@@ -1,5 +1,5 @@
 ---
-title: "Journal"
+title: "Blog"
 output:
   html_document:
     toc: true
@@ -14,115 +14,85 @@ output:
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
 
-IMPORTANT: You can delete everything in here and start fresh. You might want to start by not deleting anything above this line until you know what that stuff is doing.
+# Caminho absoluto versus caminho relativo
 
+2021 | 12 | 14 Last compiled: `r Sys.Date()`
 
-This is an .Rmd file. It is plain text with special features. Any time you write just like this, it will be compiled to normal text in the website. If you put a \# in front of your text, it will create a top level-header.
+Programar em R pode ser simples ou complicado de acordo com a preferência do cliente ;)
 
-# My first post
+Brincadeiras a parte, trabalhar com análises no R vai despender de memória e vários arquivos (principalmente para importar os dados). Se você usa frequentemente as funções *getwd* e *setwd* para acessar pastas no seu computador, **PARE!**
 
-2018 | 7 | 23 Last compiled: `r Sys.Date()`
+O uso dessas funções irá, não só te deixar mal acostumado (pra não te ofender, te chamando de preguiçoso *emoji do riso*), mas <u>também</u> desorganizado. Para compreender o motivo, devemos entender dois conceitos básicos:
 
-Notice that whatever you define as a top level header, automatically gets put into the table of contents bar on the left. 
-
-## Second level header
-
-You can add more headers by adding more hashtags. These won't be put into the table of contents
-
-### third level header
-
-Here's an even lower level header
-
-# My second post (note the order)
-
-2018 | 7 | 23 Last compiled: `r Sys.Date()`
-
-I'm writing this tutorial going from the top down. And, this is how it will be printed. So, notice the second post is second in the list. If you want your most recent post to be at the top, then make a new post starting at the top. If you want the oldest first, do, then keep adding to the bottom
-
-# Adding R stuff
-
-So far this is just a blog where you can write in plain text and serve your writing to a webpage. One of the main purposes of this lab journal is to record your progress learning R. The reason I am asking you to use this process is because you can both make a website, and a lab journal, and learn R all in R-studio. This makes everything really convenient and in the sam place. 
-
-So, let's say you are learning how to make a histogram in R. For example, maybe you want to sample 100 numbers from a normal distribution with mean = 0, and standard deviation =1, and then you want to plot a histogram. You can do this right here by using an r code block, like this:
-
-```{r}
-samples <- rnorm(100, mean=0, sd=1)
-hist(samples)
-```
-
-When you knit this R Markdown document, you will see that the histogram is printed to the page, along with the R code. This document can be set up to hide the R code in the webpage, just delete the comment (hashtag), from the cold folding option in the yaml header up top. For purposes of letting yourself see the code, and me see the code, best to keep it the way that it is. You learn all of these things and more can be customized in each R code block.
-
-# The big idea
-
-Use this lab journal to record what you do in R. This way I will be able to see what you are doing and help you along the way. You will also be creating a repository of all the things you do. You can make posts about everything. Learning specific things in R (project unrelated), and doing things for the project that we will discuss at the beginning of the Fall semester. You can get started now by fiddling around with googling things, and trying stuff out in R. I've placed some helpful starting links in the links page on this website
-
-# What can you do right now by yourself?
-
-It's hard to learn programming when you don't have specific problems that you are trying to solve. Everything just seems abstract.
-
-I wrote an [introductory programming book that introduces R](https://crumplab.github.io/programmingforpsych/), and gives some [concrete problems for you to solve](https://crumplab.github.io/programmingforpsych/programming-challenges-i-learning-the-fundamentals.html). 
-
-To get the hang of journaling and solving the problems to learn programming, my suggestion is that you use this .Rmd file to solve the problems. It would look like this:
-
-# Problem 1
-
-Do simple math with numbers, addition, subtraction, multiplication, division
-
-```{r}
-1+2
-2*5
-5/3
-(1+6+4)/5
-
-```
-
-# Problem 2
-
-Put numbers into variables, do simple math on the variables
-
-```{r}
-a<-1
-b<-2
-a+b
-
-d<-c(1,2,3)
-e<-c(5,6,7)
-d+e
-d*e
-d/e
-
-```
-
-# Problem 3
-
-Write code that will place the numbers 1 to 100 separately into a variable using for loop. Then, again using the seq function.
-
-```{r}
-# for loop solution
-# i becomes the number 1 to 100 at each step of the loop
-
-
-a <- length(100) # make empty variable, set length to 100
-for (i in 1:100){
-  a[i] <-i #assigns the number in i, to the ith index of a
-}
-
+* **Caminho absoluto** é o caminho que qualquer arquivo tenha no diretório de seu computador, por exemplo: 
+```{r echo=FALSE}
+a<-"C:\\Users\\aboar\\Documents\\Pasta do R\\portAB\\_posts\\Caminho absoluto versus caminho relativo\\Caminho absoluto versus caminho relativo.Rmd"
 print(a)
-
-# for loop solution #2
-
-a<-c() #create empty variable using combine command
-for (i in 1:100){
-  a<-c(a,i) # keeps combining a with itself and the new number in i
-}
-print(a)
-
-# seq solution
-a <- seq(1,100,1) # look up help for seq using ?seq() in console
-print(a)
-
 ```
 
-# Replace this with problem 4
+é o caminho do arquivo que gerou essa página. E é <u>característico</u> a presença do *C:*, *D:* ou *E:* a depender da sua máquina.
 
-And keep going. Try to solve the problems with different scripts that provide the same solution. Good luck, Happy coding.
+* **Caminho relativo** é o caminho que o arquivo tem dentro do projeto, o mesmo arquivo
+citado através do caminho acima pode ser acessado assim: 
+
+```{r echo=FALSE}
+b<-"_posts/Caminho absoluto versus caminho relativo/Caminho absoluto versus caminho relativo.Rmd"
+print(b)
+```
+
+Perceba o seguinte: caso eu te entregue um script com a seguinte função:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+dados<-read.csv("C:\Users\aboar\Documents\Pasta do R\portAB\_posts\Caminho absoluto versus caminho relativo\dados_tcc.csv")
+```
+O R irá encontrá-lo? Certamente **NÃO**! Por quê? Porque o uso desse caminho dentro da função *read.csv* é específico do <u>meu</u> computador. E agora?
+
+O uso de projetos, e o seu compartilhamento através do GitHub ou através de outros serviços de armazenamentos em nuvem, permitem o acesso aos arquivos devido ao uso de caminhos relativos. Portanto, se eu compartilhasse com você o meu projeto, você conseguiria acessar o arquivo através do código:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+dados<-read.csv("images/dados_tcc.csv.txt")
+```
+
+Em suma, trabalhe com projetos no R. Ali, todos os arquivos que você irá importar e todos os arquivos que você irá gerar, como *plots* e arquivos de dados já processados, poderão ser acessados facilmente depois através de caminhos relativos, além de permitir que outras pessoas vinculadas ao projeto possam executar o código em seus computadores próprios sem qualquer problema. Dica: aperte a tecla *tab* entre as aspas duplas do argumento *file* e selecione o arquivo pelo menu drop-down que irá abrir (benefícios do RStudio).
+
+
+# Personalize o RStudio com um tema SEU!
+
+2021 | 12 | 14 Last compiled: `r Sys.Date()`
+
+Você, que utiliza a interface *RStudio* no dia-a-dia, já deve ter configurado a aparência do IDE (Ambiente de Desenvolvimento Integrado) para um tema que te agrade visualmente e não cause tanta fadiga ocular, certo? Eu já testei vários temas pré-definidos, e sempre havia algo que não me agradava, como cores "fracas" na parte de comentários, dentre outros pontos que não ficavam bem.
+
+Nesse meu primeiro tutorial espero te guiar na construção de um tema **seu**! Vamos lá?
+
+1. Primeiramente, abra este [link](https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai). Aqui você encontrará o seguinte interface:
+
+![Figura 1: Interface do endereço eletrônico](images\Temas RStudio\Site de temas.JPG)
+
+* Na aba *Scopes* você pode alterar a cor da fonte (FG), a cor do fundo de cada uma das seções (BG) e se receberá itálico (*I*), negrito (**B**) ou sublinhado (<u>U</u>).
+
+* Na aba *General* você irá definir o *background* do RStudio, e em *Info*
+ você insere um nome e informações relacionadas ao seu tema.
+ 
+* Quer inspiração? Abra o menu *drop-down* *Gallery* e você encontrará vários temas já pré-definidos e que não estão disponíveis no RStudio.
+
+2. Após adaptar e criar o seu próprio tema, é hora de salvar o seu tema. Clique no menu **Download** e salve o arquivo .tmTheme em uma pasta destinada aos seus projetos do R.
+
+Para este material, realizei o download do tema *Iceberg* disponível no menu *drop-down* *Gallery*.
+
+3. Abra o seu RStudio e digite o seguinte código:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+rstudioapi::convertTheme("images\Temas RStudio\Iceberg.tmTheme")
+```
+Note: você deve ter o pacote **rstudioapi** instalado, caso contrário instale através do código:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+install.packages("rstudioapi")
+```
+
+4. Agora cheque a aba *Appearance* do *Global Options*, localize o tema e clique em *Apply* para que seja aplicado a sua interface.
+
+![Figura 1: Interface do endereço eletrônico](images\Temas RStudio\Aba Appearance.JPG){width=50%}
+
+
+Não deu certo? Pode entrar em contato através dos canais disponibilizados na aba **Sobre o autor** ou pesquise o erro no forum *stackoverflow*.
