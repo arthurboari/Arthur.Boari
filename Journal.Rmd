@@ -92,7 +92,110 @@ install.packages("rstudioapi")
 
 4. Agora cheque a aba *Appearance* do *Global Options*, localize o tema e clique em *Apply* para que seja aplicado a sua interface.
 
-![Figura 1: Interface do endereço eletrônico](images\Temas RStudio\Aba Appearance.JPG){width=50%}
+![Figura 2: Aba Appearance](images\Temas RStudio\Aba Appearance.JPG){width=50%}
 
 
 Não deu certo? Pode entrar em contato através dos canais disponibilizados na aba **Sobre o autor** ou pesquise o erro no forum *stackoverflow*.
+
+# Importando dados no R
+
+Conforme você for aprofundando na trabalho com o R, vai acabar tendo de utilizar de bases de dados externas ao R, ou seja, com dados obtidos em portais e eles virão em vários formatos. Vamos aprender algumas funções e pacotes para que você importe o seu arquivo com êxito e não te traga dor de cabeça no futuro!
+
+## Arquivo .csv
+
+Esse tipo de arquivo vem da expressão "comma separated values", em um bom português: "valores separados por vírgula". Aqui a vírgula faz o papel do separador de colunas (veremos que o ponto-e-vírgula também pode fazer esse papel nos arquivos .csv).
+
+O primeiro passo a lidar com esse tipo de arquivo é fazer sua **visualização** no Bloco de Notas. Você <u>NÃO</u> deve alterar o arquivo, apenas visualize e extraia informações que te ajudarão a importá-lo.
+
+Como exemplo, irei utilizar um arquivo contendo dados de qualidade do ar para a estação Delegacia Amazonas (Belo Horizonte) de 2019.
+
+A Figura abaixo exibe o arquivo aberto no Bloco de Notas.
+
+![Figura 3: Arquivo aberto no Bloco de Notas](Arquivos\Importação\csv foto.JPG)
+
+Aqui podemos denotrar que o arquivo possui cabeçalho, o ponto-e-vírgula separa as colunas  e a vírgula separa os decimais. São esses pontos que devem ser observados aqui.
+
+Vamos para a primeira função. Essa é a *read.table* e é a *função-mãe* de outras como *read.csv* e *read.csv2*.
+
+```{r}
+# dê um help na função e leia
+?read.table
+
+#aqui está o script de importação e será explicado abaixo
+
+dado<-read.table(file = "Arquivos/Importação/planilha2019.csv", header = TRUE,sep = ";",dec = ",")
+```
+
+O argumento **file** recebe, como *string*, o caminho no qual está o arquivo. Ao trabalhar como projetos você pode simplesmente inserir as aspas duplas e teclar TAB para procurar de forma mais ágil o caminho do arquivo. **header** é um argumento lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo como o cabeçalho, se receber FALSE a primeira linha será tratada como um dado normal. Os argumentos **sep** e **dec** recebem, como *string* os caracteres de separação de colunas e decimais, respectivamente.
+
+Vamos observar o objeto **dado**:
+
+```{r}
+head(x = dado, n = 6)
+```
+Nota que *n* é o número de linhas do objeto que selecionei para visualizar.
+
+Você pode utilizar a função **read.csv2** para importar o mesmo arquivo. Mas qual a diferença? Nenhuma! O que temos aqui é apenas a "definição de argumentos defaults". Veja:
+
+```{r}
+dado<-read.csv2(file = "Arquivos/Importação/planilha2019.csv")
+head(x = dado, n = 6)
+```
+Basicamente, o mesmo resultado. Portanto, há várias formas de importar o mesmo arquivo. Definir os argumentos ajuda a garantir uma importação mais detalhada. Você pode usar a função *read.table* para importar outros tipos de arquivos, como .txt.
+
+## Planilhas do Excel
+
+Aqui vamos precisar de pacote específico. Existem vários, entretanto iremos aprender a importar através de uma função do seguinte pacote:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+install.packages("readxl")
+```
+
+Aqui vamos trabalhar com um arquivo de dados meteorológicos de Lavras-MG.
+
+```{r}
+#Carregando o pacote
+library(readxl)
+
+#help na função
+?read_excel
+
+#importando
+dado<-read_excel(path = "Arquivos/Importação/LAVRAS (83687) (2) (1).xlsx")
+```
+Aqui bastou apenas definir o argumento *path* que é igual ao argumento *file* da função *read.table*.
+
+Vamos visualizar parte do arquivo:
+
+```{r}
+head(x = dado, n = 6)
+```
+
+Caso seu arquivo .csv ou .xlsx contenha linhas de texto antes do dado em sim, basta "pular" a quantidade de linhas através do argumento *skip* de suas respectivas funções.
+
+Veja um aplicação do argumento *skip* abaixo:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+dado<-read.csv2(file = "Arquivos/Importação/SOROCABA (83851).csv")
+
+head(x = dado, n = 6)
+```
+> Error in read.table(file = file, header = header, sep = sep, quote = quote, : 
+more columns than column names
+
+
+Observe que ocorreu um erro. Basicamente ele "reclama" que há mais colunas do que nomes para ela. Vamos observar o arquivo no Bloco de Notas:
+
+![Figura 4: Arquivo aberto no Bloco de Notas](Arquivos\Importação\csv foto 2.JPG)
+
+Podemos ver que há uma linha antes do dados, vamos retirá-la com o argumento *skip*.
+
+```{r}
+dado<-read.csv2(file = "Arquivos/Importação/SOROCABA (83851).csv",skip = 1)
+
+head(x = dado, n = 6)
+```
+
+Observe que agora deu certo!
+
+Na próxima postagem veremos como exportar dados para .csv e .xlsx.
