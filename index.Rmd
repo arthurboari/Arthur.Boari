@@ -3,21 +3,33 @@ title: "Arthur Learns R"
 output: html_document
 ---
 
-<style type="text/css">
-.title {
-  display: none;
-}
+Olá! Seja bem-vind@ ao blog Arthur Learns R. Aqui irei documentar alguns estudos de programação em R:
 
-#getting-started img {
-  margin-right: 10px;
-}
+* Funções específicas de pacotes;
+* Dicas de programação; e
+* Tutoriais.
 
-</style>
+Aprender uma linguagem de programação pode aparecer assustador, mas <u>NÃO</u> é! Aproveito a home-page para deixar algumas dicas, mas primeiramente, por quê a linguagem R?
 
-<div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
+* A linguagem R, assim como o Python, é uma linguagem de <u>alto nível</u>. Isso significa que já existem funções já prontas e que não haverá necessidade de você fazer longos *scripts* para *ensinar* o R como se faz uma média. Claro, que dependendo da área, você pode encontrar situações nas quais você precisará despender um bom tempo criando funções, caso não existam pacotes que contenham o que você almeja.
 
-# **Arthur Learns R**
+* Como citado anteriormente, o CRAN possui um vasto repositório com pacotes das mais diversas áreas, nas quais já existem funções programadas. Por exemplo, o pacote *openair* é destinado a área de poluição atmosférica, *trend* é um pacote para análise de tendências em séries históricas, e pacotes como o hydroGOF para análises hidrológicas.
 
+* É uma das linguagens com bastante material acessível, sejam apostilas e livros em bookdown, sejam vídeos e tutoriais no YouTube, seja o fórum *stackoverflow*, onde os usuários podem encontrar diversas dúvidas solucionadas. Apesar de ter uma versão em português deste fórum, a versão em inglês possui um banco mais vasto.
 
-**Em construção**
+Esses são alguns benefícios, vamos a dicas:
+
+* O aprendizado é <u>solitário</u>, mas não quer dizer que você não deva procurar ajuda (nos fóruns, vídeos e outras fontes).
+
+* Procure deixar o seu *script* bem comentado (tudo o que vem após o jogo-da-velha é considerado comentário), com explicações:
+ 
+    + do que está sendo feito;
+    + do motivo de usar aquela função e para o quê ela serve;
+    + os valores que argumentos assumem e se há alguma literatura científica que dê respaldo;
+    + erros que você cometeu anteriormente.
+    
+* Pratique! Esse é o *segredo*. Tudo o que você precisar calcular, seja uma média ou algo bem simples, opte por fazer no R e não em programas de planilha eletrônica ou na calculadora do seu sistema operacional.
+
+* Organização é a chave do negócio! Use projetos. Lá você poderá manter todos os arquivos o mais organizado possível. O primeiro tópico da aba *Blog* aborda um tópico ("Caminho absoluto versus caminho relativo") bem interessa do porquê é melhor usar projetos.
+
+**Sugestões?** Entre em contato através dos links disponibilizados na aba *Sobre mim*.
