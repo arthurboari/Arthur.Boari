@@ -99,6 +99,8 @@ Não deu certo? Pode entrar em contato através dos canais disponibilizados na a
 
 # Importando dados no R
 
+2021 | 12 | 15 Last compiled: `r Sys.Date()`
+
 Conforme você for aprofundando na trabalho com o R, vai acabar tendo de utilizar de bases de dados externas ao R, ou seja, com dados obtidos em portais e eles virão em vários formatos. Vamos aprender algumas funções e pacotes para que você importe o seu arquivo com êxito e não te traga dor de cabeça no futuro!
 
 ## Arquivo .csv
