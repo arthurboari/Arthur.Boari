@@ -128,7 +128,7 @@ Vamos para a primeira função. Essa é a *read.table* e é a *função-mãe* de
 dado<-read.table(file = "Arquivos/Importação/planilha2019.csv", header = TRUE,sep = ";",dec = ",")
 ```
 
-O argumento **file** recebe, como *string*, o caminho no qual está o arquivo. Ao trabalhar como projetos você pode simplesmente inserir as aspas duplas e teclar TAB para procurar de forma mais ágil o caminho do arquivo. **header** é um argumento lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo como o cabeçalho, se receber FALSE a primeira linha será tratada como um dado normal. Os argumentos **sep** e **dec** recebem, como *string* os caracteres de separação de colunas e decimais, respectivamente.
+O argumento **file** recebe, como *string*, o caminho no qual está o arquivo (<u>**note que é necessário adicionar a extensão do arquivo**</u> - você encontra na janela propriedades do arquivo). Ao trabalhar como projetos você pode simplesmente inserir as aspas duplas e teclar TAB para procurar de forma mais ágil o caminho do arquivo. **header** é um argumento lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo como o cabeçalho, se receber FALSE a primeira linha será tratada como um dado normal. Os argumentos **sep** e **dec** recebem, como *string* os caracteres de separação de colunas e decimais, respectivamente.
 
 Vamos observar o objeto **dado**:
 
@@ -201,3 +201,76 @@ head(x = dado, n = 6)
 Observe que agora deu certo!
 
 Na próxima postagem veremos como exportar dados para .csv e .xlsx.
+
+# Exportando dados no R
+
+2021 | 12 | 16 Last compiled: `r Sys.Date()`
+
+Agora que sabemos como se importam dados no R, é importante saber exportar. Para isso, vamos utilizar um dos *datasets* presentes no R.
+
+Podemos verificar os datasets através do código:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+library(help = "datasets")
+```
+
+Aqui iremos usar a matriz WorldPhones:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+?WorldPhones
+
+```
+
+Esse *dataset* contém o número de telefones de várias partes do mundo, em milhões. Vamos visualizar antes de exportar:
+
+```{r}
+WorldPhones
+```
+
+## Exportando em .csv
+
+Aqui iremos utilizar a função *write.table*:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+?write.table
+```
+
+Habitue-se a ler os *helps* das funções <u>sempre</u> que for utilizar uma!
+
+Vamos aprender:
+
+```{r}
+write.table(x = WorldPhones,file = "Arquivos/Exportação/WorldPhones.csv",sep = ";",dec = ",",row.names = FALSE)
+```
+
+O argumento *x* recebe o objeto que será exportado e *row.names* é um argumento que introduz o "nome" das linhas no arquivo exportado, acrescentando uma coluna ao mesmo. Os demais argumentos funcionam de forma análoga ao explicitado na seção de **Importação** acima.
+
+Vamos ver o arquivo exportado:
+
+![Figura 5: Arquivo aberto no Bloco de Notas](Arquivos\Exportação\csv.JPG)
+
+Exportaremos o mesmo *dataset*, agora em .xlsx:
+
+## Exportando em .xlsx
+
+Para isso vamos utilizar o pacote:
+
+```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+install.packages("openxlsx")
+```
+
+Precisamos carregar o pacote:
+```{r}
+library(openxlsx)
+```
+
+Vamos exportar:
+```{r}
+openxlsx::write.xlsx(x = as.data.frame(WorldPhones),file = "Arquivos/Exportação/WorldPhones.xlsx")
+```
+
+Note: convertemos *WorldPhones* em *dataframe*, pois o mesmo é uma *matrix* e a função aceita apenas um *dataframe* ou uma list no argumento *x*.
+
+![Figura 6: Arquivo aberto no Bloco de Notas](Arquivos\Exportação\xlsx.JPG)
+
+Tivemos sucesso na exportação! Até o próximo tópico!!

@@ -345,7 +345,7 @@ div.tocify {
 
 <div id="caminho-absoluto-versus-caminho-relativo" class="section level1">
 <h1>Caminho absoluto versus caminho relativo</h1>
-<p>2021 | 12 | 14 Last compiled: 2021-12-15</p>
+<p>2021 | 12 | 14 Last compiled: 2021-12-16</p>
 <p>Programar em R pode ser simples ou complicado de acordo com a preferência do cliente ;)</p>
 <p>Brincadeiras a parte, trabalhar com análises no R vai despender de memória e vários arquivos (principalmente para importar os dados). Se você usa frequentemente as funções <em>getwd</em> e <em>setwd</em> para acessar pastas no seu computador, <strong>PARE!</strong></p>
 <p>O uso dessas funções irá, não só te deixar mal acostumado (pra não te ofender, te chamando de preguiçoso <em>emoji do riso</em>), mas <u>também</u> desorganizado. Para compreender o motivo, devemos entender dois conceitos básicos:</p>
@@ -367,7 +367,7 @@ div.tocify {
 </div>
 <div id="personalize-o-rstudio-com-um-tema-seu" class="section level1">
 <h1>Personalize o RStudio com um tema SEU!</h1>
-<p>2021 | 12 | 14 Last compiled: 2021-12-15</p>
+<p>2021 | 12 | 14 Last compiled: 2021-12-16</p>
 <p>Você, que utiliza a interface <em>RStudio</em> no dia-a-dia, já deve ter configurado a aparência do IDE (Ambiente de Desenvolvimento Integrado) para um tema que te agrade visualmente e não cause tanta fadiga ocular, certo? Eu já testei vários temas pré-definidos, e sempre havia algo que não me agradava, como cores “fracas” na parte de comentários, dentre outros pontos que não ficavam bem.</p>
 <p>Nesse meu primeiro tutorial espero te guiar na construção de um tema <strong>seu</strong>! Vamos lá?</p>
 <ol style="list-style-type: decimal">
@@ -403,7 +403,7 @@ div.tocify {
 </div>
 <div id="importando-dados-no-r" class="section level1">
 <h1>Importando dados no R</h1>
-<p>2021 | 12 | 15 Last compiled: 2021-12-15</p>
+<p>2021 | 12 | 15 Last compiled: 2021-12-16</p>
 <p>Conforme você for aprofundando na trabalho com o R, vai acabar tendo de utilizar de bases de dados externas ao R, ou seja, com dados obtidos em portais e eles virão em vários formatos. Vamos aprender algumas funções e pacotes para que você importe o seu arquivo com êxito e não te traga dor de cabeça no futuro!</p>
 <div id="arquivo-.csv" class="section level2">
 <h2>Arquivo .csv</h2>
@@ -423,7 +423,7 @@ div.tocify {
 #aqui está o script de importação e será explicado abaixo
 
 dado&lt;-read.table(file = &quot;Arquivos/Importação/planilha2019.csv&quot;, header = TRUE,sep = &quot;;&quot;,dec = &quot;,&quot;)</code></pre>
-<p>O argumento <strong>file</strong> recebe, como <em>string</em>, o caminho no qual está o arquivo. Ao trabalhar como projetos você pode simplesmente inserir as aspas duplas e teclar TAB para procurar de forma mais ágil o caminho do arquivo. <strong>header</strong> é um argumento lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo como o cabeçalho, se receber FALSE a primeira linha será tratada como um dado normal. Os argumentos <strong>sep</strong> e <strong>dec</strong> recebem, como <em>string</em> os caracteres de separação de colunas e decimais, respectivamente.</p>
+<p>O argumento <strong>file</strong> recebe, como <em>string</em>, o caminho no qual está o arquivo (<u><strong>note que é necessário adicionar a extensão do arquivo</strong></u> - você encontra na janela propriedades do arquivo). Ao trabalhar como projetos você pode simplesmente inserir as aspas duplas e teclar TAB para procurar de forma mais ágil o caminho do arquivo. <strong>header</strong> é um argumento lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo como o cabeçalho, se receber FALSE a primeira linha será tratada como um dado normal. Os argumentos <strong>sep</strong> e <strong>dec</strong> recebem, como <em>string</em> os caracteres de separação de colunas e decimais, respectivamente.</p>
 <p>Vamos observar o objeto <strong>dado</strong>:</p>
 <pre class="r"><code>head(x = dado, n = 6)</code></pre>
 <pre><code>##               date PM10  NO2    O3  SO2 PM25    CO  TEMP     DV  PP     PA   VV
@@ -529,6 +529,55 @@ head(x = dado, n = 6)</code></pre>
 ## 6                      NA                      NA                  NA NA</code></pre>
 <p>Observe que agora deu certo!</p>
 <p>Na próxima postagem veremos como exportar dados para .csv e .xlsx.</p>
+</div>
+</div>
+<div id="exportando-dados-no-r" class="section level1">
+<h1>Exportando dados no R</h1>
+<p>2021 | 12 | 16 Last compiled: 2021-12-16</p>
+<p>Agora que sabemos como se importam dados no R, é importante saber exportar. Para isso, vamos utilizar um dos <em>datasets</em> presentes no R.</p>
+<p>Podemos verificar os datasets através do código:</p>
+<pre class="r"><code>library(help = &quot;datasets&quot;)</code></pre>
+<p>Aqui iremos usar a matriz WorldPhones:</p>
+<pre class="r"><code>?WorldPhones</code></pre>
+<p>Esse <em>dataset</em> contém o número de telefones de várias partes do mundo, em milhões. Vamos visualizar antes de exportar:</p>
+<pre class="r"><code>WorldPhones</code></pre>
+<pre><code>##      N.Amer Europe Asia S.Amer Oceania Africa Mid.Amer
+## 1951  45939  21574 2876   1815    1646     89      555
+## 1956  60423  29990 4708   2568    2366   1411      733
+## 1957  64721  32510 5230   2695    2526   1546      773
+## 1958  68484  35218 6662   2845    2691   1663      836
+## 1959  71799  37598 6856   3000    2868   1769      911
+## 1960  76036  40341 8220   3145    3054   1905     1008
+## 1961  79831  43173 9053   3338    3224   2005     1076</code></pre>
+<div id="exportando-em-.csv" class="section level2">
+<h2>Exportando em .csv</h2>
+<p>Aqui iremos utilizar a função <em>write.table</em>:</p>
+<pre class="r"><code>?write.table</code></pre>
+<p>Habitue-se a ler os <em>helps</em> das funções <u>sempre</u> que for utilizar uma!</p>
+<p>Vamos aprender:</p>
+<pre class="r"><code>write.table(x = WorldPhones,file = &quot;Arquivos/Exportação/WorldPhones.csv&quot;,sep = &quot;;&quot;,dec = &quot;,&quot;,row.names = FALSE)</code></pre>
+<p>O argumento <em>x</em> recebe o objeto que será exportado e <em>row.names</em> é um argumento que introduz o “nome” das linhas no arquivo exportado, acrescentando uma coluna ao mesmo. Os demais argumentos funcionam de forma análoga ao explicitado na seção de <strong>Importação</strong> acima.</p>
+<p>Vamos ver o arquivo exportado:</p>
+<div class="figure">
+<img src="Arquivos\Exportação\csv.JPG" alt="" />
+<p class="caption">Figura 5: Arquivo aberto no Bloco de Notas</p>
+</div>
+<p>Exportaremos o mesmo <em>dataset</em>, agora em .xlsx:</p>
+</div>
+<div id="exportando-em-.xlsx" class="section level2">
+<h2>Exportando em .xlsx</h2>
+<p>Para isso vamos utilizar o pacote:</p>
+<pre class="r"><code>install.packages(&quot;openxlsx&quot;)</code></pre>
+<p>Precisamos carregar o pacote:</p>
+<pre class="r"><code>library(openxlsx)</code></pre>
+<p>Vamos exportar:</p>
+<pre class="r"><code>openxlsx::write.xlsx(x = as.data.frame(WorldPhones),file = &quot;Arquivos/Exportação/WorldPhones.xlsx&quot;)</code></pre>
+<p>Note: convertemos <em>WorldPhones</em> em <em>dataframe</em>, pois o mesmo é uma <em>matrix</em> e a função aceita apenas um <em>dataframe</em> ou uma list no argumento <em>x</em>.</p>
+<div class="figure">
+<img src="Arquivos\Exportação\xlsx.JPG" alt="" />
+<p class="caption">Figura 6: Arquivo aberto no Bloco de Notas</p>
+</div>
+<p>Tivemos sucesso na exportação! Até o próximo tópico!!</p>
 </div>
 </div>
 
