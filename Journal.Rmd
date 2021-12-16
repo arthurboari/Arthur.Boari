@@ -271,6 +271,6 @@ openxlsx::write.xlsx(x = as.data.frame(WorldPhones),file = "Arquivos/Exportaçã
 
 Note: convertemos *WorldPhones* em *dataframe*, pois o mesmo é uma *matrix* e a função aceita apenas um *dataframe* ou uma list no argumento *x*.
 
-![Figura 6: Arquivo aberto no Bloco de Notas](Arquivos\Exportação\xlsx.JPG)
+![Figura 6: Arquivo aberto no Bloco de Notas](Arquivos\Exportação\xlsx.JPG){width=70%}
 
 Tivemos sucesso na exportação! Até o próximo tópico!!
