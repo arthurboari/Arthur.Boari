@@ -6,6 +6,8 @@ navbar:
       href: index.html
     - text: "Blog"
       href: Journal.html
+    - text: "Learning R"
+      href: Learn.html
     - text: "Sobre mim"
       href: Links.html
 output_dir: "docs"

@@ -1,0 +1,13 @@
+---
+title: "Learning R"
+author: "Arthur Boari"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    collapsed: false
+    number_sections: false
+    toc_depth: 1
+    #code_folding: hide
+---
+O conteúdo desta página do blog é originado do curso [Learn ggplot2 in R for Data Visualization 2021](https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/).
