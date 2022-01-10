@@ -349,6 +349,280 @@ div.tocify {
 
 
 <p>O conteúdo desta página do blog é originado do curso <a href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn ggplot2 in R for Data Visualization 2021</a>.</p>
+<div id="comandos-utéis" class="section level1">
+<h1>Comandos utéis</h1>
+<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>Nessa seção iremos compilar algumas funções úteis.</p>
+<p>A primeira função é <em>dir</em>. Ela listará os arquivos presentes no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:</p>
+<pre class="r"><code>getwd() #essa função descreve o caminho do meu diretório de trabalho</code></pre>
+<pre><code>## [1] &quot;C:/Users/aboar/Documents/GitHub/ArthurLearnsR&quot;</code></pre>
+<pre class="r"><code>dir() #aqui teremos a lista com os arquivos e pastas do diretório de trabalho</code></pre>
+<pre><code>##  [1] &quot;_site.yml&quot;               &quot;Arquivos&quot;               
+##  [3] &quot;docs&quot;                    &quot;images&quot;                 
+##  [5] &quot;index.html&quot;              &quot;index.Rmd&quot;              
+##  [7] &quot;Journal.html&quot;            &quot;Journal.Rmd&quot;            
+##  [9] &quot;Journal_cache&quot;           &quot;Journal_files&quot;          
+## [11] &quot;LabJournalWebsite.Rproj&quot; &quot;Learn.Rmd&quot;              
+## [13] &quot;Links.Rmd&quot;               &quot;README.md&quot;              
+## [15] &quot;site_libs&quot;</code></pre>
+<p>A segunda função é <em>ls</em>, que lista os objetos presentes no nosso ambiente global (Global Environment).</p>
+<pre class="r"><code>ls() #essa função descreve os objetos presentes no Global Environment</code></pre>
+<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre class="r"><code>objects() #mesma função que *ls()*</code></pre>
+<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot;</code></pre>
+<p>A terceira função é <em>remove</em>, e será útil para remover algum objeto do Global Environment.</p>
+<pre class="r"><code>#Vamos criar dois objetos
+a&lt;-1
+b&lt;-2
+#Vamos listá-los
+ls()</code></pre>
+<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre class="r"><code>#Vamos remover o objeto *a*
+remove(a)
+#Vamos listá-los
+objects()</code></pre>
+<pre><code>## [1] &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre class="r"><code>#Vamos remover o objeto *b*
+rm(b)
+#Vamos listá-los
+objects()</code></pre>
+<pre><code>## [1] &quot;dado&quot;</code></pre>
+<p>A quarta função é <em>print</em>, e como o nome sugere, irá imprimir no Console algum texto ou conteúdo de alguma variável. Veja o exemplo abaixo:</p>
+<pre class="r"><code>x&lt;-&quot;hello world!&quot;
+print(x)</code></pre>
+<pre><code>## [1] &quot;hello world!&quot;</code></pre>
+<pre class="r"><code>#também podemos apenas chamar o objeto
+x #irá retornar a mesma resposta</code></pre>
+<pre><code>## [1] &quot;hello world!&quot;</code></pre>
+<pre class="r"><code>print(&quot;hello world&quot;) #outra forma</code></pre>
+<pre><code>## [1] &quot;hello world&quot;</code></pre>
+<pre class="r"><code>#como imprimir textos mais complexos?
+cat(&quot;o valor da área do triângulo é&quot;, 135, &quot;cm^2&quot;)</code></pre>
+<pre><code>## o valor da área do triângulo é 135 cm^2</code></pre>
+<pre class="r"><code>print(paste(&quot;o valor da área do triângulo é&quot;, 135, &quot;cm^2&quot;))</code></pre>
+<pre><code>## [1] &quot;o valor da área do triângulo é 135 cm^2&quot;</code></pre>
+<p>A quinta função é a <em>install.packages</em>, que instalará os pacotes no nosso R. O nome do pacote deve ser uma <em>string</em>, ou seja, texto!</p>
+<pre class="r"><code>install.packages(&quot;ggplot2&quot;)</code></pre>
+<p>A sexta função é <em>library</em>, que carregará o pacote instalado.</p>
+<pre class="r"><code>library(ggplot2)
+require(ggplot2)</code></pre>
+<p>A diferença entre <em>library</em> e <em>require</em> é que a segunda é a mais indicada pára implementação de funções que necessitam de funções de outros pacotes para operar.</p>
+</div>
+<div id="estruturas-no-r" class="section level1">
+<h1>ESTRUTURAS NO R:</h1>
+<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>As estruturas do R podem ser classificadas quanto ao tipo de variável e quanto a estrutura utilizada.</p>
+<ul>
+<li>Quanto ao tipo de variável/classe:
+<ul>
+<li>Character (ou charactere/texto);</li>
+<li>Numeric (numérico - seja discreto (integer, e.g. 1, 2,3) ou contínuo, e.g. 1.2,3.7,5.5);</li>
+<li>Complex (números complexos, e.g. 2 + 5i);</li>
+<li>Logical (lógicos ou booleanos, e.g. TRUE ou FALSE / 1 ou 0).</li>
+</ul></li>
+</ul>
+<p>Note: o R entenderá sempre qualquer variável numérico como do tipo <em>double</em>, ou seja, tratará como discreto mesmo que não há informações sobre osa decimais. Para assimilar um número inteiro, utilize o caractere <strong>L</strong> após o número, como demonstrado abaixo. Para mais detalhes, leia o conteúdo desta <a href="https://faculty.nps.edu/sebuttre/home/R/data.html">página</a>.</p>
+<pre class="r"><code>x&lt;-23L
+print(x)</code></pre>
+<pre><code>## [1] 23</code></pre>
+<pre class="r"><code>typeof(x) #verifica o tipo do objeto</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>class(x) #mesmo objetivo da função *typeof*</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>y&lt;-23
+print(y)</code></pre>
+<pre><code>## [1] 23</code></pre>
+<pre class="r"><code>typeof(y)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre class="r"><code>class(y)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<p>Observe que as duas formas produzem o mesmo resultado no console, mas a forma de armzenagem é diferente.</p>
+<ul>
+<li><p>Quanto ao tipo de estrutura:</p>
+<ul>
+<li>Vector (vetor);</li>
+<li>List (lista);</li>
+<li>Matrix (matriz);</li>
+<li>Array;</li>
+<li>Dataframes.</li>
+</ul></li>
+</ul>
+</div>
+<div id="vetores" class="section level1">
+<h1>Vetores</h1>
+<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>Podem ser definidos como <strong>uma coleção de elementos de uma mesma classe</strong> e podem ser criados de duas maneiras:</p>
+<div id="através-da-função-concatenar-c" class="section level2">
+<h2>Através da função concatenar <em>c</em></h2>
+<p>Essa função apenas irá propiciar a assimilação de mais de um valor por vez. Veja o exemplo abaixo:</p>
+<pre class="r"><code>?c #solicita o *help* da função
+# Note que é a terceira letra do alfabeto na forma minúscula! O R é **case sensitive**, ou seja, *c* e *C* são completamente diferentes e isso vale para qualquer código aplicado ao R.</code></pre>
+<pre class="r"><code>x&lt;-c(1,2,3,4,5,6,7,8,9,10)
+print(x)</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div id="através-da-função-vector" class="section level2">
+<h2>Através da função <em>vector</em></h2>
+<p>Essa função é ideal para quando se necessita de um vetor pré-criado vazio. Veja o exemplo abaixo:</p>
+<pre class="r"><code>?vector #solicita o *help* da função</code></pre>
+<pre class="r"><code>y&lt;-vector(mode = &quot;numeric&quot;,length = 5)
+print(y)</code></pre>
+<pre><code>## [1] 0 0 0 0 0</code></pre>
+<pre class="r"><code>#podemos fazer operações com ele
+y+1</code></pre>
+<pre><code>## [1] 1 1 1 1 1</code></pre>
+<pre class="r"><code>y-1</code></pre>
+<pre><code>## [1] -1 -1 -1 -1 -1</code></pre>
+<div id="funções-úteis-ao-trabalhar-com-vetor" class="section level3">
+<h3>Funções úteis ao trabalhar com vetor:</h3>
+<div id="função-is.vector" class="section level4">
+<h4>Função <em>is.vector</em></h4>
+<p>Essa função realiza a checagem do estrutura do objeto a partir da lógica. Observe:</p>
+<pre class="r"><code>is.vector(y)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<p>Com o resultado sendo <strong>TRUE</strong>, temos que sim, o objeto <em>y</em> é um vetor.</p>
+</div>
+<div id="função-as.vector" class="section level4">
+<h4>Função <em>as.vector</em></h4>
+<p>Essa função serve para transformar uma estrutura em vetor.</p>
+<pre class="r"><code>x &lt;- c(a = 1, b = 2) # esse vetor tem as posições nomeadas
+print(x)</code></pre>
+<pre><code>## a b 
+## 1 2</code></pre>
+<pre class="r"><code># O objeto *x* é um vetor?
+is.vector(x)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code># Transforme o objeto *x* em um vetor
+as.vector(x)</code></pre>
+<pre><code>## [1] 1 2</code></pre>
+<pre class="r"><code># Os objetos *x* e *as.vector(x)* são iguais?
+all.equal(x, as.vector(x))</code></pre>
+<pre><code>## [1] &quot;names for target but not for current&quot;</code></pre>
+<p>O resultado da última função nos diz que, embora o conteúdo dos vetores sejam iguais, eles se diferenciam quanto a nomeação dos valores.</p>
+</div>
+</div>
+</div>
+<div id="acessando-valores-de-um-vetor" class="section level2">
+<h2>Acessando valores de um vetor</h2>
+<p>Para acessar qualquer valor de um vetor, usamos colchetes. Veja o exemplo abaixo:</p>
+<pre class="r"><code>#Vamos criar o vetor
+x&lt;-1:10 #aqui os dois pontos significam até, ou seja, irá criar uma sequência de 1 a 10, um-a-um elemento
+print(x)</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>#Vamos acessar o número 1: ele está na primeira posição do vetor, então:
+x[1] # não existe posição 0 em vetores na linguagem R</code></pre>
+<pre><code>## [1] 1</code></pre>
+<pre class="r"><code>#Para acessar o sexto elemento do vetor, usamos:
+x[6]</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>#Acessando as posições 1 e 6 simultaneamente
+x[c(1,6)]</code></pre>
+<pre><code>## [1] 1 6</code></pre>
+<pre class="r"><code>#Acessando uma sequência de posições
+x[8:10]</code></pre>
+<pre><code>## [1]  8  9 10</code></pre>
+<pre class="r"><code>#Criando ouro vetor
+y&lt;-c(&quot;Arthur&quot;,&quot;Rezende&quot;,&quot;Boari&quot;)
+print(y)</code></pre>
+<pre><code>## [1] &quot;Arthur&quot;  &quot;Rezende&quot; &quot;Boari&quot;</code></pre>
+<pre class="r"><code>#Como o meu nome não tem &quot;Rezende&quot;, vamos acessar o vetor *y* de forma que escreva o meu nome corretamente
+y[c(T,F,T)]</code></pre>
+<pre><code>## [1] &quot;Arthur&quot; &quot;Boari&quot;</code></pre>
+<pre class="r"><code>#Modificando uma posição do vetor, suponhamos que *Rezende* se escreve com *s*
+y[2]&lt;-&quot;Resende&quot;
+print(y)</code></pre>
+<pre><code>## [1] &quot;Arthur&quot;  &quot;Resende&quot; &quot;Boari&quot;</code></pre>
+<p>Note: dentro dos conchetes esquevemos a <strong>posição</strong> que almejamos acessar, e não o valor que queremos. Podemos acessar através de um vetor lógico, também.</p>
+<p><strong>COERÇÃO</strong>: ocorre quando se misturam variáveis de diferentes classes em um mesmo objeto. Veja abaixo:</p>
+<pre class="r"><code>v&lt;- c(1,TRUE) #aqui misturamos numérico com lógico
+v # vemos que converteu TRUE em numérico</code></pre>
+<pre><code>## [1] 1 1</code></pre>
+<pre class="r"><code>class(v)</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>v&lt;-c(FALSE,&quot;TRUE&quot;)
+v # aqui ele converteu a character</code></pre>
+<pre><code>## [1] &quot;FALSE&quot; &quot;TRUE&quot;</code></pre>
+<pre class="r"><code>class(v)</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<p>Veja que o R decidiu a classe do objeto e, por isso, tenha bastante cuidado ao trabalhar com vetores.</p>
+</div>
+<div id="comparando-vetores" class="section level2">
+<h2>Comparando vetores</h2>
+<p>Comparar vetores é de grande utilidade. Veremos como fazer isso:</p>
+<pre class="r"><code>#Criando dois vetores
+v1&lt;-1:10
+v2&lt;-10:1
+print(v1);print(v2)</code></pre>
+<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre><code>##  [1] 10  9  8  7  6  5  4  3  2  1</code></pre>
+<pre class="r"><code>#Podemos utilizar operadores matemáticos para realizar as comparações
+v1 == v2 # os vetores são iguais?</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>v1 != v2 # os vetores são diferentes?</code></pre>
+<pre><code>##  [1] TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE TRUE</code></pre>
+<pre class="r"><code>v1 &gt; v2 # o vetor *v1* é maior que o vetor *v2*?</code></pre>
+<pre><code>##  [1] FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE  TRUE  TRUE</code></pre>
+<pre class="r"><code>v1 &lt; v2 # o vetor *v1* é menor que o vetor *v2*?</code></pre>
+<pre><code>##  [1]  TRUE  TRUE  TRUE  TRUE  TRUE FALSE FALSE FALSE FALSE FALSE</code></pre>
+<pre class="r"><code>#Podemos utilizar a função *identical*
+#Nesse caso, devemos garantir que *v1* e *v2* possuem a mesma classe
+class(v1);class(v2)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>#Como possuem a mesma classe, podemos usar a função:
+identical(v1,v2)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+</div>
+<div id="operação-com-vetores" class="section level2">
+<h2>Operação com vetores</h2>
+<p>Utilizando os vetores <em>v1</em> e <em>v2</em> definidos acima, temos:</p>
+<pre class="r"><code>#soma
+v1 + v2 </code></pre>
+<pre><code>##  [1] 11 11 11 11 11 11 11 11 11 11</code></pre>
+<pre class="r"><code>#subtração
+v1 - v2 </code></pre>
+<pre><code>##  [1] -9 -7 -5 -3 -1  1  3  5  7  9</code></pre>
+<pre class="r"><code>#multiplicação
+v1 * v2 </code></pre>
+<pre><code>##  [1] 10 18 24 28 30 30 28 24 18 10</code></pre>
+<pre class="r"><code>#divisão
+v1/v2</code></pre>
+<pre><code>##  [1]  0.1000000  0.2222222  0.3750000  0.5714286  0.8333333  1.2000000
+##  [7]  1.7500000  2.6666667  4.5000000 10.0000000</code></pre>
+<p>Em alguns casos os vetores não terão o mesmo tamanho:</p>
+<pre class="r"><code>#Verificando o tamanho dos vetores *v1* e *v2*
+length(v1);length(v2)</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre><code>## [1] 10</code></pre>
+<pre class="r"><code>#Criando vetores de tamanhos diferentes:
+v1&lt;-1:3
+v2&lt;-4:5
+length(v1);length(v2)</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre><code>## [1] 2</code></pre>
+<pre class="r"><code>#Vamos realizar apenas a soma dos vetores para ver como o R irá se comportar:
+v1 + v2</code></pre>
+<pre><code>## Warning in v1 + v2: comprimento do objeto maior não é múltiplo do comprimento do
+## objeto menor</code></pre>
+<pre><code>## [1] 5 7 7</code></pre>
+<pre class="r"><code># Para obter os valores acima tivemos:
+  # 1 2 3 (v1)
+  # 4 5 x (v2)
+  # 5 7 7 (resultado)
+
+#Para que o terceiro elemento da soma retorne 7, x deve ser igual a 4
+
+#Podemos criar um vetor a partir da junção de dois
+v&lt;-c(v1,v2)
+print(v)</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<p>Quando trabalhamos com vetores de tamanhos diferentes, os elementos do menor vetor serão repetidos até que os vetores tenham o mesmo tamanho. E esse comportamento é automático. Mais uma vez o R toma uma decisão por nós!</p>
+</div>
+</div>
+<div id="lists" class="section level1">
+<h1>Lists</h1>
+<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+</div>
 
 
 
