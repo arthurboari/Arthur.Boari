@@ -1,5 +1,5 @@
 ---
-title: "Learning R"
+title: "Learning R: base"
 author: "Arthur Boari"
 output:
   html_document:
@@ -7,10 +7,10 @@ output:
     toc_float: true
     collapsed: false
     number_sections: false
-    toc_depth: 1
+    toc_depth: 4
     #code_folding: hide
 ---
-O conteúdo desta página do blog é originado do curso [Learn ggplot2 in R for Data Visualization 2021](https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/).
+O conteúdo desta página do blog é originado do curso [Learn ggplot2 in R for Data Visualization - 2021](https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/).
 
 # Comandos utéis
 
@@ -20,19 +20,19 @@ Nessa seção iremos compilar algumas funções úteis.
 
 A primeira função é *dir*. Ela listará os arquivos presentes no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:
 
-```{r}
+```{r diretório}
 getwd() #essa função descreve o caminho do meu diretório de trabalho
 dir() #aqui teremos a lista com os arquivos e pastas do diretório de trabalho
 ```
 
 A segunda função é *ls*, que lista os objetos presentes no nosso ambiente global (Global Environment).
-```{r}
+```{r ls}
 ls() #essa função descreve os objetos presentes no Global Environment
 objects() #mesma função que *ls()*
 ```
 
 A terceira função é *remove*, e será útil para remover algum objeto do Global Environment.
-```{r echo=TRUE, message=TRUE, warning=TRUE}
+```{r remove, echo=TRUE, message=TRUE, warning=TRUE}
 #Vamos criar dois objetos
 a<-1
 b<-2
@@ -49,7 +49,7 @@ objects()
 ```
 
 A quarta função é *print*, e como o nome sugere, irá imprimir no Console algum texto ou conteúdo de alguma variável. Veja o exemplo abaixo:
-```{r}
+```{r print}
 x<-"hello world!"
 print(x)
 #também podemos apenas chamar o objeto
@@ -61,12 +61,12 @@ print(paste("o valor da área do triângulo é", 135, "cm^2"))
 ```
 
 A quinta função é a *install.packages*, que instalará os pacotes no nosso R. O nome do pacote deve ser uma *string*, ou seja, texto!
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r install.package, eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 install.packages("ggplot2")
 ```
 
 A sexta função é *library*, que carregará o pacote instalado.
-```{r echo=TRUE, message=TRUE, warning=TRUE}
+```{r library/require, echo=TRUE, message=TRUE, warning=TRUE}
 library(ggplot2)
 require(ggplot2)
 ```
@@ -87,7 +87,7 @@ As estruturas do R podem ser classificadas quanto ao tipo de variável e quanto 
 
 Note: o R entenderá sempre qualquer variável numérico como do tipo *double*, ou seja, tratará como discreto mesmo que não há informações sobre osa decimais. Para assimilar um número inteiro, utilize o caractere **L** após o número, como demonstrado abaixo. Para mais detalhes, leia o conteúdo desta [página](https://faculty.nps.edu/sebuttre/home/R/data.html).
 
-```{r echo=TRUE, message=TRUE, warning=TRUE}
+```{r class/typeof/integer, echo=TRUE, message=TRUE, warning=TRUE}
 x<-23L
 print(x)
 typeof(x) #verifica o tipo do objeto
@@ -118,11 +118,11 @@ Podem ser definidos como **uma coleção de elementos de uma mesma classe** e po
 
 Essa função apenas irá propiciar a assimilação de mais de um valor por vez. Veja o exemplo abaixo:
 
-```{r eval=FALSE, include=TRUE}
+```{r concatenar, eval=FALSE, include=TRUE}
 ?c #solicita o *help* da função
 # Note que é a terceira letra do alfabeto na forma minúscula! O R é **case sensitive**, ou seja, *c* e *C* são completamente diferentes e isso vale para qualquer código aplicado ao R.
 ```
-```{r}
+```{r cria vetor com concatenar}
 x<-c(1,2,3,4,5,6,7,8,9,10)
 print(x)
 ```
@@ -131,11 +131,11 @@ print(x)
 
 Essa função é ideal para quando se necessita de um vetor pré-criado vazio. Veja o exemplo abaixo:
 
-```{r eval=FALSE, include=TRUE}
+```{r help função vector, eval=FALSE, include=TRUE}
 ?vector #solicita o *help* da função
 ```
 
-```{r echo=TRUE}
+```{r cria vetor vazio/vector, echo=TRUE}
 y<-vector(mode = "numeric",length = 5)
 print(y)
 #podemos fazer operações com ele
@@ -149,7 +149,7 @@ y-1
 
 Essa função realiza a checagem do estrutura do objeto a partir da lógica. Observe:
 
-```{r}
+```{r is.vector}
 is.vector(y)
 ```
 
@@ -159,7 +159,7 @@ Com o resultado sendo **TRUE**, temos que sim, o objeto *y* é um vetor.
 
 Essa função serve para transformar uma estrutura em vetor.
 
-```{r}
+```{r as.vector}
 x <- c(a = 1, b = 2) # esse vetor tem as posições nomeadas
 print(x)
 # O objeto *x* é um vetor?
@@ -174,9 +174,9 @@ O resultado da última função nos diz que, embora o conteúdo dos vetores seja
 
 ## Acessando valores de um vetor
 
-Para acessar qualquer valor de um vetor, usamos colchetes. Veja o exemplo abaixo:
+Para acessar qualquer valor de um vetor, usamos colchetes (chamamos de **indexação**). Veja o exemplo abaixo:
 
-```{r}
+```{r criando e acessando vetor}
 #Vamos criar o vetor
 x<-1:10 #aqui os dois pontos significam até, ou seja, irá criar uma sequência de 1 a 10, um-a-um elemento
 print(x)
@@ -202,7 +202,7 @@ Note: dentro dos conchetes esquevemos a **posição** que almejamos acessar, e n
 
 **COERÇÃO**: ocorre quando se misturam variáveis de diferentes classes em um mesmo objeto. Veja abaixo:
 
-```{r}
+```{r coerção de vetores}
 v<- c(1,TRUE) #aqui misturamos numérico com lógico
 v # vemos que converteu TRUE em numérico
 class(v)
@@ -217,7 +217,7 @@ Veja que o R decidiu a classe do objeto e, por isso, tenha bastante cuidado ao t
 
 Comparar vetores é de grande utilidade. Veremos como fazer isso:
 
-```{r}
+```{r comparando vetores}
 #Criando dois vetores
 v1<-1:10
 v2<-10:1
@@ -241,7 +241,7 @@ identical(v1,v2)
 
 Utilizando os vetores *v1* e *v2* definidos acima, temos:
 
-```{r}
+```{r operação com vetores de tamanhos iguais}
 #soma
 v1 + v2 
 #subtração
@@ -254,7 +254,7 @@ v1/v2
 
 Em alguns casos os vetores não terão o mesmo tamanho:
 
-```{r message=TRUE, warning=TRUE}
+```{r  operação com vetores de tamanhos diferentes, message=TRUE, warning=TRUE}
 #Verificando o tamanho dos vetores *v1* e *v2*
 length(v1);length(v2)
 
@@ -280,6 +280,189 @@ print(v)
 
 Quando trabalhamos com vetores de tamanhos diferentes, os elementos do menor vetor serão repetidos até que os vetores tenham o mesmo tamanho. E esse comportamento é automático. Mais uma vez o R toma uma decisão por nós!
 
+## Modificando um vetor
+
+Para modificarmos um vetor, não necessitamos criá-lo novamente. Basta selecionar, através de indexação, o valor a ser alterado e assimilar o novo valor através do operador assimilação (<-).
+
+```{r modificando um vetor}
+# O vetor a ser modificado é o seguinte:
+print(v)
+typeof(v); class(v)
+#Suponhamos que o valor '3' é, na verdade, 3.2.
+#Alteramos assim:
+v[3] # essa é a posição do valor 3
+v[3]<-3.2
+#Verificamos se a alteração ocorreu
+print(v)
+typeof(v); class(v)
+```
+
+## Ordenando um vetor numérico
+
+Muitas vezes, organizar um vetor é importante para uma análise. Para isso, vamos criar um vetor numérico aleatório.
+
+```{r ordenando um vetor numérico}
+#Criando o vetor numérico aleatório
+set.seed(126)
+vetor<-c(6,4,2,1,0)
+print(vetor)
+
+#Função rank
+rank(vetor)
+#Essa função demonsta em qual posição de um vetor ordenado (crescente) cada posição do vetor original estaria
+vetor[rank(vetor)] # verificando
+
+#Função sort
+sort(vetor) # já retorna o vetor ordenado
+
+#Função order = rank
+order(vetor)
+vetor[order(vetor)]
+```
+
 # Lists
 
-2022 | 01 | 10 Last compiled: `r Sys.Date()`
+2022 | 01 | 11 Last compiled: `r Sys.Date()`
+
+Esse tipo de objeto possibilita a inserção de vários tipos de elementos e estruturas dentro dele. Pode-se agrupar lists, vetores, dataframes, matrizes, etc.
+
+Aqui não há coerção.
+
+## Criando uma list: função *list()*
+
+```{r função list, echo=FALSE,include=TRUE}
+#Sempre recorra ao help das funções para aprender a usá-las
+?list
+```
+
+```{r criando uma list}
+#Nomeando os vetores
+lista<-list(nomes = c("Arthur Boari","João da Silva"),
+            idades = c(26,62),
+            diabetes = c(F,T))
+print(lista)
+
+#Sem nomeação
+lista2<-list(c("Arthur Boari","João da Silva"),
+            c(26,62),
+            c(F,T))
+print(lista2)
+```
+
+Observe que inserimos três vetores: um de caracteres, um numérico e um lógico. Observe ainda que nomeamos cada um dos vetores.
+
+
+## Acessando uma list via indexação por colchetes
+
+Para o primeiro exemplo usaremos o objeto *lista2*:
+```{r acessando list colchetes}
+#Observando o objeto
+print(lista2)
+
+#Acessando um objeto da list
+lista2[[2]] # o colchetes duplos é usado para acessar qualquer um dos objetos da list
+class(lista2[[2]]) #numeric
+class(lista2[2]) #list
+
+#para acessar um dos valores de um dos elementos da list usamos um colchete simples após indexarmos o elemento que queremos:
+lista2[[2]][2]
+lista2[[2]][[2]] #essa forma é usada para uma list dentro da list (objeto)
+
+#Inserindo uma list
+lista2<-list(lista,list(c(25,74,26,47),c("Ana","Beatriz","Lúcia","Joana")))
+print(lista2)
+
+#Acessando a list (elemento)
+lista2[[2]]
+class(lista2[[2]]) #list
+
+lista2[[2]][2]
+class(lista2[[2]][2]) #list
+
+lista2[[2]][[2]]
+class(lista2[[2]][[2]]) #character
+```
+## Acessando uma list via indexação por cifrão
+
+Para o exemplo usaremos o objeto *lista*:
+```{r acessando list cifrão}
+#Observando o objeto
+print(lista)
+
+#Acessando um objeto da list
+lista$idades # o colchetes duplos é usado para acessar qualquer um dos objetos da list
+class(lista$idades) #numeric
+class(lista$idades[2]) #numeric
+
+#para acessar um dos valores de um dos elementos da list usamos um colchete simples após indexarmos o elemento que queremos:
+lista$idades[1]
+```
+## Atribuindo nomes
+
+Usando a *lista2* modificada acima, vamos alterar/nomear os elementos dela.
+
+```{r nomeando elementos da list}
+print(lista2)
+#Essa lista tem dois elementos agora
+names(lista2)<-c("Grupo Experimento","Grupo Controle")
+print(lista2)
+
+#nomeando o segundo elemento
+names(lista2[[2]])<-c("idade","nome")
+print(lista2)
+
+#acessando pelo nome
+lista2[["Grupo Controle"]][["idade"]]
+```
+
+## Appending uma list
+
+Agora nós queremos inserir um outro elemento na list. Acima mostramos uma forma de fazer, vamos repetir nessa seção.
+
+```{r appendind a list}
+print(lista2)
+
+#criando um vetor de medicamentos
+medicamento<-c("Azitromicina","Placebo","Viagra","Placebo")
+
+#fazendo o appending
+lista2$`Grupo Controle`[[length(lista2$`Grupo Controle`)+1]]<-medicamento
+
+#alterando o nome
+names(lista2$`Grupo Controle`)[3]<-"medicamentos"
+print(lista2)
+```
+
+## Excluindo elementos de uma list
+
+```{r excluindo elemento da list}
+#Suponhamos que agora precisamos manter sigilo em relação ao nome dos participantes da pesquisa
+print(lista2)
+
+#Vamos removê-los então
+lista2[[1]]$nomes<-NULL
+lista2[[2]]$nome<-NULL
+
+#checando se removeu
+print(lista2)
+
+#Agora os participantes estão mantidos sobre sigilo
+```
+
+## Concatenando lists
+
+Aqui, o princípio é o mesmo de concatenar vetores.
+
+```{r concatenando lists}
+#Criando listas
+lista3<-list(1:10)
+lista4<-list(11:20)
+lista5<-list(21:30)
+
+#Concatenando
+listaconcatenada<-c(lista3,lista4,lista5)
+names(listaconcatenada)<-c("lista3","lista4","lista5")
+print(listaconcatenada)
+```
+
+# Matrix

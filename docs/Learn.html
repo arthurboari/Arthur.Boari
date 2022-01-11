@@ -12,7 +12,7 @@
 <meta name="author" content="Arthur Boari" />
 
 
-<title>Learning R</title>
+<title>Learning R: base</title>
 
 <script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -325,7 +325,10 @@ div.tocify {
   <a href="Journal.html">Blog</a>
 </li>
 <li>
-  <a href="Learn.html">Learning R</a>
+  <a href="Learn.html">Learning R: base</a>
+</li>
+<li>
+  <a href="openair.html">Learning R: openair</a>
 </li>
 <li>
   <a href="Links.html">Sobre mim</a>
@@ -342,16 +345,16 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Learning R</h1>
+<h1 class="title toc-ignore">Learning R: base</h1>
 <h4 class="author">Arthur Boari</h4>
 
 </div>
 
 
-<p>O conteúdo desta página do blog é originado do curso <a href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn ggplot2 in R for Data Visualization 2021</a>.</p>
+<p>O conteúdo desta página do blog é originado do curso <a href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn ggplot2 in R for Data Visualization - 2021</a>.</p>
 <div id="comandos-utéis" class="section level1">
 <h1>Comandos utéis</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>2022 | 01 | 10 Last compiled: 2022-01-11</p>
 <p>Nessa seção iremos compilar algumas funções úteis.</p>
 <p>A primeira função é <em>dir</em>. Ela listará os arquivos presentes no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:</p>
 <pre class="r"><code>getwd() #essa função descreve o caminho do meu diretório de trabalho</code></pre>
@@ -363,30 +366,30 @@ div.tocify {
 ##  [7] &quot;Journal.html&quot;            &quot;Journal.Rmd&quot;            
 ##  [9] &quot;Journal_cache&quot;           &quot;Journal_files&quot;          
 ## [11] &quot;LabJournalWebsite.Rproj&quot; &quot;Learn.Rmd&quot;              
-## [13] &quot;Links.Rmd&quot;               &quot;README.md&quot;              
-## [15] &quot;site_libs&quot;</code></pre>
+## [13] &quot;Links.Rmd&quot;               &quot;openair.Rmd&quot;            
+## [15] &quot;README.md&quot;               &quot;site_libs&quot;</code></pre>
 <p>A segunda função é <em>ls</em>, que lista os objetos presentes no nosso ambiente global (Global Environment).</p>
 <pre class="r"><code>ls() #essa função descreve os objetos presentes no Global Environment</code></pre>
-<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
 <pre class="r"><code>objects() #mesma função que *ls()*</code></pre>
-<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
 <p>A terceira função é <em>remove</em>, e será útil para remover algum objeto do Global Environment.</p>
 <pre class="r"><code>#Vamos criar dois objetos
 a&lt;-1
 b&lt;-2
 #Vamos listá-los
 ls()</code></pre>
-<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
 <pre class="r"><code>#Vamos remover o objeto *a*
 remove(a)
 #Vamos listá-los
 objects()</code></pre>
-<pre><code>## [1] &quot;b&quot;    &quot;dado&quot;</code></pre>
+<pre><code>## [1] &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
 <pre class="r"><code>#Vamos remover o objeto *b*
 rm(b)
 #Vamos listá-los
 objects()</code></pre>
-<pre><code>## [1] &quot;dado&quot;</code></pre>
+<pre><code>## [1] &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
 <p>A quarta função é <em>print</em>, e como o nome sugere, irá imprimir no Console algum texto ou conteúdo de alguma variável. Veja o exemplo abaixo:</p>
 <pre class="r"><code>x&lt;-&quot;hello world!&quot;
 print(x)</code></pre>
@@ -410,7 +413,7 @@ require(ggplot2)</code></pre>
 </div>
 <div id="estruturas-no-r" class="section level1">
 <h1>ESTRUTURAS NO R:</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>2022 | 01 | 10 Last compiled: 2022-01-11</p>
 <p>As estruturas do R podem ser classificadas quanto ao tipo de variável e quanto a estrutura utilizada.</p>
 <ul>
 <li>Quanto ao tipo de variável/classe:
@@ -450,7 +453,7 @@ print(y)</code></pre>
 </div>
 <div id="vetores" class="section level1">
 <h1>Vetores</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>2022 | 01 | 10 Last compiled: 2022-01-11</p>
 <p>Podem ser definidos como <strong>uma coleção de elementos de uma mesma classe</strong> e podem ser criados de duas maneiras:</p>
 <div id="através-da-função-concatenar-c" class="section level2">
 <h2>Através da função concatenar <em>c</em></h2>
@@ -504,7 +507,7 @@ all.equal(x, as.vector(x))</code></pre>
 </div>
 <div id="acessando-valores-de-um-vetor" class="section level2">
 <h2>Acessando valores de um vetor</h2>
-<p>Para acessar qualquer valor de um vetor, usamos colchetes. Veja o exemplo abaixo:</p>
+<p>Para acessar qualquer valor de um vetor, usamos colchetes (chamamos de <strong>indexação</strong>). Veja o exemplo abaixo:</p>
 <pre class="r"><code>#Vamos criar o vetor
 x&lt;-1:10 #aqui os dois pontos significam até, ou seja, irá criar uma sequência de 1 a 10, um-a-um elemento
 print(x)</code></pre>
@@ -618,10 +621,361 @@ print(v)</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
 <p>Quando trabalhamos com vetores de tamanhos diferentes, os elementos do menor vetor serão repetidos até que os vetores tenham o mesmo tamanho. E esse comportamento é automático. Mais uma vez o R toma uma decisão por nós!</p>
 </div>
+<div id="modificando-um-vetor" class="section level2">
+<h2>Modificando um vetor</h2>
+<p>Para modificarmos um vetor, não necessitamos criá-lo novamente. Basta selecionar, através de indexação, o valor a ser alterado e assimilar o novo valor através do operador assimilação (&lt;-).</p>
+<pre class="r"><code># O vetor a ser modificado é o seguinte:
+print(v)</code></pre>
+<pre><code>## [1] 1 2 3 4 5</code></pre>
+<pre class="r"><code>typeof(v); class(v)</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre><code>## [1] &quot;integer&quot;</code></pre>
+<pre class="r"><code>#Suponhamos que o valor &#39;3&#39; é, na verdade, 3.2.
+#Alteramos assim:
+v[3] # essa é a posição do valor 3</code></pre>
+<pre><code>## [1] 3</code></pre>
+<pre class="r"><code>v[3]&lt;-3.2
+#Verificamos se a alteração ocorreu
+print(v)</code></pre>
+<pre><code>## [1] 1.0 2.0 3.2 4.0 5.0</code></pre>
+<pre class="r"><code>typeof(v); class(v)</code></pre>
+<pre><code>## [1] &quot;double&quot;</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+</div>
+<div id="ordenando-um-vetor-numérico" class="section level2">
+<h2>Ordenando um vetor numérico</h2>
+<p>Muitas vezes, organizar um vetor é importante para uma análise. Para isso, vamos criar um vetor numérico aleatório.</p>
+<pre class="r"><code>#Criando o vetor numérico aleatório
+set.seed(126)
+vetor&lt;-c(6,4,2,1,0)
+print(vetor)</code></pre>
+<pre><code>## [1] 6 4 2 1 0</code></pre>
+<pre class="r"><code>#Função rank
+rank(vetor)</code></pre>
+<pre><code>## [1] 5 4 3 2 1</code></pre>
+<pre class="r"><code>#Essa função demonsta em qual posição de um vetor ordenado (crescente) cada posição do vetor original estaria
+vetor[rank(vetor)] # verificando</code></pre>
+<pre><code>## [1] 0 1 2 4 6</code></pre>
+<pre class="r"><code>#Função sort
+sort(vetor) # já retorna o vetor ordenado</code></pre>
+<pre><code>## [1] 0 1 2 4 6</code></pre>
+<pre class="r"><code>#Função order = rank
+order(vetor)</code></pre>
+<pre><code>## [1] 5 4 3 2 1</code></pre>
+<pre class="r"><code>vetor[order(vetor)]</code></pre>
+<pre><code>## [1] 0 1 2 4 6</code></pre>
+</div>
 </div>
 <div id="lists" class="section level1">
 <h1>Lists</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-10</p>
+<p>2022 | 01 | 11 Last compiled: 2022-01-11</p>
+<p>Esse tipo de objeto possibilita a inserção de vários tipos de elementos e estruturas dentro dele. Pode-se agrupar lists, vetores, dataframes, matrizes, etc.</p>
+<p>Aqui não há coerção.</p>
+<div id="criando-uma-list-função-list" class="section level2">
+<h2>Criando uma list: função <em>list()</em></h2>
+<pre><code>## starting httpd help server ... done</code></pre>
+<pre class="r"><code>#Nomeando os vetores
+lista&lt;-list(nomes = c(&quot;Arthur Boari&quot;,&quot;João da Silva&quot;),
+            idades = c(26,62),
+            diabetes = c(F,T))
+print(lista)</code></pre>
+<pre><code>## $nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $idades
+## [1] 26 62
+## 
+## $diabetes
+## [1] FALSE  TRUE</code></pre>
+<pre class="r"><code>#Sem nomeação
+lista2&lt;-list(c(&quot;Arthur Boari&quot;,&quot;João da Silva&quot;),
+            c(26,62),
+            c(F,T))
+print(lista2)</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## [[2]]
+## [1] 26 62
+## 
+## [[3]]
+## [1] FALSE  TRUE</code></pre>
+<p>Observe que inserimos três vetores: um de caracteres, um numérico e um lógico. Observe ainda que nomeamos cada um dos vetores.</p>
+</div>
+<div id="acessando-uma-list-via-indexação-por-colchetes" class="section level2">
+<h2>Acessando uma list via indexação por colchetes</h2>
+<p>Para o primeiro exemplo usaremos o objeto <em>lista2</em>:</p>
+<pre class="r"><code>#Observando o objeto
+print(lista2)</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## [[2]]
+## [1] 26 62
+## 
+## [[3]]
+## [1] FALSE  TRUE</code></pre>
+<pre class="r"><code>#Acessando um objeto da list
+lista2[[2]] # o colchetes duplos é usado para acessar qualquer um dos objetos da list</code></pre>
+<pre><code>## [1] 26 62</code></pre>
+<pre class="r"><code>class(lista2[[2]]) #numeric</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>class(lista2[2]) #list</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre class="r"><code>#para acessar um dos valores de um dos elementos da list usamos um colchete simples após indexarmos o elemento que queremos:
+lista2[[2]][2]</code></pre>
+<pre><code>## [1] 62</code></pre>
+<pre class="r"><code>lista2[[2]][[2]] #essa forma é usada para uma list dentro da list (objeto)</code></pre>
+<pre><code>## [1] 62</code></pre>
+<pre class="r"><code>#Inserindo uma list
+lista2&lt;-list(lista,list(c(25,74,26,47),c(&quot;Ana&quot;,&quot;Beatriz&quot;,&quot;Lúcia&quot;,&quot;Joana&quot;)))
+print(lista2)</code></pre>
+<pre><code>## [[1]]
+## [[1]]$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## [[1]]$idades
+## [1] 26 62
+## 
+## [[1]]$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] 25 74 26 47
+## 
+## [[2]][[2]]
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>#Acessando a list (elemento)
+lista2[[2]]</code></pre>
+<pre><code>## [[1]]
+## [1] 25 74 26 47
+## 
+## [[2]]
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>class(lista2[[2]]) #list</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre class="r"><code>lista2[[2]][2]</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>class(lista2[[2]][2]) #list</code></pre>
+<pre><code>## [1] &quot;list&quot;</code></pre>
+<pre class="r"><code>lista2[[2]][[2]]</code></pre>
+<pre><code>## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>class(lista2[[2]][[2]]) #character</code></pre>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</div>
+<div id="acessando-uma-list-via-indexação-por-cifrão" class="section level2">
+<h2>Acessando uma list via indexação por cifrão</h2>
+<p>Para o exemplo usaremos o objeto <em>lista</em>:</p>
+<pre class="r"><code>#Observando o objeto
+print(lista)</code></pre>
+<pre><code>## $nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $idades
+## [1] 26 62
+## 
+## $diabetes
+## [1] FALSE  TRUE</code></pre>
+<pre class="r"><code>#Acessando um objeto da list
+lista$idades # o colchetes duplos é usado para acessar qualquer um dos objetos da list</code></pre>
+<pre><code>## [1] 26 62</code></pre>
+<pre class="r"><code>class(lista$idades) #numeric</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>class(lista$idades[2]) #numeric</code></pre>
+<pre><code>## [1] &quot;numeric&quot;</code></pre>
+<pre class="r"><code>#para acessar um dos valores de um dos elementos da list usamos um colchete simples após indexarmos o elemento que queremos:
+lista$idades[1]</code></pre>
+<pre><code>## [1] 26</code></pre>
+</div>
+<div id="atribuindo-nomes" class="section level2">
+<h2>Atribuindo nomes</h2>
+<p>Usando a <em>lista2</em> modificada acima, vamos alterar/nomear os elementos dela.</p>
+<pre class="r"><code>print(lista2)</code></pre>
+<pre><code>## [[1]]
+## [[1]]$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## [[1]]$idades
+## [1] 26 62
+## 
+## [[1]]$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## [[2]]
+## [[2]][[1]]
+## [1] 25 74 26 47
+## 
+## [[2]][[2]]
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>#Essa lista tem dois elementos agora
+names(lista2)&lt;-c(&quot;Grupo Experimento&quot;,&quot;Grupo Controle&quot;)
+print(lista2)</code></pre>
+<pre><code>## $`Grupo Experimento`
+## $`Grupo Experimento`$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $`Grupo Experimento`$idades
+## [1] 26 62
+## 
+## $`Grupo Experimento`$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## $`Grupo Controle`
+## $`Grupo Controle`[[1]]
+## [1] 25 74 26 47
+## 
+## $`Grupo Controle`[[2]]
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>#nomeando o segundo elemento
+names(lista2[[2]])&lt;-c(&quot;idade&quot;,&quot;nome&quot;)
+print(lista2)</code></pre>
+<pre><code>## $`Grupo Experimento`
+## $`Grupo Experimento`$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $`Grupo Experimento`$idades
+## [1] 26 62
+## 
+## $`Grupo Experimento`$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## $`Grupo Controle`
+## $`Grupo Controle`$idade
+## [1] 25 74 26 47
+## 
+## $`Grupo Controle`$nome
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>#acessando pelo nome
+lista2[[&quot;Grupo Controle&quot;]][[&quot;idade&quot;]]</code></pre>
+<pre><code>## [1] 25 74 26 47</code></pre>
+</div>
+<div id="appending-uma-list" class="section level2">
+<h2>Appending uma list</h2>
+<p>Agora nós queremos inserir um outro elemento na list. Acima mostramos uma forma de fazer, vamos repetir nessa seção.</p>
+<pre class="r"><code>print(lista2)</code></pre>
+<pre><code>## $`Grupo Experimento`
+## $`Grupo Experimento`$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $`Grupo Experimento`$idades
+## [1] 26 62
+## 
+## $`Grupo Experimento`$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## $`Grupo Controle`
+## $`Grupo Controle`$idade
+## [1] 25 74 26 47
+## 
+## $`Grupo Controle`$nome
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;</code></pre>
+<pre class="r"><code>#criando um vetor de medicamentos
+medicamento&lt;-c(&quot;Azitromicina&quot;,&quot;Placebo&quot;,&quot;Viagra&quot;,&quot;Placebo&quot;)
+
+#fazendo o appending
+lista2$`Grupo Controle`[[length(lista2$`Grupo Controle`)+1]]&lt;-medicamento
+
+#alterando o nome
+names(lista2$`Grupo Controle`)[3]&lt;-&quot;medicamentos&quot;
+print(lista2)</code></pre>
+<pre><code>## $`Grupo Experimento`
+## $`Grupo Experimento`$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $`Grupo Experimento`$idades
+## [1] 26 62
+## 
+## $`Grupo Experimento`$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## $`Grupo Controle`
+## $`Grupo Controle`$idade
+## [1] 25 74 26 47
+## 
+## $`Grupo Controle`$nome
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;  
+## 
+## $`Grupo Controle`$medicamentos
+## [1] &quot;Azitromicina&quot; &quot;Placebo&quot;      &quot;Viagra&quot;       &quot;Placebo&quot;</code></pre>
+</div>
+<div id="excluindo-elementos-de-uma-list" class="section level2">
+<h2>Excluindo elementos de uma list</h2>
+<pre class="r"><code>#Suponhamos que agora precisamos manter sigilo em relação ao nome dos participantes da pesquisa
+print(lista2)</code></pre>
+<pre><code>## $`Grupo Experimento`
+## $`Grupo Experimento`$nomes
+## [1] &quot;Arthur Boari&quot;  &quot;João da Silva&quot;
+## 
+## $`Grupo Experimento`$idades
+## [1] 26 62
+## 
+## $`Grupo Experimento`$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## $`Grupo Controle`
+## $`Grupo Controle`$idade
+## [1] 25 74 26 47
+## 
+## $`Grupo Controle`$nome
+## [1] &quot;Ana&quot;     &quot;Beatriz&quot; &quot;Lúcia&quot;   &quot;Joana&quot;  
+## 
+## $`Grupo Controle`$medicamentos
+## [1] &quot;Azitromicina&quot; &quot;Placebo&quot;      &quot;Viagra&quot;       &quot;Placebo&quot;</code></pre>
+<pre class="r"><code>#Vamos removê-los então
+lista2[[1]]$nomes&lt;-NULL
+lista2[[2]]$nome&lt;-NULL
+
+#checando se removeu
+print(lista2)</code></pre>
+<pre><code>## $`Grupo Experimento`
+## $`Grupo Experimento`$idades
+## [1] 26 62
+## 
+## $`Grupo Experimento`$diabetes
+## [1] FALSE  TRUE
+## 
+## 
+## $`Grupo Controle`
+## $`Grupo Controle`$idade
+## [1] 25 74 26 47
+## 
+## $`Grupo Controle`$medicamentos
+## [1] &quot;Azitromicina&quot; &quot;Placebo&quot;      &quot;Viagra&quot;       &quot;Placebo&quot;</code></pre>
+<pre class="r"><code>#Agora os participantes estão mantidos sobre sigilo</code></pre>
+</div>
+<div id="concatenando-lists" class="section level2">
+<h2>Concatenando lists</h2>
+<p>Aqui, o princípio é o mesmo de concatenar vetores.</p>
+<pre class="r"><code>#Criando listas
+lista3&lt;-list(1:10)
+lista4&lt;-list(11:20)
+lista5&lt;-list(21:30)
+
+#Concatenando
+listaconcatenada&lt;-c(lista3,lista4,lista5)
+names(listaconcatenada)&lt;-c(&quot;lista3&quot;,&quot;lista4&quot;,&quot;lista5&quot;)
+print(listaconcatenada)</code></pre>
+<pre><code>## $lista3
+##  [1]  1  2  3  4  5  6  7  8  9 10
+## 
+## $lista4
+##  [1] 11 12 13 14 15 16 17 18 19 20
+## 
+## $lista5
+##  [1] 21 22 23 24 25 26 27 28 29 30</code></pre>
+</div>
+</div>
+<div id="matrix" class="section level1">
+<h1>Matrix</h1>
 </div>
 
 
@@ -673,7 +1027,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1",
+      selectors: "h1,h2,h3,h4",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
