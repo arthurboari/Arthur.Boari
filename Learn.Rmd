@@ -579,3 +579,41 @@ print(m)
 ```
 
 # Array
+
+2022 | 01 | 12 Last compiled: `r Sys.Date()`
+
+São elementos multidimensionais, ou seja, armazenam dados em mais de duas dimensões.
+
+## Criando um array
+
+```{r criando um array}
+a<-array(data = 1:18,dim = c(3,3,2)) # c(x,y,z)
+print(a)
+```
+Aqui nós temos duas matrizes retangulares justapostas.
+
+## Acessando um array - indexação
+
+```{r acessando um array}
+# Acessando uma matrix
+a[,,1] #matrix 1
+a[,,2] #matrix 2
+
+# Acessando um elemento de uma das matrizes
+a[1,2,2] # [linha, coluna, matriz - eixo z]
+
+# Acessando a primeira linha de todas as matrizes
+a[1,,]
+
+# Acessando a segunda coluna de todas as matrizes
+a[,2,]
+```
+## Nomeando um array
+
+Com a função *dimnames*, inserimos uma *list* com três vetores de caracteres: o primeiro para as linhas, o segundo para as colunas e o terceiro para as matrizes.
+
+```{r nomeando um array}
+dimnames(a)<-list(c("r1","r2","r3"),c("c1","c2","c3"),c("array 1","array 2"))
+print(a)
+```
+

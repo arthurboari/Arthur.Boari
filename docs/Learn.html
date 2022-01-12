@@ -1172,6 +1172,75 @@ print(m)</code></pre>
 </div>
 <div id="array" class="section level1">
 <h1>Array</h1>
+<p>2022 | 01 | 12 Last compiled: 2022-01-12</p>
+<p>São elementos multidimensionais, ou seja, armazenam dados em mais de duas dimensões.</p>
+<div id="criando-um-array" class="section level2">
+<h2>Criando um array</h2>
+<pre class="r"><code>a&lt;-array(data = 1:18,dim = c(3,3,2)) # c(x,y,z)
+print(a)</code></pre>
+<pre><code>## , , 1
+## 
+##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9
+## 
+## , , 2
+## 
+##      [,1] [,2] [,3]
+## [1,]   10   13   16
+## [2,]   11   14   17
+## [3,]   12   15   18</code></pre>
+<p>Aqui nós temos duas matrizes retangulares justapostas.</p>
+</div>
+<div id="acessando-um-array---indexação" class="section level2">
+<h2>Acessando um array - indexação</h2>
+<pre class="r"><code># Acessando uma matrix
+a[,,1] #matrix 1</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    4    7
+## [2,]    2    5    8
+## [3,]    3    6    9</code></pre>
+<pre class="r"><code>a[,,2] #matrix 2</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]   10   13   16
+## [2,]   11   14   17
+## [3,]   12   15   18</code></pre>
+<pre class="r"><code># Acessando um elemento de uma das matrizes
+a[1,2,2] # [linha, coluna, matriz - eixo z]</code></pre>
+<pre><code>## [1] 13</code></pre>
+<pre class="r"><code># Acessando a primeira linha de todas as matrizes
+a[1,,]</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1   10
+## [2,]    4   13
+## [3,]    7   16</code></pre>
+<pre class="r"><code># Acessando a segunda coluna de todas as matrizes
+a[,2,]</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    4   13
+## [2,]    5   14
+## [3,]    6   15</code></pre>
+</div>
+<div id="nomeando-um-array" class="section level2">
+<h2>Nomeando um array</h2>
+<p>Com a função <em>dimnames</em>, inserimos uma <em>list</em> com três vetores de caracteres: o primeiro para as linhas, o segundo para as colunas e o terceiro para as matrizes.</p>
+<pre class="r"><code>dimnames(a)&lt;-list(c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;),c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;),c(&quot;array 1&quot;,&quot;array 2&quot;))
+print(a)</code></pre>
+<pre><code>## , , array 1
+## 
+##    c1 c2 c3
+## r1  1  4  7
+## r2  2  5  8
+## r3  3  6  9
+## 
+## , , array 2
+## 
+##    c1 c2 c3
+## r1 10 13 16
+## r2 11 14 17
+## r3 12 15 18</code></pre>
+</div>
 </div>
 
 
