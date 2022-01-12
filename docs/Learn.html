@@ -354,7 +354,7 @@ div.tocify {
 <p>O conteúdo desta página do blog é originado do curso <a href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn ggplot2 in R for Data Visualization - 2021</a>.</p>
 <div id="comandos-utéis" class="section level1">
 <h1>Comandos utéis</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-11</p>
+<p>2022 | 01 | 10 Last compiled: 2022-01-12</p>
 <p>Nessa seção iremos compilar algumas funções úteis.</p>
 <p>A primeira função é <em>dir</em>. Ela listará os arquivos presentes no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:</p>
 <pre class="r"><code>getwd() #essa função descreve o caminho do meu diretório de trabalho</code></pre>
@@ -370,26 +370,44 @@ div.tocify {
 ## [15] &quot;README.md&quot;               &quot;site_libs&quot;</code></pre>
 <p>A segunda função é <em>ls</em>, que lista os objetos presentes no nosso ambiente global (Global Environment).</p>
 <pre class="r"><code>ls() #essa função descreve os objetos presentes no Global Environment</code></pre>
-<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
+##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
+##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;               
+## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
+## [17] &quot;y&quot;</code></pre>
 <pre class="r"><code>objects() #mesma função que *ls()*</code></pre>
-<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
+##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
+##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;               
+## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
+## [17] &quot;y&quot;</code></pre>
 <p>A terceira função é <em>remove</em>, e será útil para remover algum objeto do Global Environment.</p>
 <pre class="r"><code>#Vamos criar dois objetos
 a&lt;-1
 b&lt;-2
 #Vamos listá-los
 ls()</code></pre>
-<pre><code>## [1] &quot;a&quot;    &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
+<pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
+##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
+##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;               
+## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
+## [17] &quot;y&quot;</code></pre>
 <pre class="r"><code>#Vamos remover o objeto *a*
 remove(a)
 #Vamos listá-los
 objects()</code></pre>
-<pre><code>## [1] &quot;b&quot;    &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
+<pre><code>##  [1] &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;            &quot;lista2&quot;          
+##  [5] &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;           &quot;listaconcatenada&quot;
+##  [9] &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;                &quot;v1&quot;              
+## [13] &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
 <pre class="r"><code>#Vamos remover o objeto *b*
 rm(b)
 #Vamos listá-los
 objects()</code></pre>
-<pre><code>## [1] &quot;dado&quot; &quot;v&quot;    &quot;v1&quot;   &quot;v2&quot;   &quot;x&quot;    &quot;y&quot;</code></pre>
+<pre><code>##  [1] &quot;dado&quot;             &quot;lista&quot;            &quot;lista2&quot;           &quot;lista3&quot;          
+##  [5] &quot;lista4&quot;           &quot;lista5&quot;           &quot;listaconcatenada&quot; &quot;m&quot;               
+##  [9] &quot;medicamento&quot;      &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;              
+## [13] &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
 <p>A quarta função é <em>print</em>, e como o nome sugere, irá imprimir no Console algum texto ou conteúdo de alguma variável. Veja o exemplo abaixo:</p>
 <pre class="r"><code>x&lt;-&quot;hello world!&quot;
 print(x)</code></pre>
@@ -413,7 +431,7 @@ require(ggplot2)</code></pre>
 </div>
 <div id="estruturas-no-r" class="section level1">
 <h1>ESTRUTURAS NO R:</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-11</p>
+<p>2022 | 01 | 10 Last compiled: 2022-01-12</p>
 <p>As estruturas do R podem ser classificadas quanto ao tipo de variável e quanto a estrutura utilizada.</p>
 <ul>
 <li>Quanto ao tipo de variável/classe:
@@ -453,7 +471,7 @@ print(y)</code></pre>
 </div>
 <div id="vetores" class="section level1">
 <h1>Vetores</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-11</p>
+<p>2022 | 01 | 10 Last compiled: 2022-01-12</p>
 <p>Podem ser definidos como <strong>uma coleção de elementos de uma mesma classe</strong> e podem ser criados de duas maneiras:</p>
 <div id="através-da-função-concatenar-c" class="section level2">
 <h2>Através da função concatenar <em>c</em></h2>
@@ -668,7 +686,7 @@ order(vetor)</code></pre>
 </div>
 <div id="lists" class="section level1">
 <h1>Lists</h1>
-<p>2022 | 01 | 11 Last compiled: 2022-01-11</p>
+<p>2022 | 01 | 11 Last compiled: 2022-01-12</p>
 <p>Esse tipo de objeto possibilita a inserção de vários tipos de elementos e estruturas dentro dele. Pode-se agrupar lists, vetores, dataframes, matrizes, etc.</p>
 <p>Aqui não há coerção.</p>
 <div id="criando-uma-list-função-list" class="section level2">
@@ -976,6 +994,184 @@ print(listaconcatenada)</code></pre>
 </div>
 <div id="matrix" class="section level1">
 <h1>Matrix</h1>
+<p>2022 | 01 | 12 Last compiled: 2022-01-12</p>
+<p>É um agrupamento de vetores, resultando em um objeto com dimensões.</p>
+<div id="criando-uma-matrix" class="section level2">
+<h2>Criando uma matrix</h2>
+<p>Usamos a função <em>matrix</em>, como abaixo:</p>
+<pre class="r"><code>matrix(data = 1:25,
+       nrow = 5,
+       ncol = 5)</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    6   11   16   21
+## [2,]    2    7   12   17   22
+## [3,]    3    8   13   18   23
+## [4,]    4    9   14   19   24
+## [5,]    5   10   15   20   25</code></pre>
+<p>Observe que criamos uma matriz numérica através da sequência unitária de 1 a 25, explicitada no argumento <em>data</em>. Os argumentos <em>ncol</em> e <em>nrow</em> definem o número de colunas e linhas, respectivamente, porém não necessita de definí-los conjuntamente, visto que o R irá completar as informações automaticamente.</p>
+<p>É importante notar que o R preenche a matriz coluna-a-coluna (<strong>columnwise</strong>) - esse é o default, mas caso queiramos que preencha linha-a-linha, usamo o argumento <em>byrow</em>, como abaixo:</p>
+<pre class="r"><code>matrix(data = 1:25,
+       nrow = 5,
+       ncol = 5,
+       byrow = TRUE)</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5]
+## [1,]    1    2    3    4    5
+## [2,]    6    7    8    9   10
+## [3,]   11   12   13   14   15
+## [4,]   16   17   18   19   20
+## [5,]   21   22   23   24   25</code></pre>
+<p>Note: caso a definição dos valores dos argumentos <em>ncol</em> e <em>nrow</em> estejam em desacordo com o tamanho dos dados, alguns efeitos são esperados:</p>
+<ul>
+<li>Valores inferiores ao tamanho dos dados:
+<ul>
+<li>Aqui você espera um corte nos dados até a dimensão informada nos argumentos da função <em>matrix</em>;</li>
+</ul></li>
+<li>Valores superiores ao tamanho dos dados:
+<ul>
+<li>Aqui você espera uma réplica dos dados até a dimensão informada nos argumentos da função, ou seja, os espaços vazios serão preenchidos com o início dos dados até a última célula vazia disponível.</li>
+</ul></li>
+</ul>
+<p>Veja um exemplo:</p>
+<pre class="r"><code>#Dimensões inferiores
+matrix(data = 1:12,nrow = 4,ncol = 2)</code></pre>
+<pre><code>##      [,1] [,2]
+## [1,]    1    5
+## [2,]    2    6
+## [3,]    3    7
+## [4,]    4    8</code></pre>
+<pre class="r"><code>#Dimensões superiores
+matrix(data = 1:12,nrow = 4,ncol = 4)</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4]
+## [1,]    1    5    9    1
+## [2,]    2    6   10    2
+## [3,]    3    7   11    3
+## [4,]    4    8   12    4</code></pre>
+</div>
+<div id="alterando-uma-matrix" class="section level2">
+<h2>Alterando uma matrix</h2>
+<p>Assim como em uma list, matrix conseguem ter o nome das dimensões alteradas ou criadas juntamente na função <em>matrix</em>, veja abaixo:</p>
+<pre class="r"><code>#O argumento *dimnames* recebe uma list com vetores de carateres com os nomes das linhas e das colunas, nessa mesma ordem
+matrix(data = 1:12,nrow = 4,ncol = 3,dimnames = list(rownames = c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;,&quot;r4&quot;),colnames = c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;)))</code></pre>
+<pre><code>##         colnames
+## rownames c1 c2 c3
+##       r1  1  5  9
+##       r2  2  6 10
+##       r3  3  7 11
+##       r4  4  8 12</code></pre>
+<pre class="r"><code>matrix(data = 1:12,nrow = 4,ncol = 3,dimnames = list(c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;,&quot;r4&quot;),c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;)))</code></pre>
+<pre><code>##    c1 c2 c3
+## r1  1  5  9
+## r2  2  6 10
+## r3  3  7 11
+## r4  4  8 12</code></pre>
+<pre class="r"><code>#Podemos alterar após a criação
+m&lt;-matrix(data = 1:12,nrow = 4,ncol = 3)
+print(m)</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12</code></pre>
+<pre class="r"><code>colnames(m)&lt;-c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;)
+rownames(m)&lt;-c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;,&quot;r4&quot;)</code></pre>
+</div>
+<div id="acessando-uma-matrix" class="section level2">
+<h2>Acessando uma matrix</h2>
+<p>Utilizando a matrix armazenada no objeto <em>m</em>:</p>
+<pre class="r"><code>#Como matrizes são vetores, podemos acessá-la dessa forma:
+m[6]</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>m[2,2] # [linha,coluna]</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>m[&quot;r2&quot;,&quot;c2&quot;]</code></pre>
+<pre><code>## [1] 6</code></pre>
+<pre class="r"><code>m[2:4,2:3]</code></pre>
+<pre><code>##    c2 c3
+## r2  6 10
+## r3  7 11
+## r4  8 12</code></pre>
+</div>
+<div id="modificando-uma-matrix" class="section level2">
+<h2>Modificando uma matrix</h2>
+<div id="transpondo-uma-matrix" class="section level3">
+<h3>Transpondo uma matrix</h3>
+<p>Aqui, usamos a função <em>t</em>, de <em>transpose</em>:</p>
+<pre class="r"><code>print(m)</code></pre>
+<pre><code>##    c1 c2 c3
+## r1  1  5  9
+## r2  2  6 10
+## r3  3  7 11
+## r4  4  8 12</code></pre>
+<pre class="r"><code>t(x = m)</code></pre>
+<pre><code>##    r1 r2 r3 r4
+## c1  1  2  3  4
+## c2  5  6  7  8
+## c3  9 10 11 12</code></pre>
+</div>
+<div id="adicionando-linhas-e-colunas" class="section level3">
+<h3>Adicionando linhas e colunas</h3>
+<p>Funções: <em>rbind</em> e <em>cbind</em>:</p>
+<pre class="r"><code>#CBIND
+cbind(m, c(11,22,33,44))</code></pre>
+<pre><code>##    c1 c2 c3   
+## r1  1  5  9 11
+## r2  2  6 10 22
+## r3  3  7 11 33
+## r4  4  8 12 44</code></pre>
+<pre class="r"><code>#RBIND
+rbind(m,c(11,22,33))</code></pre>
+<pre><code>##    c1 c2 c3
+## r1  1  5  9
+## r2  2  6 10
+## r3  3  7 11
+## r4  4  8 12
+##    11 22 33</code></pre>
+<pre class="r"><code># Note: as alterações acima não estão gravadas no objeto *m*, pois não houve assimilação</code></pre>
+<pre class="r"><code>#CBIND
+m&lt;-cbind(m, c4 = c(11,22,33,44))
+colnames(m)[4]&lt;-&quot;c4&quot;
+print(m)</code></pre>
+<pre><code>##    c1 c2 c3 c4
+## r1  1  5  9 11
+## r2  2  6 10 22
+## r3  3  7 11 33
+## r4  4  8 12 44</code></pre>
+<pre class="r"><code>#RBIND
+m&lt;-rbind(m,r5 = c(11,22,33))</code></pre>
+<pre><code>## Warning in rbind(m, r5 = c(11, 22, 33)): number of columns of result is not a
+## multiple of vector length (arg 2)</code></pre>
+<pre class="r"><code>print(m)</code></pre>
+<pre><code>##    c1 c2 c3 c4
+## r1  1  5  9 11
+## r2  2  6 10 22
+## r3  3  7 11 33
+## r4  4  8 12 44
+## r5 11 22 33 11</code></pre>
+<pre class="r"><code># Note: as alterações acima não estão gravadas no objeto *m*, pois não houve assimilação</code></pre>
+</div>
+<div id="alterando-dimensões" class="section level3">
+<h3>Alterando dimensões</h3>
+<p>Bom, matrizes não são mais do que vetores com dimensões.</p>
+<pre class="r"><code>m&lt;-matrix(data = 1:12,
+          nrow = 4)
+print(m)</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    1    5    9
+## [2,]    2    6   10
+## [3,]    3    7   11
+## [4,]    4    8   12</code></pre>
+<pre class="r"><code>dim(m) # 3 linhas e 3 colunas</code></pre>
+<pre><code>## [1] 4 3</code></pre>
+<pre class="r"><code>dim(m)&lt;-c(2,6) # esse código em uma matriz com nomes de colunas e linhas definidos irá resultar na perda desses nomes
+print(m)</code></pre>
+<pre><code>##      [,1] [,2] [,3] [,4] [,5] [,6]
+## [1,]    1    3    5    7    9   11
+## [2,]    2    4    6    8   10   12</code></pre>
+</div>
+</div>
+</div>
+<div id="array" class="section level1">
+<h1>Array</h1>
 </div>
 
 

@@ -466,3 +466,116 @@ print(listaconcatenada)
 ```
 
 # Matrix
+
+2022 | 01 | 12 Last compiled: `r Sys.Date()`
+
+É um agrupamento de vetores, resultando em um objeto com dimensões.
+
+## Criando uma matrix
+
+Usamos a função *matrix*, como abaixo:
+
+```{r criando matrix columnwise}
+matrix(data = 1:25,
+       nrow = 5,
+       ncol = 5)
+```
+Observe que criamos uma matriz numérica através da sequência unitária de 1 a 25, explicitada no argumento *data*. Os argumentos *ncol* e *nrow*  definem o número de colunas e linhas, respectivamente, porém não necessita de definí-los conjuntamente, visto que o R irá completar as informações automaticamente.
+
+É importante notar que o R preenche a matriz coluna-a-coluna (**columnwise**) - esse é o default, mas caso queiramos que preencha linha-a-linha, usamo o argumento *byrow*, como abaixo:
+
+```{r criando matrix rowwise}
+matrix(data = 1:25,
+       nrow = 5,
+       ncol = 5,
+       byrow = TRUE)
+```
+Note: caso a definição dos valores dos argumentos *ncol* e *nrow* estejam em desacordo com o tamanho dos dados, alguns efeitos são esperados:
+
+ * Valores inferiores ao tamanho dos dados:
+   + Aqui você espera um corte nos dados até a dimensão informada nos argumentos da função *matrix*;
+ * Valores superiores ao tamanho dos dados:
+   + Aqui você espera uma réplica dos dados até a dimensão informada nos argumentos da função, ou seja, os espaços vazios serão preenchidos com o início dos dados até a última célula vazia disponível.
+ 
+Veja um exemplo:
+
+```{r ncol e nrow diferentes}
+#Dimensões inferiores
+matrix(data = 1:12,nrow = 4,ncol = 2)
+#Dimensões superiores
+matrix(data = 1:12,nrow = 4,ncol = 4)
+```
+## Alterando uma matrix
+
+Assim como em uma list, matrix conseguem ter o nome das dimensões alteradas ou criadas juntamente na função *matrix*, veja abaixo:
+
+```{r nomes matrix, message=TRUE, warning=TRUE}
+#O argumento *dimnames* recebe uma list com vetores de carateres com os nomes das linhas e das colunas, nessa mesma ordem
+matrix(data = 1:12,nrow = 4,ncol = 3,dimnames = list(rownames = c("r1","r2","r3","r4"),colnames = c("c1","c2","c3")))
+
+matrix(data = 1:12,nrow = 4,ncol = 3,dimnames = list(c("r1","r2","r3","r4"),c("c1","c2","c3")))
+
+#Podemos alterar após a criação
+m<-matrix(data = 1:12,nrow = 4,ncol = 3)
+print(m)
+colnames(m)<-c("c1","c2","c3")
+rownames(m)<-c("r1","r2","r3","r4")
+```
+
+## Acessando uma matrix
+
+Utilizando a matrix armazenada no objeto *m*:
+
+```{r acessando matrix}
+#Como matrizes são vetores, podemos acessá-la dessa forma:
+m[6]
+m[2,2] # [linha,coluna]
+m["r2","c2"]
+m[2:4,2:3]
+```
+
+## Modificando uma matrix
+### Transpondo uma matrix
+
+Aqui, usamos a função *t*, de *transpose*:
+
+```{r transpondo uma matrix}
+print(m)
+t(x = m)
+```
+### Adicionando linhas e colunas
+
+Funções: *rbind* e *cbind*:
+
+```{r cbind e rbind}
+#CBIND
+cbind(m, c(11,22,33,44))
+#RBIND
+rbind(m,c(11,22,33))
+# Note: as alterações acima não estão gravadas no objeto *m*, pois não houve assimilação
+```
+```{r cbind e rbind again}
+#CBIND
+m<-cbind(m, c4 = c(11,22,33,44))
+colnames(m)[4]<-"c4"
+print(m)
+#RBIND
+m<-rbind(m,r5 = c(11,22,33))
+print(m)
+# Note: as alterações acima não estão gravadas no objeto *m*, pois não houve assimilação
+```
+
+### Alterando dimensões
+
+Bom, matrizes não são mais do que vetores com dimensões.
+
+```{r alterando dim()}
+m<-matrix(data = 1:12,
+          nrow = 4)
+print(m)
+dim(m) # 3 linhas e 3 colunas
+dim(m)<-c(2,6) # esse código em uma matriz com nomes de colunas e linhas definidos irá resultar na perda desses nomes
+print(m)
+```
+
+# Array
