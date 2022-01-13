@@ -17,7 +17,7 @@ Esse pacote é específico para análise de dados de qualidade do ar.
 
 # Obtendo dados de qualidade do ar
 
-#inserir links para tutorial do NEP UAI
+Tutorial: [dados de qualidade do ar de Minas Gerais - FEAM](https://www.instagram.com/tv/CQGx-5cHv2Y/?utm_source=ig_web_copy_link)
 
 # Importando dados de qualidade do ar
 
