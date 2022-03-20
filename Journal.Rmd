@@ -305,7 +305,7 @@ Os objetos recebem nomes, e esses devem ser coerentes com o que está sendo real
 
 ```{r exemplo de nomes de objetos,echo=TRUE}
 library(trend)
-MG.Aven.Cont<-seq(from = 20, to = 300, by = 2)
+MG.Aven.Cont<-seq(from = 20, to = 300, by = 2) #dados sequenciais
 MK.MG.Aven.Cont<-trend::mk.test(MG.Aven.Cont)
 ```
 
