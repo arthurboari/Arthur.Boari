@@ -13,9 +13,9 @@ Aprender uma linguagem de programação pode aparecer assustador, mas <u>NÃO</u
 
 * A linguagem R, assim como o Python, é uma linguagem de <u>alto nível</u>. Isso significa que já existem funções prontas e que não haverá necessidade de você fazer longos *scripts* para *ensinar* o R como se faz uma média. Claro, que dependendo da área, você pode encontrar situações nas quais você precisará despender um bom tempo criando funções, caso não existam pacotes que contenham o que você almeja.
 
-* Como citado anteriormente, o CRAN possui um vasto repositório com pacotes das mais diversas áreas, nas quais já existem funções programadas. Por exemplo, o pacote *openair* é destinado a área de poluição atmosférica, *trend* é um pacote para análise de tendências em séries históricas, e pacotes como o hydroGOF para análises hidrológicas.
+* Como citado anteriormente, o [CRAN](https://cran.r-project.org/) possui um vasto repositório com pacotes das mais diversas áreas, nas quais já existem funções programadas. Por exemplo, o pacote [*openair*](https://cran.r-project.org/web/packages/openair/) é destinado a área de poluição atmosférica, [*trend*](https://cran.r-project.org/web/packages/trend/) é um pacote para análise de tendências em séries históricas, e pacotes como o [*hydroGOF*](https://cran.r-project.org/web/packages/hydroGOF/) para análises hidrológicas.
 
-* É uma das linguagens com bastante material acessível, sejam apostilas e livros em bookdown, sejam vídeos e tutoriais no YouTube, seja o fórum *stackoverflow*, onde os usuários podem encontrar diversas dúvidas solucionadas. Apesar de ter uma versão em português deste fórum, a versão em inglês possui um banco mais vasto.
+* É uma das linguagens com bastante material acessível, sejam apostilas e livros em bookdown, sejam vídeos e tutoriais no YouTube, seja o fórum [*stackoverflow*](https://stackoverflow.com/questions/tagged/r), onde os usuários podem encontrar diversas dúvidas solucionadas. Apesar de ter uma versão em português deste fórum, a versão em inglês possui um banco mais vasto.
 
 Esses são alguns benefícios, vamos a dicas:
 
@@ -30,6 +30,6 @@ Esses são alguns benefícios, vamos a dicas:
     
 * Pratique! Esse é o *segredo*. Tudo o que você precisar calcular, seja uma média ou algo bem simples, opte por fazer no R e não em programas de planilha eletrônica ou na calculadora do seu sistema operacional.
 
-* Organização é a chave do negócio! Use projetos. Lá você poderá manter todos os arquivos o mais organizado possível. O primeiro tópico da aba *Blog* aborda um tópico ("Caminho absoluto versus caminho relativo") bem interessa do porquê é melhor usar projetos.
+* Organização é a chave do negócio! Use projetos. Lá você poderá manter todos os arquivos o mais organizado possível. O primeiro tópico da aba *Dicas* aborda um tópico ("Caminho absoluto versus caminho relativo") bem interessante do porquê é melhor usar projetos.
 
 **Sugestões?** Entre em contato através dos links disponibilizados na aba *Sobre mim*.

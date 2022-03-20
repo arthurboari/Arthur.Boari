@@ -4,7 +4,7 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Blog"
+    - text: "Dicas"
       href: Journal.html
     - text: "Learning R: base"
       href: Learn.html

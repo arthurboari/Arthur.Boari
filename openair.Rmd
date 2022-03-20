@@ -70,6 +70,8 @@ Em uma rápida análise na segunda coluna do gráfico, podemos verificar que nã
 
 ## Teste de Anderson-Darling
 
+O teste de Anderson-Darling é semelhante ao teste de Shapiro-Wilk. Ambos verificam a normalidade dos dados. Vale ressaltar que a função do Shapiro-Wild (*stats::shapiro.test()*) foi traduzida do Fortran e possui a limitação de análise de até 5000 dados.
+
 2022 | 1 | 13 Last compiled: `r Sys.Date()`
 
 ```{r anderson-darling}

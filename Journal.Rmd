@@ -1,5 +1,5 @@
 ---
-title: "Blog"
+title: "Dicas"
 output:
   html_document:
     toc: true
@@ -13,6 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(message=FALSE,warning=FALSE, cache=TRUE)
 ```
+Essa seção do [Arthur Learns R](https://arthurboari.github.io/ArthurLearnsR/index.html) apresenta algumas dicas de programação.
 
 # Caminho absoluto versus caminho relativo
 

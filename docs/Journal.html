@@ -11,7 +11,7 @@
 
 
 
-<title>Blog</title>
+<title>Dicas</title>
 
 <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -325,7 +325,7 @@ div.tocify {
   <a href="index.html">Home</a>
 </li>
 <li>
-  <a href="Journal.html">Blog</a>
+  <a href="Journal.html">Dicas</a>
 </li>
 <li>
   <a href="Learn.html">Learning R: base</a>
@@ -348,11 +348,12 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Blog</h1>
+<h1 class="title toc-ignore">Dicas</h1>
 
 </div>
 
 
+<p>Essa seção do <a href="https://arthurboari.github.io/ArthurLearnsR/index.html">Arthur Learns R</a> apresenta algumas dicas de programação.</p>
 <div id="caminho-absoluto-versus-caminho-relativo" class="section level1">
 <h1>Caminho absoluto versus caminho relativo</h1>
 <p>2021 | 12 | 14 Last compiled: 2022-03-20</p>
@@ -606,7 +607,7 @@ head(x = dado, n = 6)</code></pre>
 <p><strong>4) Usar variável descritiva e nomes de funções</strong></p>
 <p>Os objetos recebem nomes, e esses devem ser coerentes com o que está sendo realizado, de forma a ser facilmente detectado a motivação daquele código. Vamos supor a aplicação do teste de Mann-Kendall nos dados da estação MG.Aven.Cont (Avenida do Contorno):</p>
 <pre class="r"><code>library(trend)
-MG.Aven.Cont&lt;-seq(from = 20, to = 300, by = 2)
+MG.Aven.Cont&lt;-seq(from = 20, to = 300, by = 2) #dados sequenciais
 MK.MG.Aven.Cont&lt;-trend::mk.test(MG.Aven.Cont)</code></pre>
 <p>Atribua nomes simples e que tenham conteúdo!</p>
 <p><strong>5) Utilizar funções em vez de repetir o código</strong></p>
