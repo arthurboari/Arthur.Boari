@@ -10,6 +10,7 @@ output:
     toc_depth: 4
     #code_folding: hide
 ---
+2022 | 1 | 13 Last compiled: `r Sys.Date()`
 
 Pacote *openair*: Tools for the Analysis of Air Pollution Data
 
@@ -17,9 +18,13 @@ Esse pacote é específico para análise de dados de qualidade do ar.
 
 # Obtendo dados de qualidade do ar
 
+2022 | 1 | 13 Last compiled: `r Sys.Date()`
+
 Tutorial: [dados de qualidade do ar de Minas Gerais - FEAM](https://www.instagram.com/tv/CQGx-5cHv2Y/?utm_source=ig_web_copy_link)
 
 # Importando dados de qualidade do ar
+
+2022 | 1 | 13 Last compiled: `r Sys.Date()`
 
 ```{r importando, echo=TRUE,include=FALSE}
 dado<-read.csv2(file = "Arquivos/openair/DelAma2019.csv")
@@ -49,6 +54,8 @@ Veja como agora a coluna *date* está escrita, o R reconhece como data-hora! Est
 
 # Função *summaryPlot*
 
+2022 | 1 | 13 Last compiled: `r Sys.Date()`
+
 ```{r summaryPlot}
 openair::summaryPlot(mydata = dado,
                      date.breaks = 12,
@@ -62,6 +69,8 @@ O gráfico é dividido em duas colunas: a primeira, com a estatística e complet
 Em uma rápida análise na segunda coluna do gráfico, podemos verificar que não seguem uma distribuição normal, porém devemos sempre verificar a estatística.
 
 ## Teste de Anderson-Darling
+
+2022 | 1 | 13 Last compiled: `r Sys.Date()`
 
 ```{r anderson-darling}
 library(nortest)

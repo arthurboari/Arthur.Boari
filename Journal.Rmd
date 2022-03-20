@@ -25,7 +25,7 @@ Brincadeiras a parte, trabalhar com análises no R vai despender de memória e v
 O uso dessas funções irá, não só te deixar mal acostumado (pra não te ofender, te chamando de preguiçoso *emoji do riso*), mas <u>também</u> desorganizado. Para compreender o motivo, devemos entender dois conceitos básicos:
 
 * **Caminho absoluto** é o caminho que qualquer arquivo tenha no diretório de seu computador, por exemplo: 
-```{r echo=FALSE}
+```{r caminho abs,echo=FALSE}
 a<-"C:\\Users\\aboar\\Documents\\Pasta do R\\portAB\\_posts\\Caminho absoluto versus caminho relativo\\Caminho absoluto versus caminho relativo.Rmd"
 print(a)
 ```
@@ -35,21 +35,21 @@ print(a)
 * **Caminho relativo** é o caminho que o arquivo tem dentro do projeto, o mesmo arquivo
 citado através do caminho acima pode ser acessado assim: 
 
-```{r echo=FALSE}
+```{r imprime caminho,echo=FALSE}
 b<-"_posts/Caminho absoluto versus caminho relativo/Caminho absoluto versus caminho relativo.Rmd"
 print(b)
 ```
 
 Perceba o seguinte: caso eu te entregue um script com a seguinte função:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r importação + erro de caminho absoluto,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 dados<-read.csv("C:\Users\aboar\Documents\Pasta do R\portAB\_posts\Caminho absoluto versus caminho relativo\dados_tcc.csv")
 ```
 O R irá encontrá-lo? Certamente **NÃO**! Por quê? Porque o uso desse caminho dentro da função *read.csv* é específico do <u>meu</u> computador. E agora?
 
 O uso de projetos, e o seu compartilhamento através do GitHub ou através de outros serviços de armazenamentos em nuvem, permitem o acesso aos arquivos devido ao uso de caminhos relativos. Portanto, se eu compartilhasse com você o meu projeto, você conseguiria acessar o arquivo através do código:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r importação dados_tcc,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 dados<-read.csv("images/dados_tcc.csv.txt")
 ```
 
@@ -81,12 +81,12 @@ Para este material, realizei o download do tema *Iceberg* disponível no menu *d
 
 3. Abra o seu RStudio e digite o seguinte código:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r convertTheme,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 rstudioapi::convertTheme("images\Temas RStudio\Iceberg.tmTheme")
 ```
 Note: você deve ter o pacote **rstudioapi** instalado, caso contrário instale através do código:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r instalando rstudioapi package,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 install.packages("rstudioapi")
 ```
 
@@ -119,7 +119,7 @@ Aqui podemos denotrar que o arquivo possui cabeçalho, o ponto-e-vírgula separa
 
 Vamos para a primeira função. Essa é a *read.table* e é a *função-mãe* de outras como *read.csv* e *read.csv2*.
 
-```{r}
+```{r importação de planilha2019}
 # dê um help na função e leia
 ?read.table
 
@@ -132,14 +132,14 @@ O argumento **file** recebe, como *string*, o caminho no qual está o arquivo (<
 
 Vamos observar o objeto **dado**:
 
-```{r}
+```{r head de dado}
 head(x = dado, n = 6)
 ```
 Nota que *n* é o número de linhas do objeto que selecionei para visualizar.
 
 Você pode utilizar a função **read.csv2** para importar o mesmo arquivo. Mas qual a diferença? Nenhuma! O que temos aqui é apenas a "definição de argumentos defaults". Veja:
 
-```{r}
+```{r importação planilha + head}
 dado<-read.csv2(file = "Arquivos/Importação/planilha2019.csv")
 head(x = dado, n = 6)
 ```
@@ -149,13 +149,13 @@ Basicamente, o mesmo resultado. Portanto, há várias formas de importar o mesmo
 
 Aqui vamos precisar de pacote específico. Existem vários, entretanto iremos aprender a importar através de uma função do seguinte pacote:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r instalando readxl package,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 install.packages("readxl")
 ```
 
 Aqui vamos trabalhar com um arquivo de dados meteorológicos de Lavras-MG.
 
-```{r}
+```{r carregando readxl package e importando dados de LAVRAS}
 #Carregando o pacote
 library(readxl)
 
@@ -169,7 +169,7 @@ Aqui bastou apenas definir o argumento *path* que é igual ao argumento *file* d
 
 Vamos visualizar parte do arquivo:
 
-```{r}
+```{r head dos dados}
 head(x = dado, n = 6)
 ```
 
@@ -177,7 +177,7 @@ Caso seu arquivo .csv ou .xlsx contenha linhas de texto antes do dado em sim, ba
 
 Veja um aplicação do argumento *skip* abaixo:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r importação de dados de SOROCABA,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 dado<-read.csv2(file = "Arquivos/Importação/SOROCABA (83851).csv")
 
 head(x = dado, n = 6)
@@ -192,7 +192,7 @@ Observe que ocorreu um erro. Basicamente ele "reclama" que há mais colunas do q
 
 Podemos ver que há uma linha antes do dados, vamos retirá-la com o argumento *skip*.
 
-```{r}
+```{r importação de dados de SOROCABA 2}
 dado<-read.csv2(file = "Arquivos/Importação/SOROCABA (83851).csv",skip = 1)
 
 head(x = dado, n = 6)
@@ -210,20 +210,20 @@ Agora que sabemos como se importam dados no R, é importante saber exportar. Par
 
 Podemos verificar os datasets através do código:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r lista de datasets,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 library(help = "datasets")
 ```
 
 Aqui iremos usar a matriz WorldPhones:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r help WorldPhones dataset,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 ?WorldPhones
 
 ```
 
 Esse *dataset* contém o número de telefones de várias partes do mundo, em milhões. Vamos visualizar antes de exportar:
 
-```{r}
+```{r visualizar WorldPhones dataset}
 WorldPhones
 ```
 
@@ -231,7 +231,7 @@ WorldPhones
 
 Aqui iremos utilizar a função *write.table*:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r help de write.table,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 ?write.table
 ```
 
@@ -239,7 +239,7 @@ Habitue-se a ler os *helps* das funções <u>sempre</u> que for utilizar uma!
 
 Vamos aprender:
 
-```{r}
+```{r salvando em csv}
 write.table(x = WorldPhones,file = "Arquivos/Exportação/WorldPhones.csv",sep = ";",dec = ",",row.names = FALSE)
 ```
 
@@ -255,17 +255,17 @@ Exportaremos o mesmo *dataset*, agora em .xlsx:
 
 Para isso vamos utilizar o pacote:
 
-```{r eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
+```{r instalando openxlsx package,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 install.packages("openxlsx")
 ```
 
 Precisamos carregar o pacote:
-```{r}
+```{r carregando openxlsx package}
 library(openxlsx)
 ```
 
 Vamos exportar:
-```{r}
+```{r exportação em xlsx}
 openxlsx::write.xlsx(x = as.data.frame(WorldPhones),file = "Arquivos/Exportação/WorldPhones.xlsx")
 ```
 
@@ -303,7 +303,7 @@ Aqui, a sugestão é de escrever sequencialmente o código, de forma a executá-
 
 Os objetos recebem nomes, e esses devem ser coerentes com o que está sendo realizado, de forma a ser facilmente detectado a motivação daquele código. Vamos supor a aplicação do teste de Mann-Kendall nos dados da estação MG.Aven.Cont (Avenida do Contorno):
 
-```{r echo=TRUE}
+```{r exemplo de nomes de objetos,echo=TRUE}
 library(trend)
 MG.Aven.Cont<-seq(from = 20, to = 300, by = 2)
 MK.MG.Aven.Cont<-trend::mk.test(MG.Aven.Cont)
@@ -319,7 +319,7 @@ A depender do que está sendo realizado, há a necessidade de se repetir várias
 
 Prefira criar funções simples e curtas ao invés de funções longas. Você pode se perder no emaranhado de código. Usar o operador **pipe** do pacote *dplyr* do *tidyverse* pode simplificar e melhorar a aparência e lógica do código.
 
-```{r message=FALSE}
+```{r exemplo uso pipe,message=FALSE}
 sqrt(log(max(c(5,4,9))))
 
 # Com o operador pipe
