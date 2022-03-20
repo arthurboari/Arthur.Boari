@@ -617,3 +617,12 @@ dimnames(a)<-list(c("r1","r2","r3"),c("c1","c2","c3"),c("array 1","array 2"))
 print(a)
 ```
 
+# Dataframe
+
+2022 | 01 | 14 Last compiled: `r Sys.Date()`
+
+É um "tipo" de matrix - só que agora, cada vetor pode ser de um tipo, e.g. vetores numéricos, de caracteres, lógicos são permitidos em um mesmo objeto.
+
+**Recorde:** objetos do tipo *matrix*, assim como vetores, permitem <u>apenas</u> um tipo de variável.
+
+## Criando um dataframe

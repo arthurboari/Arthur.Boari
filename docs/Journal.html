@@ -13,7 +13,7 @@
 
 <title>Blog</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -63,6 +63,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -83,6 +84,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -308,7 +312,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -351,7 +355,7 @@ div.tocify {
 
 <div id="caminho-absoluto-versus-caminho-relativo" class="section level1">
 <h1>Caminho absoluto versus caminho relativo</h1>
-<p>2021 | 12 | 14 Last compiled: 2022-01-13</p>
+<p>2021 | 12 | 14 Last compiled: 2022-03-20</p>
 <p>Programar em R pode ser simples ou complicado de acordo com a preferência do cliente ;)</p>
 <p>Brincadeiras a parte, trabalhar com análises no R vai despender de memória e vários arquivos (principalmente para importar os dados). Se você usa frequentemente as funções <em>getwd</em> e <em>setwd</em> para acessar pastas no seu computador, <strong>PARE!</strong></p>
 <p>O uso dessas funções irá, não só te deixar mal acostumado (pra não te ofender, te chamando de preguiçoso <em>emoji do riso</em>), mas <u>também</u> desorganizado. Para compreender o motivo, devemos entender dois conceitos básicos:</p>
@@ -373,7 +377,7 @@ div.tocify {
 </div>
 <div id="personalize-o-rstudio-com-um-tema-seu" class="section level1">
 <h1>Personalize o RStudio com um tema SEU!</h1>
-<p>2021 | 12 | 14 Last compiled: 2022-01-13</p>
+<p>2021 | 12 | 14 Last compiled: 2022-03-20</p>
 <p>Você, que utiliza a interface <em>RStudio</em> no dia-a-dia, já deve ter configurado a aparência do IDE (Ambiente de Desenvolvimento Integrado) para um tema que te agrade visualmente e não cause tanta fadiga ocular, certo? Eu já testei vários temas pré-definidos, e sempre havia algo que não me agradava, como cores “fracas” na parte de comentários, dentre outros pontos que não ficavam bem.</p>
 <p>Nesse meu primeiro tutorial espero te guiar na construção de um tema <strong>seu</strong>! Vamos lá?</p>
 <ol style="list-style-type: decimal">
@@ -409,7 +413,7 @@ div.tocify {
 </div>
 <div id="importando-dados-no-r" class="section level1">
 <h1>Importando dados no R</h1>
-<p>2021 | 12 | 15 Last compiled: 2022-01-13</p>
+<p>2021 | 12 | 15 Last compiled: 2022-03-20</p>
 <p>Conforme você for aprofundando na trabalho com o R, vai acabar tendo de utilizar de bases de dados externas ao R, ou seja, com dados obtidos em portais e eles virão em vários formatos. Vamos aprender algumas funções e pacotes para que você importe o seu arquivo com êxito e não te traga dor de cabeça no futuro!</p>
 <div id="arquivo-.csv" class="section level2">
 <h2>Arquivo .csv</h2>
@@ -539,7 +543,7 @@ head(x = dado, n = 6)</code></pre>
 </div>
 <div id="exportando-dados-no-r" class="section level1">
 <h1>Exportando dados no R</h1>
-<p>2021 | 12 | 16 Last compiled: 2022-01-13</p>
+<p>2021 | 12 | 16 Last compiled: 2022-03-20</p>
 <p>Agora que sabemos como se importam dados no R, é importante saber exportar. Para isso, vamos utilizar um dos <em>datasets</em> presentes no R.</p>
 <p>Podemos verificar os datasets através do código:</p>
 <pre class="r"><code>library(help = &quot;datasets&quot;)</code></pre>
@@ -585,6 +589,48 @@ head(x = dado, n = 6)</code></pre>
 </div>
 <p>Tivemos sucesso na exportação! Até o próximo tópico!!</p>
 </div>
+</div>
+<div id="deixe-seu-script-prático" class="section level1">
+<h1>Deixe seu script prático</h1>
+<p>2022 | 3 | 20 Last compiled: 2022-03-20</p>
+<p>Trabalhar com R se torna uma tarefa um pouco mais fácil quando se usa <em>scripts</em>, porém pode virar um problema, caso você seja desorganizado. As dicas abaixo são compiladas do vídeo <a href="https://www.youtube.com/watch?v=V5srYcnDowA">10 Good Coding Practices for Data Science</a>.</p>
+<p><strong>1) Defina o objetivo do código</strong></p>
+<p>Antes de entrar no mérito desse tópico, leia o item <a href="https://arthurboari.github.io/ArthurLearnsR/Journal.html#Caminho_absoluto_versus_caminho_relativo">Caminho absoluto versus caminho relativo</a> acima, veja que trabalhar com projetos no R irá facilitar a sua vida e já deixar os <em>scripts</em> organizados.</p>
+<p>Mesmo que você não irá compartilhar o seu <em>script</em> com alguém, é sempre bom saber o que está sendo feito ali. Geralmente, após alguns dias sem ter contato com qualquer material, esquecemos o conteúdo dele. Portanto, mantenha tudo organizado.</p>
+<p>Não tenha preguiça de usar vários <em>scripts</em> para uma análise em específico. Por exemplo, ao desenvolver um trabalho que envolva análise de dados de qualidade do ar, mantenha: <em>um script para cada estação, um script modelo com o passo-a-passo a ser realizado, um script para elaboração de mapas, um script para as análises de estatísticas, entre outros</em>.</p>
+<p>Definir esse objetivo é importante, pois irá te guiar em relação ao que precisa ser feito. Faça um <em>brainstorming</em> dos passos a serem realizados, e começe a desenvolver o código”</p>
+<p><strong>2) Minimizar o que (inevitavelmente) precisará de alteração</strong></p>
+<p>Durante o desenvolvimento do código e das análises, os códigos podem mudar. Sejam dados a serem importados (e seus caminhos), sejam datas ou outros objetos.</p>
+<p><strong>3) Trabalhar de cima para baixo, não para a direita</strong></p>
+<p>Aqui, a sugestão é de escrever sequencialmente o código, de forma a executá-lo <strong>de cima para baixo</strong>, sem ficar <strong>indo-e-voltando</strong>. Mantenha uma lógica e evite escrever vários códigos em uma mesma linha, habitue-se a escrever verticalmente.</p>
+<p><strong>4) Usar variável descritiva e nomes de funções</strong></p>
+<p>Os objetos recebem nomes, e esses devem ser coerentes com o que está sendo realizado, de forma a ser facilmente detectado a motivação daquele código. Vamos supor a aplicação do teste de Mann-Kendall nos dados da estação MG.Aven.Cont (Avenida do Contorno):</p>
+<pre class="r"><code>library(trend)
+MG.Aven.Cont&lt;-seq(from = 20, to = 300, by = 2)
+MK.MG.Aven.Cont&lt;-trend::mk.test(MG.Aven.Cont)</code></pre>
+<p>Atribua nomes simples e que tenham conteúdo!</p>
+<p><strong>5) Utilizar funções em vez de repetir o código</strong></p>
+<p>A depender do que está sendo realizado, há a necessidade de se repetir várias partes do código. Para simplificar, reduza-as em funções e poupe espaço no código! Poupe também tempo e saúde mental: caso precise alterar algo, fazê-lo na função irá poupá-lo de fazer ao longo do script.</p>
+<p><strong>6) Mas não exagere com as funções de encadeamento</strong></p>
+<p>Prefira criar funções simples e curtas ao invés de funções longas. Você pode se perder no emaranhado de código. Usar o operador <strong>pipe</strong> do pacote <em>dplyr</em> do <em>tidyverse</em> pode simplificar e melhorar a aparência e lógica do código.</p>
+<pre class="r"><code>sqrt(log(max(c(5,4,9))))</code></pre>
+<pre><code>## [1] 1.482304</code></pre>
+<pre class="r"><code># Com o operador pipe
+library(dplyr)
+c(5,4,9) %&gt;%
+  max()%&gt;%
+  log()%&gt;%
+  sqrt()</code></pre>
+<pre><code>## [1] 1.482304</code></pre>
+<p>Sem o <em>pipe</em> você se perderia no monte de parênteses utilizados.</p>
+<p><strong>7) Preste atenção aos tipos de dados</strong></p>
+<p>Quando, ao executar um código, for gerado um erro, verifique se está sendo aplicado ao tipo certo de dado. Por exemplo, obter a média de um vetor de caracteres irá resultar em erro. Conhecer o tipo de dados que está trabalhando é de suma importância!</p>
+<p><strong>8) Fornecer documentação e comentários adequados</strong></p>
+<p>Sempre deixe comentários nos <em>scripts</em>. Nunca é demais deixar explícito o que está sendo feito nas linhas abaixo.</p>
+<p><strong>9) Verificar os últimos e melhores pacotes para a tarefa</strong></p>
+<p>Com o rápido desenvolvimento de pacotes em R, há chances de que as análises que você precisa fazer já estejam alocadas em um pacote específico. Faça buscas por eles, e não perca tempo tendo de programar tudo sendo que já existem funções para isso!</p>
+<p><strong>10) Teste à medida que vai</strong></p>
+<p>Não há outra forma, pratique e verifique o que funciona ou não.</p>
 </div>
 
 

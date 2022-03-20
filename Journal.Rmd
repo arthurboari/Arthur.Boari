@@ -274,3 +274,75 @@ Note: convertemos *WorldPhones* em *dataframe*, pois o mesmo é uma *matrix* e a
 ![Figura 6: Arquivo aberto no Bloco de Notas](Arquivos\Exportação\xlsx.JPG){width=70%}
 
 Tivemos sucesso na exportação! Até o próximo tópico!!
+
+# Deixe seu script prático
+
+2022 | 3 | 20 Last compiled: `r Sys.Date()`
+
+Trabalhar com R se torna uma tarefa um pouco mais fácil quando se usa *scripts*, porém pode virar um problema, caso você seja desorganizado. As dicas abaixo são compiladas do vídeo [10 Good Coding Practices for Data Science](https://www.youtube.com/watch?v=V5srYcnDowA).
+
+**1) Defina o objetivo do código**
+
+Antes de entrar no mérito desse tópico, leia o item [Caminho absoluto versus caminho relativo](https://arthurboari.github.io/ArthurLearnsR/Journal.html#Caminho_absoluto_versus_caminho_relativo) acima, veja que trabalhar com projetos no R irá facilitar a sua vida e já deixar os *scripts* organizados.
+
+Mesmo que você não irá compartilhar o seu *script* com alguém, é sempre bom saber o que está sendo feito ali. Geralmente, após alguns dias sem ter contato com qualquer material, esquecemos o conteúdo dele. Portanto, mantenha tudo organizado.
+
+Não tenha preguiça de usar vários *scripts* para uma análise em específico. Por exemplo, ao desenvolver um trabalho que envolva análise de dados de qualidade do ar, mantenha: *um script para cada estação, um script modelo com o passo-a-passo a ser realizado, um script para elaboração de mapas, um script para as análises de estatísticas, entre outros*.
+
+Definir esse objetivo é importante, pois irá te guiar em relação ao que precisa ser feito. Faça um *brainstorming* dos passos a serem realizados, e começe a desenvolver o código"
+
+**2) Minimizar o que (inevitavelmente) precisará de alteração**
+
+Durante o desenvolvimento do código e das análises, os códigos podem mudar. Sejam dados a serem importados (e seus caminhos), sejam datas ou outros objetos.
+
+**3) Trabalhar de cima para baixo, não para a direita**
+
+Aqui, a sugestão é de escrever sequencialmente o código, de forma a executá-lo **de cima para baixo**, sem ficar **indo-e-voltando**. Mantenha uma lógica e evite escrever vários códigos em uma mesma linha, habitue-se a escrever verticalmente.
+
+**4) Usar variável descritiva e nomes de funções**
+
+Os objetos recebem nomes, e esses devem ser coerentes com o que está sendo realizado, de forma a ser facilmente detectado a motivação daquele código. Vamos supor a aplicação do teste de Mann-Kendall nos dados da estação MG.Aven.Cont (Avenida do Contorno):
+
+```{r echo=TRUE}
+library(trend)
+MG.Aven.Cont<-seq(from = 20, to = 300, by = 2)
+MK.MG.Aven.Cont<-trend::mk.test(MG.Aven.Cont)
+```
+
+Atribua nomes simples e que tenham conteúdo!
+
+**5) Utilizar funções em vez de repetir o código**
+
+A depender do que está sendo realizado, há a necessidade de se repetir várias partes do código. Para simplificar, reduza-as em funções e poupe espaço no código! Poupe também tempo e saúde mental: caso precise alterar algo, fazê-lo na função irá poupá-lo de fazer ao longo do script.
+
+**6) Mas não exagere com as funções de encadeamento**
+
+Prefira criar funções simples e curtas ao invés de funções longas. Você pode se perder no emaranhado de código. Usar o operador **pipe** do pacote *dplyr* do *tidyverse* pode simplificar e melhorar a aparência e lógica do código.
+
+```{r message=FALSE}
+sqrt(log(max(c(5,4,9))))
+
+# Com o operador pipe
+library(dplyr)
+c(5,4,9) %>%
+  max()%>%
+  log()%>%
+  sqrt()
+```
+Sem o *pipe* você se perderia no monte de parênteses utilizados.
+
+**7) Preste atenção aos tipos de dados**
+
+Quando, ao executar um código, for gerado um erro, verifique se está sendo aplicado ao tipo certo de dado. Por exemplo, obter a média de um vetor de caracteres irá resultar em erro. Conhecer o tipo de dados que está trabalhando é de suma importância!
+
+**8) Fornecer documentação e comentários adequados**
+
+Sempre deixe comentários nos *scripts*. Nunca é demais deixar explícito o que está sendo feito nas linhas abaixo.
+
+**9) Verificar os últimos e melhores pacotes para a tarefa**
+
+Com o rápido desenvolvimento de pacotes em R, há chances de que as análises que você precisa fazer já estejam alocadas em um pacote específico. Faça buscas por eles, e não perca tempo tendo de programar tudo sendo que já existem funções para isso!
+
+**10) Teste à medida que vai**
+
+Não há outra forma, pratique e verifique o que funciona ou não.

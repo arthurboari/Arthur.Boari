@@ -14,7 +14,7 @@
 
 <title>Learning R: base</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -64,6 +64,7 @@ if (window.hljs) {
 
 
 
+
 <style type = "text/css">
 .main-container {
   max-width: 940px;
@@ -84,6 +85,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -309,7 +313,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -354,7 +358,7 @@ div.tocify {
 <p>O conteúdo desta página do blog é originado do curso <a href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn ggplot2 in R for Data Visualization - 2021</a>.</p>
 <div id="comandos-utéis" class="section level1">
 <h1>Comandos utéis</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-13</p>
+<p>2022 | 01 | 10 Last compiled: 2022-03-20</p>
 <p>Nessa seção iremos compilar algumas funções úteis.</p>
 <p>A primeira função é <em>dir</em>. Ela listará os arquivos presentes no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:</p>
 <pre class="r"><code>getwd() #essa função descreve o caminho do meu diretório de trabalho</code></pre>
@@ -372,15 +376,15 @@ div.tocify {
 <pre class="r"><code>ls() #essa função descreve os objetos presentes no Global Environment</code></pre>
 <pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
 ##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
-##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;               
-## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
-## [17] &quot;y&quot;</code></pre>
+##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;    
+## [13] &quot;MK.MG.Aven.Cont&quot;  &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;              
+## [17] &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
 <pre class="r"><code>objects() #mesma função que *ls()*</code></pre>
 <pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
 ##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
-##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;               
-## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
-## [17] &quot;y&quot;</code></pre>
+##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;    
+## [13] &quot;MK.MG.Aven.Cont&quot;  &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;              
+## [17] &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
 <p>A terceira função é <em>remove</em>, e será útil para remover algum objeto do Global Environment.</p>
 <pre class="r"><code>#Vamos criar dois objetos
 a&lt;-1
@@ -389,25 +393,27 @@ b&lt;-2
 ls()</code></pre>
 <pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
 ##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
-##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;               
-## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
-## [17] &quot;y&quot;</code></pre>
+##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;    
+## [13] &quot;MK.MG.Aven.Cont&quot;  &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;              
+## [17] &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
 <pre class="r"><code>#Vamos remover o objeto *a*
 remove(a)
 #Vamos listá-los
 objects()</code></pre>
 <pre><code>##  [1] &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;            &quot;lista2&quot;          
 ##  [5] &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;           &quot;listaconcatenada&quot;
-##  [9] &quot;m&quot;                &quot;medicamento&quot;      &quot;v&quot;                &quot;v1&quot;              
-## [13] &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
+##  [9] &quot;m&quot;                &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;     &quot;MK.MG.Aven.Cont&quot; 
+## [13] &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;           
+## [17] &quot;x&quot;                &quot;y&quot;</code></pre>
 <pre class="r"><code>#Vamos remover o objeto *b*
 rm(b)
 #Vamos listá-los
 objects()</code></pre>
 <pre><code>##  [1] &quot;dado&quot;             &quot;lista&quot;            &quot;lista2&quot;           &quot;lista3&quot;          
 ##  [5] &quot;lista4&quot;           &quot;lista5&quot;           &quot;listaconcatenada&quot; &quot;m&quot;               
-##  [9] &quot;medicamento&quot;      &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;              
-## [13] &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
+##  [9] &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;     &quot;MK.MG.Aven.Cont&quot;  &quot;v&quot;               
+## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
+## [17] &quot;y&quot;</code></pre>
 <p>A quarta função é <em>print</em>, e como o nome sugere, irá imprimir no Console algum texto ou conteúdo de alguma variável. Veja o exemplo abaixo:</p>
 <pre class="r"><code>x&lt;-&quot;hello world!&quot;
 print(x)</code></pre>
@@ -431,7 +437,7 @@ require(ggplot2)</code></pre>
 </div>
 <div id="estruturas-no-r" class="section level1">
 <h1>ESTRUTURAS NO R:</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-13</p>
+<p>2022 | 01 | 10 Last compiled: 2022-03-20</p>
 <p>As estruturas do R podem ser classificadas quanto ao tipo de variável e quanto a estrutura utilizada.</p>
 <ul>
 <li>Quanto ao tipo de variável/classe:
@@ -471,7 +477,7 @@ print(y)</code></pre>
 </div>
 <div id="vetores" class="section level1">
 <h1>Vetores</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-01-13</p>
+<p>2022 | 01 | 10 Last compiled: 2022-03-20</p>
 <p>Podem ser definidos como <strong>uma coleção de elementos de uma mesma classe</strong> e podem ser criados de duas maneiras:</p>
 <div id="através-da-função-concatenar-c" class="section level2">
 <h2>Através da função concatenar <em>c</em></h2>
@@ -686,7 +692,7 @@ order(vetor)</code></pre>
 </div>
 <div id="lists" class="section level1">
 <h1>Lists</h1>
-<p>2022 | 01 | 11 Last compiled: 2022-01-13</p>
+<p>2022 | 01 | 11 Last compiled: 2022-03-20</p>
 <p>Esse tipo de objeto possibilita a inserção de vários tipos de elementos e estruturas dentro dele. Pode-se agrupar lists, vetores, dataframes, matrizes, etc.</p>
 <p>Aqui não há coerção.</p>
 <div id="criando-uma-list-função-list" class="section level2">
@@ -994,7 +1000,7 @@ print(listaconcatenada)</code></pre>
 </div>
 <div id="matrix" class="section level1">
 <h1>Matrix</h1>
-<p>2022 | 01 | 12 Last compiled: 2022-01-13</p>
+<p>2022 | 01 | 12 Last compiled: 2022-03-20</p>
 <p>É um agrupamento de vetores, resultando em um objeto com dimensões.</p>
 <div id="criando-uma-matrix" class="section level2">
 <h2>Criando uma matrix</h2>
@@ -1172,7 +1178,7 @@ print(m)</code></pre>
 </div>
 <div id="array" class="section level1">
 <h1>Array</h1>
-<p>2022 | 01 | 12 Last compiled: 2022-01-13</p>
+<p>2022 | 01 | 12 Last compiled: 2022-03-20</p>
 <p>São elementos multidimensionais, ou seja, armazenam dados em mais de duas dimensões.</p>
 <div id="criando-um-array" class="section level2">
 <h2>Criando um array</h2>
@@ -1240,6 +1246,15 @@ print(a)</code></pre>
 ## r1 10 13 16
 ## r2 11 14 17
 ## r3 12 15 18</code></pre>
+</div>
+</div>
+<div id="dataframe" class="section level1">
+<h1>Dataframe</h1>
+<p>2022 | 01 | 14 Last compiled: 2022-03-20</p>
+<p>É um “tipo” de matrix - só que agora, cada vetor pode ser de um tipo, e.g. vetores numéricos, de caracteres, lógicos são permitidos em um mesmo objeto.</p>
+<p><strong>Recorde:</strong> objetos do tipo <em>matrix</em>, assim como vetores, permitem <u>apenas</u> um tipo de variável.</p>
+<div id="criando-um-dataframe" class="section level2">
+<h2>Criando um dataframe</h2>
 </div>
 </div>
 
