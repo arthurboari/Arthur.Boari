@@ -7,9 +7,9 @@ output: html_document
 
   ARTHUR BOARI é:
   
-  Mestrando em Engenharia Ambiental (PPGEAmb), pela Universidade Federal de Lavras (UFLA), na linha de pesquisa Mudanças Climáticas, Energia e Poluição Atmosférica. Graduou em 2020, com mérito acadêmico, no curso de Engenharia Ambiental e Sanitária, pela UFLA.
+  Mestrando em [Engenharia Ambiental](https://sites.google.com/ufla.br/ppgeamb/p%C3%A1gina-inicial?authuser=0), pela Universidade Federal de Lavras (UFLA), na linha de pesquisa Mudanças Climáticas, Energia e Poluição Atmosférica. Graduou, em 2020, no curso de Engenharia Ambiental e Sanitária, pela UFLA.
   
-  Iniciou o aprendizado de R, em 2019, através de curso introdutório ministrado por membros do Núcleo de Estudos em Poluição Urbana e Agroindustrial (NEP UAI). Iniciou a aplicação dos conhecimentos na disciplina GRS 124 - Modelagem de Processos Ambientais ministrada pelo Dr. Marcelo Vieira-Filho (atual orientador de mestrado) bem como em atividades de pesquisas enquanto membro do NEP UAI.
+  Iniciou o aprendizado de R, em 2019, através de curso introdutório ministrado por membros do Núcleo de Estudos em Poluição Urbana e Agroindustrial ([NEP UAI](https://sites.google.com/ufla.br/nepuai)). Iniciou a aplicação dos conhecimentos na disciplina GAM 124 - Modelagem de Processos Ambientais, ministrada pelo Dr. Marcelo Vieira-Filho (atual orientador de mestrado) bem como em atividades de pesquisas enquanto membro do NEP UAI.
   
   Para mais informações, consulte os meus perfis:
     
@@ -18,11 +18,5 @@ output: html_document
 [LinkedIn](https://www.linkedin.com/in/arthurboari/)
     
 [ORCID](https://www.researchgate.net/profile/Arthur-Boari)
-    
-   Outros links:
-    
-[NEP UAI](https://sites.google.com/ufla.br/nepuai)
-    
-[PPGEAmb](https://sites.google.com/ufla.br/ppgeamb/p%C3%A1gina-inicial?authuser=0)
     
 Deseja entrar em contato via e-mail? [Clique aqui!](mailto:arthur1995boari@gmail.com)

@@ -355,17 +355,17 @@ div.tocify {
 </div>
 
 
-<p>2022 | 1 | 13 Last compiled: 2022-03-20</p>
+<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
 <p>Pacote <em>openair</em>: Tools for the Analysis of Air Pollution Data</p>
 <p>Esse pacote é específico para análise de dados de qualidade do ar.</p>
 <div id="obtendo-dados-de-qualidade-do-ar" class="section level1">
 <h1>Obtendo dados de qualidade do ar</h1>
-<p>2022 | 1 | 13 Last compiled: 2022-03-20</p>
+<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
 <p>Tutorial: <a href="https://www.instagram.com/tv/CQGx-5cHv2Y/?utm_source=ig_web_copy_link">dados de qualidade do ar de Minas Gerais - FEAM</a></p>
 </div>
 <div id="importando-dados-de-qualidade-do-ar" class="section level1">
 <h1>Importando dados de qualidade do ar</h1>
-<p>2022 | 1 | 13 Last compiled: 2022-03-20</p>
+<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
 <p>Trabalharemos com dados de qualidade do ar para a estação Delegacia Amazonas (Belo Horizonte/MG) para o ano de 2019:</p>
 <pre><code>##               date PM10  NO2    O3  SO2 PM25    CO
 ## 1 01/01/2019 00:30   29 3.37 15.43 0.74   NA 0.934
@@ -404,7 +404,7 @@ div.tocify {
 </div>
 <div id="função-summaryplot" class="section level1">
 <h1>Função <em>summaryPlot</em></h1>
-<p>2022 | 1 | 13 Last compiled: 2022-03-20</p>
+<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
 <pre class="r"><code>openair::summaryPlot(mydata = dado,
                      date.breaks = 12,
                      period = &quot;months&quot;)</code></pre>
@@ -418,7 +418,7 @@ div.tocify {
 <div id="teste-de-anderson-darling" class="section level2">
 <h2>Teste de Anderson-Darling</h2>
 <p>O teste de Anderson-Darling é semelhante ao teste de Shapiro-Wilk. Ambos verificam a normalidade dos dados. Vale ressaltar que a função do Shapiro-Wild (<em>stats::shapiro.test()</em>) foi traduzida do Fortran e possui a limitação de análise de até 5000 dados.</p>
-<p>2022 | 1 | 13 Last compiled: 2022-03-20</p>
+<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
 <pre class="r"><code>library(nortest)
 #H0 = distribuição normal: p &gt; 0.05 (Hipótese nula)
 #Ha = distribuição não normal: p &lt;= 0.05 (Hipótese alternativa)
