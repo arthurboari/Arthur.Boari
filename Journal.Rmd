@@ -143,10 +143,14 @@ Aqui podemos denotrar que o arquivo possui cabeçalho, o ponto-e-vírgula separa
 
 Vamos para a primeira função. Essa é a *read.table* e é a *função-mãe* de outras como *read.csv* e *read.csv2*.
 
-```{r importação de planilha2019}
+```{r eval=FALSE}
 # dê um help na função e leia
 ?read.table
 
+```
+
+
+```{r importação de planilha2019}
 #aqui está o script de importação e será explicado abaixo
 
 dado<-read.table(file = "Arquivos/Importação/planilha2019.csv", header = TRUE,sep = ";",dec = ",")
@@ -183,12 +187,16 @@ Aqui vamos trabalhar com um arquivo de dados meteorológicos de Lavras-MG.
 #Carregando o pacote
 library(readxl)
 
-#help na função
-?read_excel
-
 #importando
 dado<-read_excel(path = "Arquivos/Importação/LAVRAS (83687) (2) (1).xlsx")
 ```
+
+```{r eval=FALSE}
+#help na função
+?read_excel
+```
+
+
 Aqui bastou apenas definir o argumento *path* que é igual ao argumento *file* da função *read.table*.
 
 Vamos visualizar parte do arquivo:

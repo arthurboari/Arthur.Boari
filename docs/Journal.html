@@ -13,7 +13,7 @@
 
 <title>Dicas</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -317,7 +317,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Arthur Learns R</a>
+      <a class="navbar-brand" href="index.html">Arthur Boari</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -353,107 +353,218 @@ div.tocify {
 </div>
 
 
-<p>Essa seção do <a href="https://arthurboari.github.io/ArthurLearnsR/index.html">Arthur Learns R</a> apresenta algumas dicas de programação.</p>
-<p>Aprender uma linguagem de programação pode aparecer assustador, mas <u>NÃO</u> é! Aproveito a home-page para deixar algumas dicas, mas primeiramente, por quê a linguagem R?</p>
+<p>Essa seção do <a
+href="https://arthurboari.github.io/ArthurLearnsR/index.html">Arthur
+Learns R</a> apresenta algumas dicas de programação.</p>
+<p>Aprender uma linguagem de programação pode aparecer assustador, mas
+<u>NÃO</u> é! Aproveito a home-page para deixar algumas dicas, mas
+primeiramente, por quê a linguagem R?</p>
 <ul>
-<li><p>A linguagem R, assim como o Python, é uma linguagem de <u>alto nível</u>. Isso significa que já existem funções prontas e que não haverá necessidade de você fazer longos <em>scripts</em> para <em>ensinar</em> o R como se faz uma média. Claro, que dependendo da área, você pode encontrar situações nas quais você precisará despender um bom tempo criando funções, caso não existam pacotes que contenham o que você almeja.</p></li>
-<li><p>Como citado anteriormente, o <a href="https://cran.r-project.org/">CRAN</a> possui um vasto repositório com pacotes das mais diversas áreas, nas quais já existem funções programadas. Por exemplo, o pacote <a href="https://cran.r-project.org/web/packages/openair/"><em>openair</em></a> é destinado a área de poluição atmosférica, <a href="https://cran.r-project.org/web/packages/trend/"><em>trend</em></a> é um pacote para análise de tendências em séries históricas, e pacotes como o <a href="https://cran.r-project.org/web/packages/hydroGOF/"><em>hydroGOF</em></a> para análises hidrológicas.</p></li>
-<li><p>É uma das linguagens com bastante material acessível, sejam apostilas e livros em bookdown, sejam vídeos e tutoriais no YouTube, seja o fórum <a href="https://stackoverflow.com/questions/tagged/r"><em>stackoverflow</em></a>, onde os usuários podem encontrar diversas dúvidas solucionadas. Apesar de ter uma versão em português deste fórum, a versão em inglês possui um banco mais vasto.</p></li>
+<li><p>A linguagem R, assim como o Python, é uma linguagem de <u>alto
+nível</u>. Isso significa que já existem funções prontas e que não
+haverá necessidade de você fazer longos <em>scripts</em> para
+<em>ensinar</em> o R como se faz uma média. Claro, que dependendo da
+área, você pode encontrar situações nas quais você precisará despender
+um bom tempo criando funções, caso não existam pacotes que contenham o
+que você almeja.</p></li>
+<li><p>Como citado anteriormente, o <a
+href="https://cran.r-project.org/">CRAN</a> possui um vasto repositório
+com pacotes das mais diversas áreas, nas quais já existem funções
+programadas. Por exemplo, o pacote <a
+href="https://cran.r-project.org/web/packages/openair/"><em>openair</em></a>
+é destinado a área de poluição atmosférica, <a
+href="https://cran.r-project.org/web/packages/trend/"><em>trend</em></a>
+é um pacote para análise de tendências em séries históricas, e pacotes
+como o <a
+href="https://cran.r-project.org/web/packages/hydroGOF/"><em>hydroGOF</em></a>
+para análises hidrológicas.</p></li>
+<li><p>É uma das linguagens com bastante material acessível, sejam
+apostilas e livros em bookdown, sejam vídeos e tutoriais no YouTube,
+seja o fórum <a
+href="https://stackoverflow.com/questions/tagged/r"><em>stackoverflow</em></a>,
+onde os usuários podem encontrar diversas dúvidas solucionadas. Apesar
+de ter uma versão em português deste fórum, a versão em inglês possui um
+banco mais vasto.</p></li>
 </ul>
 <p>Esses são alguns benefícios, vamos a dicas:</p>
 <ul>
-<li><p>O aprendizado é <u>solitário</u>, mas não quer dizer que você não deva procurar ajuda (nos fóruns, vídeos e outras fontes).</p></li>
-<li><p>Procure deixar o seu <em>script</em> bem comentado (tudo o que vem após o jogo-da-velha é considerado comentário), com explicações:</p>
+<li><p>O aprendizado é <u>solitário</u>, mas não quer dizer que você não
+deva procurar ajuda (nos fóruns, vídeos e outras fontes).</p></li>
+<li><p>Procure deixar o seu <em>script</em> bem comentado (tudo o que
+vem após o jogo-da-velha é considerado comentário), com explicações:</p>
 <ul>
 <li>do que está sendo feito;</li>
 <li>do motivo de usar aquela função e para o quê ela serve;</li>
-<li>os valores que argumentos assumem e se há alguma literatura científica que dê respaldo;</li>
+<li>os valores que argumentos assumem e se há alguma literatura
+científica que dê respaldo;</li>
 <li>erros que você cometeu anteriormente.</li>
 </ul></li>
-<li><p>Pratique! Esse é o <em>segredo</em>. Tudo o que você precisar calcular, seja uma média ou algo bem simples, opte por fazer no R e não em programas de planilha eletrônica ou na calculadora do seu sistema operacional.</p></li>
-<li><p>Organização é a chave do negócio! Use projetos. Lá você poderá manter todos os arquivos o mais organizado possível. O próximo tópico aborda um tópico (“Caminho absoluto versus caminho relativo”) bem interessante do porquê é melhor usar projetos.</p></li>
+<li><p>Pratique! Esse é o <em>segredo</em>. Tudo o que você precisar
+calcular, seja uma média ou algo bem simples, opte por fazer no R e não
+em programas de planilha eletrônica ou na calculadora do seu sistema
+operacional.</p></li>
+<li><p>Organização é a chave do negócio! Use projetos. Lá você poderá
+manter todos os arquivos o mais organizado possível. O próximo tópico
+aborda um tópico (“Caminho absoluto versus caminho relativo”) bem
+interessante do porquê é melhor usar projetos.</p></li>
 </ul>
-<div id="caminho-absoluto-versus-caminho-relativo" class="section level1">
+<div id="caminho-absoluto-versus-caminho-relativo"
+class="section level1">
 <h1>Caminho absoluto versus caminho relativo</h1>
-<p>2021 | 12 | 14 Last compiled: 2022-03-21</p>
-<p>Programar em R pode ser simples ou complicado de acordo com a preferência do cliente ;)</p>
-<p>Brincadeiras a parte, trabalhar com análises no R vai despender de memória e vários arquivos (principalmente para importar os dados). Se você usa frequentemente as funções <em>getwd</em> e <em>setwd</em> para acessar pastas no seu computador, <strong>PARE!</strong></p>
-<p>O uso dessas funções irá, não só te deixar mal acostumado (pra não te ofender, te chamando de preguiçoso <em>emoji do riso</em>), mas <u>também</u> desorganizado. Para compreender o motivo, devemos entender dois conceitos básicos:</p>
+<p>2021 | 12 | 14 Last compiled: 2022-08-14</p>
+<p>Programar em R pode ser simples ou complicado de acordo com a
+preferência do cliente ;)</p>
+<p>Brincadeiras a parte, trabalhar com análises no R vai despender de
+memória e vários arquivos (principalmente para importar os dados). Se
+você usa frequentemente as funções <em>getwd</em> e <em>setwd</em> para
+acessar pastas no seu computador, <strong>PARE!</strong></p>
+<p>O uso dessas funções irá, não só te deixar mal acostumado (pra não te
+ofender, te chamando de preguiçoso <em>emoji do riso</em>), mas
+<u>também</u> desorganizado. Para compreender o motivo, devemos entender
+dois conceitos básicos:</p>
 <ul>
-<li><strong>Caminho absoluto</strong> é o caminho que qualquer arquivo tenha no diretório de seu computador, por exemplo:</li>
+<li><strong>Caminho absoluto</strong> é o caminho que qualquer arquivo
+tenha no diretório de seu computador, por exemplo:</li>
 </ul>
 <pre><code>## [1] &quot;C:\\Users\\aboar\\Documents\\Pasta do R\\portAB\\_posts\\Caminho absoluto versus caminho relativo\\Caminho absoluto versus caminho relativo.Rmd&quot;</code></pre>
-<p>é o caminho do arquivo que gerou essa página. E é <u>característico</u> a presença do <em>C:</em>, <em>D:</em> ou <em>E:</em> a depender da sua máquina.</p>
+<p>é o caminho do arquivo que gerou essa página. E é
+<u>característico</u> a presença do <em>C:</em>, <em>D:</em> ou
+<em>E:</em> a depender da sua máquina.</p>
 <ul>
-<li><strong>Caminho relativo</strong> é o caminho que o arquivo tem dentro do projeto, o mesmo arquivo citado através do caminho acima pode ser acessado assim:</li>
+<li><strong>Caminho relativo</strong> é o caminho que o arquivo tem
+dentro do projeto, o mesmo arquivo citado através do caminho acima pode
+ser acessado assim:</li>
 </ul>
 <pre><code>## [1] &quot;_posts/Caminho absoluto versus caminho relativo/Caminho absoluto versus caminho relativo.Rmd&quot;</code></pre>
-<p>Perceba o seguinte: caso eu te entregue um script com a seguinte função:</p>
+<p>Perceba o seguinte: caso eu te entregue um script com a seguinte
+função:</p>
 <pre class="r"><code>dados&lt;-read.csv(&quot;C:\Users\aboar\Documents\Pasta do R\portAB\_posts\Caminho absoluto versus caminho relativo\dados_tcc.csv&quot;)</code></pre>
-<p>O R irá encontrá-lo? Certamente <strong>NÃO</strong>! Por quê? Porque o uso desse caminho dentro da função <em>read.csv</em> é específico do <u>meu</u> computador. E agora?</p>
-<p>O uso de projetos, e o seu compartilhamento através do GitHub ou através de outros serviços de armazenamentos em nuvem, permitem o acesso aos arquivos devido ao uso de caminhos relativos. Portanto, se eu compartilhasse com você o meu projeto, você conseguiria acessar o arquivo através do código:</p>
+<p>O R irá encontrá-lo? Certamente <strong>NÃO</strong>! Por quê? Porque
+o uso desse caminho dentro da função <em>read.csv</em> é específico do
+<u>meu</u> computador. E agora?</p>
+<p>O uso de projetos, e o seu compartilhamento através do GitHub ou
+através de outros serviços de armazenamentos em nuvem, permitem o acesso
+aos arquivos devido ao uso de caminhos relativos. Portanto, se eu
+compartilhasse com você o meu projeto, você conseguiria acessar o
+arquivo através do código:</p>
 <pre class="r"><code>dados&lt;-read.csv(&quot;images/dados_tcc.csv.txt&quot;)</code></pre>
-<p>Em suma, trabalhe com projetos no R. Ali, todos os arquivos que você irá importar e todos os arquivos que você irá gerar, como <em>plots</em> e arquivos de dados já processados, poderão ser acessados facilmente depois através de caminhos relativos, além de permitir que outras pessoas vinculadas ao projeto possam executar o código em seus computadores próprios sem qualquer problema. Dica: aperte a tecla <em>tab</em> entre as aspas duplas do argumento <em>file</em> e selecione o arquivo pelo menu drop-down que irá abrir (benefícios do RStudio).</p>
+<p>Em suma, trabalhe com projetos no R. Ali, todos os arquivos que você
+irá importar e todos os arquivos que você irá gerar, como <em>plots</em>
+e arquivos de dados já processados, poderão ser acessados facilmente
+depois através de caminhos relativos, além de permitir que outras
+pessoas vinculadas ao projeto possam executar o código em seus
+computadores próprios sem qualquer problema. Dica: aperte a tecla
+<em>tab</em> entre as aspas duplas do argumento <em>file</em> e
+selecione o arquivo pelo menu drop-down que irá abrir (benefícios do
+RStudio).</p>
 </div>
 <div id="personalize-o-rstudio-com-um-tema-seu" class="section level1">
 <h1>Personalize o RStudio com um tema SEU!</h1>
-<p>2021 | 12 | 14 Last compiled: 2022-03-21</p>
-<p>Você, que utiliza a interface <em>RStudio</em> no dia-a-dia, já deve ter configurado a aparência do IDE (Ambiente de Desenvolvimento Integrado) para um tema que te agrade visualmente e não cause tanta fadiga ocular, certo? Eu já testei vários temas pré-definidos, e sempre havia algo que não me agradava, como cores “fracas” na parte de comentários, dentre outros pontos que não ficavam bem.</p>
-<p>Nesse meu primeiro tutorial espero te guiar na construção de um tema <strong>seu</strong>! Vamos lá?</p>
+<p>2021 | 12 | 14 Last compiled: 2022-08-14</p>
+<p>Você, que utiliza a interface <em>RStudio</em> no dia-a-dia, já deve
+ter configurado a aparência do IDE (Ambiente de Desenvolvimento
+Integrado) para um tema que te agrade visualmente e não cause tanta
+fadiga ocular, certo? Eu já testei vários temas pré-definidos, e sempre
+havia algo que não me agradava, como cores “fracas” na parte de
+comentários, dentre outros pontos que não ficavam bem.</p>
+<p>Nesse meu primeiro tutorial espero te guiar na construção de um tema
+<strong>seu</strong>! Vamos lá?</p>
 <ol style="list-style-type: decimal">
-<li>Primeiramente, abra este <a href="https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai">link</a>. Aqui você encontrará o seguinte interface:</li>
+<li>Primeiramente, abra este <a
+href="https://tmtheme-editor.herokuapp.com/#!/editor/theme/Monokai">link</a>.
+Aqui você encontrará o seguinte interface:</li>
 </ol>
 <div class="figure">
 <img src="images/Temas%20RStudio/Site%20de%20temas.JPG" alt="" />
 <p class="caption">Figura 1: Interface do endereço eletrônico</p>
 </div>
 <ul>
-<li><p>Na aba <em>Scopes</em> você pode alterar a cor da fonte (FG), a cor do fundo de cada uma das seções (BG) e se receberá itálico (<em>I</em>), negrito (<strong>B</strong>) ou sublinhado (<u>U</u>).</p></li>
-<li><p>Na aba <em>General</em> você irá definir o <em>background</em> do RStudio, e em <em>Info</em> você insere um nome e informações relacionadas ao seu tema.</p></li>
-<li><p>Quer inspiração? Abra o menu <em>drop-down</em> <em>Gallery</em> e você encontrará vários temas já pré-definidos e que não estão disponíveis no RStudio.</p></li>
+<li><p>Na aba <em>Scopes</em> você pode alterar a cor da fonte (FG), a
+cor do fundo de cada uma das seções (BG) e se receberá itálico
+(<em>I</em>), negrito (<strong>B</strong>) ou sublinhado
+(<u>U</u>).</p></li>
+<li><p>Na aba <em>General</em> você irá definir o <em>background</em> do
+RStudio, e em <em>Info</em> você insere um nome e informações
+relacionadas ao seu tema.</p></li>
+<li><p>Quer inspiração? Abra o menu <em>drop-down</em> <em>Gallery</em>
+e você encontrará vários temas já pré-definidos e que não estão
+disponíveis no RStudio.</p></li>
 </ul>
 <ol start="2" style="list-style-type: decimal">
-<li>Após adaptar e criar o seu próprio tema, é hora de salvar o seu tema. Clique no menu <strong>Download</strong> e salve o arquivo .tmTheme em uma pasta destinada aos seus projetos do R.</li>
+<li>Após adaptar e criar o seu próprio tema, é hora de salvar o seu
+tema. Clique no menu <strong>Download</strong> e salve o arquivo
+.tmTheme em uma pasta destinada aos seus projetos do R.</li>
 </ol>
-<p>Para este material, realizei o download do tema <em>Iceberg</em> disponível no menu <em>drop-down</em> <em>Gallery</em>.</p>
+<p>Para este material, realizei o download do tema <em>Iceberg</em>
+disponível no menu <em>drop-down</em> <em>Gallery</em>.</p>
 <ol start="3" style="list-style-type: decimal">
 <li>Abra o seu RStudio e digite o seguinte código:</li>
 </ol>
 <pre class="r"><code>rstudioapi::convertTheme(&quot;images\Temas RStudio\Iceberg.tmTheme&quot;)</code></pre>
-<p>Note: você deve ter o pacote <strong>rstudioapi</strong> instalado, caso contrário instale através do código:</p>
+<p>Note: você deve ter o pacote <strong>rstudioapi</strong> instalado,
+caso contrário instale através do código:</p>
 <pre class="r"><code>install.packages(&quot;rstudioapi&quot;)</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Agora cheque a aba <em>Appearance</em> do <em>Global Options</em>, localize o tema e clique em <em>Apply</em> para que seja aplicado a sua interface.</li>
+<li>Agora cheque a aba <em>Appearance</em> do <em>Global Options</em>,
+localize o tema e clique em <em>Apply</em> para que seja aplicado a sua
+interface.</li>
 </ol>
 <div class="figure">
-<img src="images/Temas%20RStudio/Aba%20Appearance.JPG" style="width:50.0%" alt="" />
+<img src="images/Temas%20RStudio/Aba%20Appearance.JPG"
+style="width:50.0%" alt="" />
 <p class="caption">Figura 2: Aba Appearance</p>
 </div>
-<p>Não deu certo? Pode entrar em contato através dos canais disponibilizados na aba <strong>Sobre o autor</strong> ou pesquise o erro no forum <em>stackoverflow</em>.</p>
+<p>Não deu certo? Pode entrar em contato através dos canais
+disponibilizados na aba <strong>Sobre o autor</strong> ou pesquise o
+erro no forum <em>stackoverflow</em>.</p>
 </div>
 <div id="importando-dados-no-r" class="section level1">
 <h1>Importando dados no R</h1>
-<p>2021 | 12 | 15 Last compiled: 2022-03-21</p>
-<p>Conforme você for aprofundando na trabalho com o R, vai acabar tendo de utilizar de bases de dados externas ao R, ou seja, com dados obtidos em portais e eles virão em vários formatos. Vamos aprender algumas funções e pacotes para que você importe o seu arquivo com êxito e não te traga dor de cabeça no futuro!</p>
+<p>2021 | 12 | 15 Last compiled: 2022-08-14</p>
+<p>Conforme você for aprofundando na trabalho com o R, vai acabar tendo
+de utilizar de bases de dados externas ao R, ou seja, com dados obtidos
+em portais e eles virão em vários formatos. Vamos aprender algumas
+funções e pacotes para que você importe o seu arquivo com êxito e não te
+traga dor de cabeça no futuro!</p>
 <div id="arquivo-.csv" class="section level2">
 <h2>Arquivo .csv</h2>
-<p>Esse tipo de arquivo vem da expressão “comma separated values”, em um bom português: “valores separados por vírgula”. Aqui a vírgula faz o papel do separador de colunas (veremos que o ponto-e-vírgula também pode fazer esse papel nos arquivos .csv).</p>
-<p>O primeiro passo a lidar com esse tipo de arquivo é fazer sua <strong>visualização</strong> no Bloco de Notas. Você <u>NÃO</u> deve alterar o arquivo, apenas visualize e extraia informações que te ajudarão a importá-lo.</p>
-<p>Como exemplo, irei utilizar um arquivo contendo dados de qualidade do ar para a estação Delegacia Amazonas (Belo Horizonte) de 2019.</p>
+<p>Esse tipo de arquivo vem da expressão “comma separated values”, em um
+bom português: “valores separados por vírgula”. Aqui a vírgula faz o
+papel do separador de colunas (veremos que o ponto-e-vírgula também pode
+fazer esse papel nos arquivos .csv).</p>
+<p>O primeiro passo a lidar com esse tipo de arquivo é fazer sua
+<strong>visualização</strong> no Bloco de Notas. Você <u>NÃO</u> deve
+alterar o arquivo, apenas visualize e extraia informações que te
+ajudarão a importá-lo.</p>
+<p>Como exemplo, irei utilizar um arquivo contendo dados de qualidade do
+ar para a estação Delegacia Amazonas (Belo Horizonte) de 2019.</p>
 <p>A Figura abaixo exibe o arquivo aberto no Bloco de Notas.</p>
 <div class="figure">
-<img src="Arquivos\Importação\csv%20foto.JPG" alt="" />
+<img src="Arquivos/Importa%C3%A7%C3%A3o/csv%20foto.JPG" alt="" />
 <p class="caption">Figura 3: Arquivo aberto no Bloco de Notas</p>
 </div>
-<p>Aqui podemos denotrar que o arquivo possui cabeçalho, o ponto-e-vírgula separa as colunas e a vírgula separa os decimais. São esses pontos que devem ser observados aqui.</p>
-<p>Vamos para a primeira função. Essa é a <em>read.table</em> e é a <em>função-mãe</em> de outras como <em>read.csv</em> e <em>read.csv2</em>.</p>
+<p>Aqui podemos denotrar que o arquivo possui cabeçalho, o
+ponto-e-vírgula separa as colunas e a vírgula separa os decimais. São
+esses pontos que devem ser observados aqui.</p>
+<p>Vamos para a primeira função. Essa é a <em>read.table</em> e é a
+<em>função-mãe</em> de outras como <em>read.csv</em> e
+<em>read.csv2</em>.</p>
 <pre class="r"><code># dê um help na função e leia
-?read.table
-
-#aqui está o script de importação e será explicado abaixo
+?read.table</code></pre>
+<pre class="r"><code>#aqui está o script de importação e será explicado abaixo
 
 dado&lt;-read.table(file = &quot;Arquivos/Importação/planilha2019.csv&quot;, header = TRUE,sep = &quot;;&quot;,dec = &quot;,&quot;)</code></pre>
-<p>O argumento <strong>file</strong> recebe, como <em>string</em>, o caminho no qual está o arquivo (<u><strong>note que é necessário adicionar a extensão do arquivo</strong></u> - você encontra na janela propriedades do arquivo). Ao trabalhar como projetos você pode simplesmente inserir as aspas duplas e teclar TAB para procurar de forma mais ágil o caminho do arquivo. <strong>header</strong> é um argumento lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo como o cabeçalho, se receber FALSE a primeira linha será tratada como um dado normal. Os argumentos <strong>sep</strong> e <strong>dec</strong> recebem, como <em>string</em> os caracteres de separação de colunas e decimais, respectivamente.</p>
+<p>O argumento <strong>file</strong> recebe, como <em>string</em>, o
+caminho no qual está o arquivo (<u><strong>note que é necessário
+adicionar a extensão do arquivo</strong></u> - você encontra na janela
+propriedades do arquivo). Ao trabalhar como projetos você pode
+simplesmente inserir as aspas duplas e teclar TAB para procurar de forma
+mais ágil o caminho do arquivo. <strong>header</strong> é um argumento
+lógico, que ao receber TRUE assume a <u>primeira linha</u> do arquivo
+como o cabeçalho, se receber FALSE a primeira linha será tratada como um
+dado normal. Os argumentos <strong>sep</strong> e <strong>dec</strong>
+recebem, como <em>string</em> os caracteres de separação de colunas e
+decimais, respectivamente.</p>
 <p>Vamos observar o objeto <strong>dado</strong>:</p>
 <pre class="r"><code>head(x = dado, n = 6)</code></pre>
 <pre><code>##               date PM10  NO2    O3  SO2 PM25    CO  TEMP     DV  PP     PA   VV
@@ -470,8 +581,11 @@ dado&lt;-read.table(file = &quot;Arquivos/Importação/planilha2019.csv&quot;, h
 ## 4  0 89  NA NA
 ## 5  0 87  NA NA
 ## 6  0 93  NA NA</code></pre>
-<p>Nota que <em>n</em> é o número de linhas do objeto que selecionei para visualizar.</p>
-<p>Você pode utilizar a função <strong>read.csv2</strong> para importar o mesmo arquivo. Mas qual a diferença? Nenhuma! O que temos aqui é apenas a “definição de argumentos defaults”. Veja:</p>
+<p>Nota que <em>n</em> é o número de linhas do objeto que selecionei
+para visualizar.</p>
+<p>Você pode utilizar a função <strong>read.csv2</strong> para importar
+o mesmo arquivo. Mas qual a diferença? Nenhuma! O que temos aqui é
+apenas a “definição de argumentos defaults”. Veja:</p>
 <pre class="r"><code>dado&lt;-read.csv2(file = &quot;Arquivos/Importação/planilha2019.csv&quot;)
 head(x = dado, n = 6)</code></pre>
 <pre><code>##               date PM10  NO2    O3  SO2 PM25    CO  TEMP     DV  PP     PA   VV
@@ -488,22 +602,27 @@ head(x = dado, n = 6)</code></pre>
 ## 4  0 89  NA NA
 ## 5  0 87  NA NA
 ## 6  0 93  NA NA</code></pre>
-<p>Basicamente, o mesmo resultado. Portanto, há várias formas de importar o mesmo arquivo. Definir os argumentos ajuda a garantir uma importação mais detalhada. Você pode usar a função <em>read.table</em> para importar outros tipos de arquivos, como .txt.</p>
+<p>Basicamente, o mesmo resultado. Portanto, há várias formas de
+importar o mesmo arquivo. Definir os argumentos ajuda a garantir uma
+importação mais detalhada. Você pode usar a função <em>read.table</em>
+para importar outros tipos de arquivos, como .txt.</p>
 </div>
 <div id="planilhas-do-excel" class="section level2">
 <h2>Planilhas do Excel</h2>
-<p>Aqui vamos precisar de pacote específico. Existem vários, entretanto iremos aprender a importar através de uma função do seguinte pacote:</p>
+<p>Aqui vamos precisar de pacote específico. Existem vários, entretanto
+iremos aprender a importar através de uma função do seguinte pacote:</p>
 <pre class="r"><code>install.packages(&quot;readxl&quot;)</code></pre>
-<p>Aqui vamos trabalhar com um arquivo de dados meteorológicos de Lavras-MG.</p>
+<p>Aqui vamos trabalhar com um arquivo de dados meteorológicos de
+Lavras-MG.</p>
 <pre class="r"><code>#Carregando o pacote
 library(readxl)
 
-#help na função
-?read_excel
-
 #importando
 dado&lt;-read_excel(path = &quot;Arquivos/Importação/LAVRAS (83687) (2) (1).xlsx&quot;)</code></pre>
-<p>Aqui bastou apenas definir o argumento <em>path</em> que é igual ao argumento <em>file</em> da função <em>read.table</em>.</p>
+<pre class="r"><code>#help na função
+?read_excel</code></pre>
+<p>Aqui bastou apenas definir o argumento <em>path</em> que é igual ao
+argumento <em>file</em> da função <em>read.table</em>.</p>
 <p>Vamos visualizar parte do arquivo:</p>
 <pre class="r"><code>head(x = dado, n = 6)</code></pre>
 <pre><code>## # A tibble: 6 x 12
@@ -519,20 +638,26 @@ dado&lt;-read_excel(path = &quot;Arquivos/Importação/LAVRAS (83687) (2) (1).xl
 ## #   `Dir. Vento (m/s)` &lt;dbl&gt;, `Nebulosidade (Decimos)` &lt;dbl&gt;,
 ## #   `Insolacao (h)` &lt;dbl&gt;, `Temp. Max. [Diaria] (h)` &lt;dbl&gt;,
 ## #   `Temp. Min. [Diaria] (h)` &lt;dbl&gt;, `Chuva [Diaria] (mm)` &lt;dbl&gt;</code></pre>
-<p>Caso seu arquivo .csv ou .xlsx contenha linhas de texto antes do dado em sim, basta “pular” a quantidade de linhas através do argumento <em>skip</em> de suas respectivas funções.</p>
+<p>Caso seu arquivo .csv ou .xlsx contenha linhas de texto antes do dado
+em sim, basta “pular” a quantidade de linhas através do argumento
+<em>skip</em> de suas respectivas funções.</p>
 <p>Veja um aplicação do argumento <em>skip</em> abaixo:</p>
 <pre class="r"><code>dado&lt;-read.csv2(file = &quot;Arquivos/Importação/SOROCABA (83851).csv&quot;)
 
 head(x = dado, n = 6)</code></pre>
 <blockquote>
-<p>Error in read.table(file = file, header = header, sep = sep, quote = quote, : more columns than column names</p>
+<p>Error in read.table(file = file, header = header, sep = sep, quote =
+quote, : more columns than column names</p>
 </blockquote>
-<p>Observe que ocorreu um erro. Basicamente ele “reclama” que há mais colunas do que nomes para ela. Vamos observar o arquivo no Bloco de Notas:</p>
+<p>Observe que ocorreu um erro. Basicamente ele “reclama” que há mais
+colunas do que nomes para ela. Vamos observar o arquivo no Bloco de
+Notas:</p>
 <div class="figure">
-<img src="Arquivos\Importação\csv%20foto%202.JPG" alt="" />
+<img src="Arquivos/Importa%C3%A7%C3%A3o/csv%20foto%202.JPG" alt="" />
 <p class="caption">Figura 4: Arquivo aberto no Bloco de Notas</p>
 </div>
-<p>Podemos ver que há uma linha antes do dados, vamos retirá-la com o argumento <em>skip</em>.</p>
+<p>Podemos ver que há uma linha antes do dados, vamos retirá-la com o
+argumento <em>skip</em>.</p>
 <pre class="r"><code>dado&lt;-read.csv2(file = &quot;Arquivos/Importação/SOROCABA (83851).csv&quot;,skip = 1)
 
 head(x = dado, n = 6)</code></pre>
@@ -558,18 +683,22 @@ head(x = dado, n = 6)</code></pre>
 ## 5                      NA                    18.6                   0 NA
 ## 6                      NA                      NA                  NA NA</code></pre>
 <p>Observe que agora deu certo!</p>
-<p>Na próxima postagem veremos como exportar dados para .csv e .xlsx.</p>
+<p>Na próxima postagem veremos como exportar dados para .csv e
+.xlsx.</p>
 </div>
 </div>
 <div id="exportando-dados-no-r" class="section level1">
 <h1>Exportando dados no R</h1>
-<p>2021 | 12 | 16 Last compiled: 2022-03-21</p>
-<p>Agora que sabemos como se importam dados no R, é importante saber exportar. Para isso, vamos utilizar um dos <em>datasets</em> presentes no R.</p>
+<p>2021 | 12 | 16 Last compiled: 2022-08-14</p>
+<p>Agora que sabemos como se importam dados no R, é importante saber
+exportar. Para isso, vamos utilizar um dos <em>datasets</em> presentes
+no R.</p>
 <p>Podemos verificar os datasets através do código:</p>
 <pre class="r"><code>library(help = &quot;datasets&quot;)</code></pre>
 <p>Aqui iremos usar a matriz WorldPhones:</p>
 <pre class="r"><code>?WorldPhones</code></pre>
-<p>Esse <em>dataset</em> contém o número de telefones de várias partes do mundo, em milhões. Vamos visualizar antes de exportar:</p>
+<p>Esse <em>dataset</em> contém o número de telefones de várias partes
+do mundo, em milhões. Vamos visualizar antes de exportar:</p>
 <pre class="r"><code>WorldPhones</code></pre>
 <pre><code>##      N.Amer Europe Asia S.Amer Oceania Africa Mid.Amer
 ## 1951  45939  21574 2876   1815    1646     89      555
@@ -583,13 +712,18 @@ head(x = dado, n = 6)</code></pre>
 <h2>Exportando em .csv</h2>
 <p>Aqui iremos utilizar a função <em>write.table</em>:</p>
 <pre class="r"><code>?write.table</code></pre>
-<p>Habitue-se a ler os <em>helps</em> das funções <u>sempre</u> que for utilizar uma!</p>
+<p>Habitue-se a ler os <em>helps</em> das funções <u>sempre</u> que for
+utilizar uma!</p>
 <p>Vamos aprender:</p>
 <pre class="r"><code>write.table(x = WorldPhones,file = &quot;Arquivos/Exportação/WorldPhones.csv&quot;,sep = &quot;;&quot;,dec = &quot;,&quot;,row.names = FALSE)</code></pre>
-<p>O argumento <em>x</em> recebe o objeto que será exportado e <em>row.names</em> é um argumento que introduz o “nome” das linhas no arquivo exportado, acrescentando uma coluna ao mesmo. Os demais argumentos funcionam de forma análoga ao explicitado na seção de <strong>Importação</strong> acima.</p>
+<p>O argumento <em>x</em> recebe o objeto que será exportado e
+<em>row.names</em> é um argumento que introduz o “nome” das linhas no
+arquivo exportado, acrescentando uma coluna ao mesmo. Os demais
+argumentos funcionam de forma análoga ao explicitado na seção de
+<strong>Importação</strong> acima.</p>
 <p>Vamos ver o arquivo exportado:</p>
 <div class="figure">
-<img src="Arquivos\Exportação\csv.JPG" alt="" />
+<img src="Arquivos/Exporta%C3%A7%C3%A3o/csv.JPG" alt="" />
 <p class="caption">Figura 5: Arquivo aberto no Bloco de Notas</p>
 </div>
 <p>Exportaremos o mesmo <em>dataset</em>, agora em .xlsx:</p>
@@ -602,9 +736,11 @@ head(x = dado, n = 6)</code></pre>
 <pre class="r"><code>library(openxlsx)</code></pre>
 <p>Vamos exportar:</p>
 <pre class="r"><code>openxlsx::write.xlsx(x = as.data.frame(WorldPhones),file = &quot;Arquivos/Exportação/WorldPhones.xlsx&quot;)</code></pre>
-<p>Note: convertemos <em>WorldPhones</em> em <em>dataframe</em>, pois o mesmo é uma <em>matrix</em> e a função aceita apenas um <em>dataframe</em> ou uma list no argumento <em>x</em>.</p>
+<p>Note: convertemos <em>WorldPhones</em> em <em>dataframe</em>, pois o
+mesmo é uma <em>matrix</em> e a função aceita apenas um
+<em>dataframe</em> ou uma list no argumento <em>x</em>.</p>
 <div class="figure">
-<img src="Arquivos\Exportação\xlsx.JPG" style="width:70.0%" alt="" />
+<img src="Arquivos/Exporta%C3%A7%C3%A3o/xlsx.JPG" style="width:70.0%" alt="" />
 <p class="caption">Figura 6: Arquivo aberto no Bloco de Notas</p>
 </div>
 <p>Tivemos sucesso na exportação! Até o próximo tópico!!</p>
@@ -612,27 +748,64 @@ head(x = dado, n = 6)</code></pre>
 </div>
 <div id="deixe-seu-script-prático" class="section level1">
 <h1>Deixe seu script prático</h1>
-<p>2022 | 3 | 20 Last compiled: 2022-03-21</p>
-<p>Trabalhar com R se torna uma tarefa um pouco mais fácil quando se usa <em>scripts</em>, porém pode virar um problema, caso você seja desorganizado. As dicas abaixo são compiladas do vídeo <a href="https://www.youtube.com/watch?v=V5srYcnDowA">10 Good Coding Practices for Data Science</a>.</p>
+<p>2022 | 3 | 20 Last compiled: 2022-08-14</p>
+<p>Trabalhar com R se torna uma tarefa um pouco mais fácil quando se usa
+<em>scripts</em>, porém pode virar um problema, caso você seja
+desorganizado. As dicas abaixo são compiladas do vídeo <a
+href="https://www.youtube.com/watch?v=V5srYcnDowA">10 Good Coding
+Practices for Data Science</a>.</p>
 <p><strong>1) Defina o objetivo do código</strong></p>
-<p>Antes de entrar no mérito desse tópico, leia o item <a href="https://arthurboari.github.io/ArthurLearnsR/Journal.html#Caminho_absoluto_versus_caminho_relativo">Caminho absoluto versus caminho relativo</a> acima, veja que trabalhar com projetos no R irá facilitar a sua vida e já deixar os <em>scripts</em> organizados.</p>
-<p>Mesmo que você não irá compartilhar o seu <em>script</em> com alguém, é sempre bom saber o que está sendo feito ali. Geralmente, após alguns dias sem ter contato com qualquer material, esquecemos o conteúdo dele. Portanto, mantenha tudo organizado.</p>
-<p>Não tenha preguiça de usar vários <em>scripts</em> para uma análise em específico. Por exemplo, ao desenvolver um trabalho que envolva análise de dados de qualidade do ar, mantenha: <em>um script para cada estação, um script modelo com o passo-a-passo a ser realizado, um script para elaboração de mapas, um script para as análises de estatísticas, entre outros</em>.</p>
-<p>Definir esse objetivo é importante, pois irá te guiar em relação ao que precisa ser feito. Faça um <em>brainstorming</em> dos passos a serem realizados, e começe a desenvolver o código”</p>
-<p><strong>2) Minimizar o que (inevitavelmente) precisará de alteração</strong></p>
-<p>Durante o desenvolvimento do código e das análises, os códigos podem mudar. Sejam dados a serem importados (e seus caminhos), sejam datas ou outros objetos.</p>
-<p><strong>3) Trabalhar de cima para baixo, não para a direita</strong></p>
-<p>Aqui, a sugestão é de escrever sequencialmente o código, de forma a executá-lo <strong>de cima para baixo</strong>, sem ficar <strong>indo-e-voltando</strong>. Mantenha uma lógica e evite escrever vários códigos em uma mesma linha, habitue-se a escrever verticalmente.</p>
+<p>Antes de entrar no mérito desse tópico, leia o item <a
+href="https://arthurboari.github.io/ArthurLearnsR/Journal.html#Caminho_absoluto_versus_caminho_relativo">Caminho
+absoluto versus caminho relativo</a> acima, veja que trabalhar com
+projetos no R irá facilitar a sua vida e já deixar os <em>scripts</em>
+organizados.</p>
+<p>Mesmo que você não irá compartilhar o seu <em>script</em> com alguém,
+é sempre bom saber o que está sendo feito ali. Geralmente, após alguns
+dias sem ter contato com qualquer material, esquecemos o conteúdo dele.
+Portanto, mantenha tudo organizado.</p>
+<p>Não tenha preguiça de usar vários <em>scripts</em> para uma análise
+em específico. Por exemplo, ao desenvolver um trabalho que envolva
+análise de dados de qualidade do ar, mantenha: <em>um script para cada
+estação, um script modelo com o passo-a-passo a ser realizado, um script
+para elaboração de mapas, um script para as análises de estatísticas,
+entre outros</em>.</p>
+<p>Definir esse objetivo é importante, pois irá te guiar em relação ao
+que precisa ser feito. Faça um <em>brainstorming</em> dos passos a serem
+realizados, e começe a desenvolver o código”</p>
+<p><strong>2) Minimizar o que (inevitavelmente) precisará de
+alteração</strong></p>
+<p>Durante o desenvolvimento do código e das análises, os códigos podem
+mudar. Sejam dados a serem importados (e seus caminhos), sejam datas ou
+outros objetos.</p>
+<p><strong>3) Trabalhar de cima para baixo, não para a
+direita</strong></p>
+<p>Aqui, a sugestão é de escrever sequencialmente o código, de forma a
+executá-lo <strong>de cima para baixo</strong>, sem ficar
+<strong>indo-e-voltando</strong>. Mantenha uma lógica e evite escrever
+vários códigos em uma mesma linha, habitue-se a escrever
+verticalmente.</p>
 <p><strong>4) Usar variável descritiva e nomes de funções</strong></p>
-<p>Os objetos recebem nomes, e esses devem ser coerentes com o que está sendo realizado, de forma a ser facilmente detectado a motivação daquele código. Vamos supor a aplicação do teste de Mann-Kendall nos dados da estação MG.Aven.Cont (Avenida do Contorno):</p>
+<p>Os objetos recebem nomes, e esses devem ser coerentes com o que está
+sendo realizado, de forma a ser facilmente detectado a motivação daquele
+código. Vamos supor a aplicação do teste de Mann-Kendall nos dados da
+estação MG.Aven.Cont (Avenida do Contorno):</p>
 <pre class="r"><code>library(trend)
 MG.Aven.Cont&lt;-seq(from = 20, to = 300, by = 2) #dados sequenciais
 MK.MG.Aven.Cont&lt;-trend::mk.test(MG.Aven.Cont)</code></pre>
 <p>Atribua nomes simples e que tenham conteúdo!</p>
 <p><strong>5) Utilizar funções em vez de repetir o código</strong></p>
-<p>A depender do que está sendo realizado, há a necessidade de se repetir várias partes do código. Para simplificar, reduza-as em funções e poupe espaço no código! Poupe também tempo e saúde mental: caso precise alterar algo, fazê-lo na função irá poupá-lo de fazer ao longo do script.</p>
-<p><strong>6) Mas não exagere com as funções de encadeamento</strong></p>
-<p>Prefira criar funções simples e curtas ao invés de funções longas. Você pode se perder no emaranhado de código. Usar o operador <strong>pipe</strong> do pacote <em>dplyr</em> do <em>tidyverse</em> pode simplificar e melhorar a aparência e lógica do código.</p>
+<p>A depender do que está sendo realizado, há a necessidade de se
+repetir várias partes do código. Para simplificar, reduza-as em funções
+e poupe espaço no código! Poupe também tempo e saúde mental: caso
+precise alterar algo, fazê-lo na função irá poupá-lo de fazer ao longo
+do script.</p>
+<p><strong>6) Mas não exagere com as funções de
+encadeamento</strong></p>
+<p>Prefira criar funções simples e curtas ao invés de funções longas.
+Você pode se perder no emaranhado de código. Usar o operador
+<strong>pipe</strong> do pacote <em>dplyr</em> do <em>tidyverse</em>
+pode simplificar e melhorar a aparência e lógica do código.</p>
 <pre class="r"><code>sqrt(log(max(c(5,4,9))))</code></pre>
 <pre><code>## [1] 1.482304</code></pre>
 <pre class="r"><code># Com o operador pipe
@@ -642,13 +815,22 @@ c(5,4,9) %&gt;%
   log()%&gt;%
   sqrt()</code></pre>
 <pre><code>## [1] 1.482304</code></pre>
-<p>Sem o <em>pipe</em> você se perderia no monte de parênteses utilizados.</p>
+<p>Sem o <em>pipe</em> você se perderia no monte de parênteses
+utilizados.</p>
 <p><strong>7) Preste atenção aos tipos de dados</strong></p>
-<p>Quando, ao executar um código, for gerado um erro, verifique se está sendo aplicado ao tipo certo de dado. Por exemplo, obter a média de um vetor de caracteres irá resultar em erro. Conhecer o tipo de dados que está trabalhando é de suma importância!</p>
+<p>Quando, ao executar um código, for gerado um erro, verifique se está
+sendo aplicado ao tipo certo de dado. Por exemplo, obter a média de um
+vetor de caracteres irá resultar em erro. Conhecer o tipo de dados que
+está trabalhando é de suma importância!</p>
 <p><strong>8) Fornecer documentação e comentários adequados</strong></p>
-<p>Sempre deixe comentários nos <em>scripts</em>. Nunca é demais deixar explícito o que está sendo feito nas linhas abaixo.</p>
-<p><strong>9) Verificar os últimos e melhores pacotes para a tarefa</strong></p>
-<p>Com o rápido desenvolvimento de pacotes em R, há chances de que as análises que você precisa fazer já estejam alocadas em um pacote específico. Faça buscas por eles, e não perca tempo tendo de programar tudo sendo que já existem funções para isso!</p>
+<p>Sempre deixe comentários nos <em>scripts</em>. Nunca é demais deixar
+explícito o que está sendo feito nas linhas abaixo.</p>
+<p><strong>9) Verificar os últimos e melhores pacotes para a
+tarefa</strong></p>
+<p>Com o rápido desenvolvimento de pacotes em R, há chances de que as
+análises que você precisa fazer já estejam alocadas em um pacote
+específico. Faça buscas por eles, e não perca tempo tendo de programar
+tudo sendo que já existem funções para isso!</p>
 <p><strong>10) Teste à medida que vai</strong></p>
 <p>Não há outra forma, pratique e verifique o que funciona ou não.</p>
 </div>

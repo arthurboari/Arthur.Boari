@@ -14,7 +14,7 @@
 
 <title>Learning R: base</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -318,7 +318,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Arthur Learns R</a>
+      <a class="navbar-brand" href="index.html">Arthur Boari</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -355,12 +355,15 @@ div.tocify {
 </div>
 
 
-<p>O conteúdo desta página do blog é originado do curso <a href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn ggplot2 in R for Data Visualization - 2021</a>.</p>
+<p>O conteúdo desta página do blog é originado do curso <a
+href="https://www.udemy.com/course/learn-ggplot2-in-r-for-data-viz/">Learn
+ggplot2 in R for Data Visualization - 2021</a>.</p>
 <div id="comandos-utéis" class="section level1">
 <h1>Comandos utéis</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-03-21</p>
+<p>2022 | 01 | 10 Last compiled: 2022-08-14</p>
 <p>Nessa seção iremos compilar algumas funções úteis.</p>
-<p>A primeira função é <em>dir</em>. Ela listará os arquivos presentes no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:</p>
+<p>A primeira função é <em>dir</em>. Ela listará os arquivos presentes
+no nosso diretório de projeto ou a pasta. Veja o exemplo abaixo:</p>
 <pre class="r"><code>getwd() #essa função descreve o caminho do meu diretório de trabalho</code></pre>
 <pre><code>## [1] &quot;C:/Users/aboar/Documents/GitHub/ArthurLearnsR&quot;</code></pre>
 <pre class="r"><code>dir() #aqui teremos a lista com os arquivos e pastas do diretório de trabalho</code></pre>
@@ -372,7 +375,8 @@ div.tocify {
 ## [11] &quot;LabJournalWebsite.Rproj&quot; &quot;Learn.Rmd&quot;              
 ## [13] &quot;Links.Rmd&quot;               &quot;openair.Rmd&quot;            
 ## [15] &quot;README.md&quot;               &quot;site_libs&quot;</code></pre>
-<p>A segunda função é <em>ls</em>, que lista os objetos presentes no nosso ambiente global (Global Environment).</p>
+<p>A segunda função é <em>ls</em>, que lista os objetos presentes no
+nosso ambiente global (Global Environment).</p>
 <pre class="r"><code>ls() #essa função descreve os objetos presentes no Global Environment</code></pre>
 <pre><code>##  [1] &quot;a&quot;                &quot;b&quot;                &quot;dado&quot;             &quot;lista&quot;           
 ##  [5] &quot;lista2&quot;           &quot;lista3&quot;           &quot;lista4&quot;           &quot;lista5&quot;          
@@ -385,7 +389,8 @@ div.tocify {
 ##  [9] &quot;listaconcatenada&quot; &quot;m&quot;                &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;    
 ## [13] &quot;MK.MG.Aven.Cont&quot;  &quot;v&quot;                &quot;v1&quot;               &quot;v2&quot;              
 ## [17] &quot;vetor&quot;            &quot;x&quot;                &quot;y&quot;</code></pre>
-<p>A terceira função é <em>remove</em>, e será útil para remover algum objeto do Global Environment.</p>
+<p>A terceira função é <em>remove</em>, e será útil para remover algum
+objeto do Global Environment.</p>
 <pre class="r"><code>#Vamos criar dois objetos
 a&lt;-1
 b&lt;-2
@@ -414,7 +419,9 @@ objects()</code></pre>
 ##  [9] &quot;medicamento&quot;      &quot;MG.Aven.Cont&quot;     &quot;MK.MG.Aven.Cont&quot;  &quot;v&quot;               
 ## [13] &quot;v1&quot;               &quot;v2&quot;               &quot;vetor&quot;            &quot;x&quot;               
 ## [17] &quot;y&quot;</code></pre>
-<p>A quarta função é <em>print</em>, e como o nome sugere, irá imprimir no Console algum texto ou conteúdo de alguma variável. Veja o exemplo abaixo:</p>
+<p>A quarta função é <em>print</em>, e como o nome sugere, irá imprimir
+no Console algum texto ou conteúdo de alguma variável. Veja o exemplo
+abaixo:</p>
 <pre class="r"><code>x&lt;-&quot;hello world!&quot;
 print(x)</code></pre>
 <pre><code>## [1] &quot;hello world!&quot;</code></pre>
@@ -428,27 +435,39 @@ cat(&quot;o valor da área do triângulo é&quot;, 135, &quot;cm^2&quot;)</code>
 <pre><code>## o valor da área do triângulo é 135 cm^2</code></pre>
 <pre class="r"><code>print(paste(&quot;o valor da área do triângulo é&quot;, 135, &quot;cm^2&quot;))</code></pre>
 <pre><code>## [1] &quot;o valor da área do triângulo é 135 cm^2&quot;</code></pre>
-<p>A quinta função é a <em>install.packages</em>, que instalará os pacotes no nosso R. O nome do pacote deve ser uma <em>string</em>, ou seja, texto!</p>
+<p>A quinta função é a <em>install.packages</em>, que instalará os
+pacotes no nosso R. O nome do pacote deve ser uma <em>string</em>, ou
+seja, texto!</p>
 <pre class="r"><code>install.packages(&quot;ggplot2&quot;)</code></pre>
-<p>A sexta função é <em>library</em>, que carregará o pacote instalado.</p>
+<p>A sexta função é <em>library</em>, que carregará o pacote
+instalado.</p>
 <pre class="r"><code>library(ggplot2)
 require(ggplot2)</code></pre>
-<p>A diferença entre <em>library</em> e <em>require</em> é que a segunda é a mais indicada pára implementação de funções que necessitam de funções de outros pacotes para operar.</p>
+<p>A diferença entre <em>library</em> e <em>require</em> é que a segunda
+é a mais indicada pára implementação de funções que necessitam de
+funções de outros pacotes para operar.</p>
 </div>
 <div id="estruturas-no-r" class="section level1">
 <h1>ESTRUTURAS NO R:</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-03-21</p>
-<p>As estruturas do R podem ser classificadas quanto ao tipo de variável e quanto a estrutura utilizada.</p>
+<p>2022 | 01 | 10 Last compiled: 2022-08-14</p>
+<p>As estruturas do R podem ser classificadas quanto ao tipo de variável
+e quanto a estrutura utilizada.</p>
 <ul>
 <li>Quanto ao tipo de variável/classe:
 <ul>
 <li>Character (ou charactere/texto);</li>
-<li>Numeric (numérico - seja discreto (integer, e.g. 1, 2,3) ou contínuo, e.g. 1.2,3.7,5.5);</li>
+<li>Numeric (numérico - seja discreto (integer, e.g. 1, 2,3) ou
+contínuo, e.g. 1.2,3.7,5.5);</li>
 <li>Complex (números complexos, e.g. 2 + 5i);</li>
 <li>Logical (lógicos ou booleanos, e.g. TRUE ou FALSE / 1 ou 0).</li>
 </ul></li>
 </ul>
-<p>Note: o R entenderá sempre qualquer variável numérico como do tipo <em>double</em>, ou seja, tratará como discreto mesmo que não há informações sobre osa decimais. Para assimilar um número inteiro, utilize o caractere <strong>L</strong> após o número, como demonstrado abaixo. Para mais detalhes, leia o conteúdo desta <a href="https://faculty.nps.edu/sebuttre/home/R/data.html">página</a>.</p>
+<p>Note: o R entenderá sempre qualquer variável numérico como do tipo
+<em>double</em>, ou seja, tratará como discreto mesmo que não há
+informações sobre osa decimais. Para assimilar um número inteiro,
+utilize o caractere <strong>L</strong> após o número, como demonstrado
+abaixo. Para mais detalhes, leia o conteúdo desta <a
+href="https://faculty.nps.edu/sebuttre/home/R/data.html">página</a>.</p>
 <pre class="r"><code>x&lt;-23L
 print(x)</code></pre>
 <pre><code>## [1] 23</code></pre>
@@ -463,7 +482,8 @@ print(y)</code></pre>
 <pre><code>## [1] &quot;double&quot;</code></pre>
 <pre class="r"><code>class(y)</code></pre>
 <pre><code>## [1] &quot;numeric&quot;</code></pre>
-<p>Observe que as duas formas produzem o mesmo resultado no console, mas a forma de armzenagem é diferente.</p>
+<p>Observe que as duas formas produzem o mesmo resultado no console, mas
+a forma de armzenagem é diferente.</p>
 <ul>
 <li><p>Quanto ao tipo de estrutura:</p>
 <ul>
@@ -477,11 +497,13 @@ print(y)</code></pre>
 </div>
 <div id="vetores" class="section level1">
 <h1>Vetores</h1>
-<p>2022 | 01 | 10 Last compiled: 2022-03-21</p>
-<p>Podem ser definidos como <strong>uma coleção de elementos de uma mesma classe</strong> e podem ser criados de duas maneiras:</p>
+<p>2022 | 01 | 10 Last compiled: 2022-08-14</p>
+<p>Podem ser definidos como <strong>uma coleção de elementos de uma
+mesma classe</strong> e podem ser criados de duas maneiras:</p>
 <div id="através-da-função-concatenar-c" class="section level2">
 <h2>Através da função concatenar <em>c</em></h2>
-<p>Essa função apenas irá propiciar a assimilação de mais de um valor por vez. Veja o exemplo abaixo:</p>
+<p>Essa função apenas irá propiciar a assimilação de mais de um valor
+por vez. Veja o exemplo abaixo:</p>
 <pre class="r"><code>?c #solicita o *help* da função
 # Note que é a terceira letra do alfabeto na forma minúscula! O R é **case sensitive**, ou seja, *c* e *C* são completamente diferentes e isso vale para qualquer código aplicado ao R.</code></pre>
 <pre class="r"><code>x&lt;-c(1,2,3,4,5,6,7,8,9,10)
@@ -490,7 +512,8 @@ print(x)</code></pre>
 </div>
 <div id="através-da-função-vector" class="section level2">
 <h2>Através da função <em>vector</em></h2>
-<p>Essa função é ideal para quando se necessita de um vetor pré-criado vazio. Veja o exemplo abaixo:</p>
+<p>Essa função é ideal para quando se necessita de um vetor pré-criado
+vazio. Veja o exemplo abaixo:</p>
 <pre class="r"><code>?vector #solicita o *help* da função</code></pre>
 <pre class="r"><code>y&lt;-vector(mode = &quot;numeric&quot;,length = 5)
 print(y)</code></pre>
@@ -504,10 +527,12 @@ y+1</code></pre>
 <h3>Funções úteis ao trabalhar com vetor:</h3>
 <div id="função-is.vector" class="section level4">
 <h4>Função <em>is.vector</em></h4>
-<p>Essa função realiza a checagem do estrutura do objeto a partir da lógica. Observe:</p>
+<p>Essa função realiza a checagem do estrutura do objeto a partir da
+lógica. Observe:</p>
 <pre class="r"><code>is.vector(y)</code></pre>
 <pre><code>## [1] TRUE</code></pre>
-<p>Com o resultado sendo <strong>TRUE</strong>, temos que sim, o objeto <em>y</em> é um vetor.</p>
+<p>Com o resultado sendo <strong>TRUE</strong>, temos que sim, o objeto
+<em>y</em> é um vetor.</p>
 </div>
 <div id="função-as.vector" class="section level4">
 <h4>Função <em>as.vector</em></h4>
@@ -525,13 +550,16 @@ as.vector(x)</code></pre>
 <pre class="r"><code># Os objetos *x* e *as.vector(x)* são iguais?
 all.equal(x, as.vector(x))</code></pre>
 <pre><code>## [1] &quot;names for target but not for current&quot;</code></pre>
-<p>O resultado da última função nos diz que, embora o conteúdo dos vetores sejam iguais, eles se diferenciam quanto a nomeação dos valores.</p>
+<p>O resultado da última função nos diz que, embora o conteúdo dos
+vetores sejam iguais, eles se diferenciam quanto a nomeação dos
+valores.</p>
 </div>
 </div>
 </div>
 <div id="acessando-valores-de-um-vetor" class="section level2">
 <h2>Acessando valores de um vetor</h2>
-<p>Para acessar qualquer valor de um vetor, usamos colchetes (chamamos de <strong>indexação</strong>). Veja o exemplo abaixo:</p>
+<p>Para acessar qualquer valor de um vetor, usamos colchetes (chamamos
+de <strong>indexação</strong>). Veja o exemplo abaixo:</p>
 <pre class="r"><code>#Vamos criar o vetor
 x&lt;-1:10 #aqui os dois pontos significam até, ou seja, irá criar uma sequência de 1 a 10, um-a-um elemento
 print(x)</code></pre>
@@ -559,8 +587,11 @@ y[c(T,F,T)]</code></pre>
 y[2]&lt;-&quot;Resende&quot;
 print(y)</code></pre>
 <pre><code>## [1] &quot;Arthur&quot;  &quot;Resende&quot; &quot;Boari&quot;</code></pre>
-<p>Note: dentro dos conchetes esquevemos a <strong>posição</strong> que almejamos acessar, e não o valor que queremos. Podemos acessar através de um vetor lógico, também.</p>
-<p><strong>COERÇÃO</strong>: ocorre quando se misturam variáveis de diferentes classes em um mesmo objeto. Veja abaixo:</p>
+<p>Note: dentro dos conchetes esquevemos a <strong>posição</strong> que
+almejamos acessar, e não o valor que queremos. Podemos acessar através
+de um vetor lógico, também.</p>
+<p><strong>COERÇÃO</strong>: ocorre quando se misturam variáveis de
+diferentes classes em um mesmo objeto. Veja abaixo:</p>
 <pre class="r"><code>v&lt;- c(1,TRUE) #aqui misturamos numérico com lógico
 v # vemos que converteu TRUE em numérico</code></pre>
 <pre><code>## [1] 1 1</code></pre>
@@ -571,7 +602,8 @@ v # aqui ele converteu a character</code></pre>
 <pre><code>## [1] &quot;FALSE&quot; &quot;TRUE&quot;</code></pre>
 <pre class="r"><code>class(v)</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<p>Veja que o R decidiu a classe do objeto e, por isso, tenha bastante cuidado ao trabalhar com vetores.</p>
+<p>Veja que o R decidiu a classe do objeto e, por isso, tenha bastante
+cuidado ao trabalhar com vetores.</p>
 </div>
 <div id="comparando-vetores" class="section level2">
 <h2>Comparando vetores</h2>
@@ -602,7 +634,8 @@ identical(v1,v2)</code></pre>
 </div>
 <div id="operação-com-vetores" class="section level2">
 <h2>Operação com vetores</h2>
-<p>Utilizando os vetores <em>v1</em> e <em>v2</em> definidos acima, temos:</p>
+<p>Utilizando os vetores <em>v1</em> e <em>v2</em> definidos acima,
+temos:</p>
 <pre class="r"><code>#soma
 v1 + v2 </code></pre>
 <pre><code>##  [1] 11 11 11 11 11 11 11 11 11 11</code></pre>
@@ -643,11 +676,16 @@ v1 + v2</code></pre>
 v&lt;-c(v1,v2)
 print(v)</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
-<p>Quando trabalhamos com vetores de tamanhos diferentes, os elementos do menor vetor serão repetidos até que os vetores tenham o mesmo tamanho. E esse comportamento é automático. Mais uma vez o R toma uma decisão por nós!</p>
+<p>Quando trabalhamos com vetores de tamanhos diferentes, os elementos
+do menor vetor serão repetidos até que os vetores tenham o mesmo
+tamanho. E esse comportamento é automático. Mais uma vez o R toma uma
+decisão por nós!</p>
 </div>
 <div id="modificando-um-vetor" class="section level2">
 <h2>Modificando um vetor</h2>
-<p>Para modificarmos um vetor, não necessitamos criá-lo novamente. Basta selecionar, através de indexação, o valor a ser alterado e assimilar o novo valor através do operador assimilação (&lt;-).</p>
+<p>Para modificarmos um vetor, não necessitamos criá-lo novamente. Basta
+selecionar, através de indexação, o valor a ser alterado e assimilar o
+novo valor através do operador assimilação (&lt;-).</p>
 <pre class="r"><code># O vetor a ser modificado é o seguinte:
 print(v)</code></pre>
 <pre><code>## [1] 1 2 3 4 5</code></pre>
@@ -668,7 +706,8 @@ print(v)</code></pre>
 </div>
 <div id="ordenando-um-vetor-numérico" class="section level2">
 <h2>Ordenando um vetor numérico</h2>
-<p>Muitas vezes, organizar um vetor é importante para uma análise. Para isso, vamos criar um vetor numérico aleatório.</p>
+<p>Muitas vezes, organizar um vetor é importante para uma análise. Para
+isso, vamos criar um vetor numérico aleatório.</p>
 <pre class="r"><code>#Criando o vetor numérico aleatório
 set.seed(126)
 vetor&lt;-c(6,4,2,1,0)
@@ -692,12 +731,13 @@ order(vetor)</code></pre>
 </div>
 <div id="lists" class="section level1">
 <h1>Lists</h1>
-<p>2022 | 01 | 11 Last compiled: 2022-03-21</p>
-<p>Esse tipo de objeto possibilita a inserção de vários tipos de elementos e estruturas dentro dele. Pode-se agrupar lists, vetores, dataframes, matrizes, etc.</p>
+<p>2022 | 01 | 11 Last compiled: 2022-08-14</p>
+<p>Esse tipo de objeto possibilita a inserção de vários tipos de
+elementos e estruturas dentro dele. Pode-se agrupar lists, vetores,
+dataframes, matrizes, etc.</p>
 <p>Aqui não há coerção.</p>
 <div id="criando-uma-list-função-list" class="section level2">
 <h2>Criando uma list: função <em>list()</em></h2>
-<pre><code>## starting httpd help server ... done</code></pre>
 <pre class="r"><code>#Nomeando os vetores
 lista&lt;-list(nomes = c(&quot;Arthur Boari&quot;,&quot;João da Silva&quot;),
             idades = c(26,62),
@@ -724,9 +764,11 @@ print(lista2)</code></pre>
 ## 
 ## [[3]]
 ## [1] FALSE  TRUE</code></pre>
-<p>Observe que inserimos três vetores: um de caracteres, um numérico e um lógico. Observe ainda que nomeamos cada um dos vetores.</p>
+<p>Observe que inserimos três vetores: um de caracteres, um numérico e
+um lógico. Observe ainda que nomeamos cada um dos vetores.</p>
 </div>
-<div id="acessando-uma-list-via-indexação-por-colchetes" class="section level2">
+<div id="acessando-uma-list-via-indexação-por-colchetes"
+class="section level2">
 <h2>Acessando uma list via indexação por colchetes</h2>
 <p>Para o primeiro exemplo usaremos o objeto <em>lista2</em>:</p>
 <pre class="r"><code>#Observando o objeto
@@ -790,7 +832,8 @@ lista2[[2]]</code></pre>
 <pre class="r"><code>class(lista2[[2]][[2]]) #character</code></pre>
 <pre><code>## [1] &quot;character&quot;</code></pre>
 </div>
-<div id="acessando-uma-list-via-indexação-por-cifrão" class="section level2">
+<div id="acessando-uma-list-via-indexação-por-cifrão"
+class="section level2">
 <h2>Acessando uma list via indexação por cifrão</h2>
 <p>Para o exemplo usaremos o objeto <em>lista</em>:</p>
 <pre class="r"><code>#Observando o objeto
@@ -816,7 +859,8 @@ lista$idades[1]</code></pre>
 </div>
 <div id="atribuindo-nomes" class="section level2">
 <h2>Atribuindo nomes</h2>
-<p>Usando a <em>lista2</em> modificada acima, vamos alterar/nomear os elementos dela.</p>
+<p>Usando a <em>lista2</em> modificada acima, vamos alterar/nomear os
+elementos dela.</p>
 <pre class="r"><code>print(lista2)</code></pre>
 <pre><code>## [[1]]
 ## [[1]]$nomes
@@ -881,7 +925,8 @@ lista2[[&quot;Grupo Controle&quot;]][[&quot;idade&quot;]]</code></pre>
 </div>
 <div id="appending-uma-list" class="section level2">
 <h2>Appending uma list</h2>
-<p>Agora nós queremos inserir um outro elemento na list. Acima mostramos uma forma de fazer, vamos repetir nessa seção.</p>
+<p>Agora nós queremos inserir um outro elemento na list. Acima mostramos
+uma forma de fazer, vamos repetir nessa seção.</p>
 <pre class="r"><code>print(lista2)</code></pre>
 <pre><code>## $`Grupo Experimento`
 ## $`Grupo Experimento`$nomes
@@ -1000,8 +1045,9 @@ print(listaconcatenada)</code></pre>
 </div>
 <div id="matrix" class="section level1">
 <h1>Matrix</h1>
-<p>2022 | 01 | 12 Last compiled: 2022-03-21</p>
-<p>É um agrupamento de vetores, resultando em um objeto com dimensões.</p>
+<p>2022 | 01 | 12 Last compiled: 2022-08-14</p>
+<p>É um agrupamento de vetores, resultando em um objeto com
+dimensões.</p>
 <div id="criando-uma-matrix" class="section level2">
 <h2>Criando uma matrix</h2>
 <p>Usamos a função <em>matrix</em>, como abaixo:</p>
@@ -1014,8 +1060,15 @@ print(listaconcatenada)</code></pre>
 ## [3,]    3    8   13   18   23
 ## [4,]    4    9   14   19   24
 ## [5,]    5   10   15   20   25</code></pre>
-<p>Observe que criamos uma matriz numérica através da sequência unitária de 1 a 25, explicitada no argumento <em>data</em>. Os argumentos <em>ncol</em> e <em>nrow</em> definem o número de colunas e linhas, respectivamente, porém não necessita de definí-los conjuntamente, visto que o R irá completar as informações automaticamente.</p>
-<p>É importante notar que o R preenche a matriz coluna-a-coluna (<strong>columnwise</strong>) - esse é o default, mas caso queiramos que preencha linha-a-linha, usamo o argumento <em>byrow</em>, como abaixo:</p>
+<p>Observe que criamos uma matriz numérica através da sequência unitária
+de 1 a 25, explicitada no argumento <em>data</em>. Os argumentos
+<em>ncol</em> e <em>nrow</em> definem o número de colunas e linhas,
+respectivamente, porém não necessita de definí-los conjuntamente, visto
+que o R irá completar as informações automaticamente.</p>
+<p>É importante notar que o R preenche a matriz coluna-a-coluna
+(<strong>columnwise</strong>) - esse é o default, mas caso queiramos que
+preencha linha-a-linha, usamo o argumento <em>byrow</em>, como
+abaixo:</p>
 <pre class="r"><code>matrix(data = 1:25,
        nrow = 5,
        ncol = 5,
@@ -1026,20 +1079,27 @@ print(listaconcatenada)</code></pre>
 ## [3,]   11   12   13   14   15
 ## [4,]   16   17   18   19   20
 ## [5,]   21   22   23   24   25</code></pre>
-<p>Note: caso a definição dos valores dos argumentos <em>ncol</em> e <em>nrow</em> estejam em desacordo com o tamanho dos dados, alguns efeitos são esperados:</p>
+<p>Note: caso a definição dos valores dos argumentos <em>ncol</em> e
+<em>nrow</em> estejam em desacordo com o tamanho dos dados, alguns
+efeitos são esperados:</p>
 <ul>
 <li>Valores inferiores ao tamanho dos dados:
 <ul>
-<li>Aqui você espera um corte nos dados até a dimensão informada nos argumentos da função <em>matrix</em>;</li>
+<li>Aqui você espera um corte nos dados até a dimensão informada nos
+argumentos da função <em>matrix</em>;</li>
 </ul></li>
 <li>Valores superiores ao tamanho dos dados:
 <ul>
-<li>Aqui você espera uma réplica dos dados até a dimensão informada nos argumentos da função, ou seja, os espaços vazios serão preenchidos com o início dos dados até a última célula vazia disponível.</li>
+<li>Aqui você espera uma réplica dos dados até a dimensão informada nos
+argumentos da função, ou seja, os espaços vazios serão preenchidos com o
+início dos dados até a última célula vazia disponível.</li>
 </ul></li>
 </ul>
 <p>Veja um exemplo:</p>
 <pre class="r"><code>#Dimensões inferiores
 matrix(data = 1:12,nrow = 4,ncol = 2)</code></pre>
+<pre><code>## Warning in matrix(data = 1:12, nrow = 4, ncol = 2): data length differs from
+## size of matrix: [12 != 4 x 2]</code></pre>
 <pre><code>##      [,1] [,2]
 ## [1,]    1    5
 ## [2,]    2    6
@@ -1047,6 +1107,8 @@ matrix(data = 1:12,nrow = 4,ncol = 2)</code></pre>
 ## [4,]    4    8</code></pre>
 <pre class="r"><code>#Dimensões superiores
 matrix(data = 1:12,nrow = 4,ncol = 4)</code></pre>
+<pre><code>## Warning in matrix(data = 1:12, nrow = 4, ncol = 4): data length differs from
+## size of matrix: [12 != 4 x 4]</code></pre>
 <pre><code>##      [,1] [,2] [,3] [,4]
 ## [1,]    1    5    9    1
 ## [2,]    2    6   10    2
@@ -1055,7 +1117,9 @@ matrix(data = 1:12,nrow = 4,ncol = 4)</code></pre>
 </div>
 <div id="alterando-uma-matrix" class="section level2">
 <h2>Alterando uma matrix</h2>
-<p>Assim como em uma list, matrix conseguem ter o nome das dimensões alteradas ou criadas juntamente na função <em>matrix</em>, veja abaixo:</p>
+<p>Assim como em uma list, matrix conseguem ter o nome das dimensões
+alteradas ou criadas juntamente na função <em>matrix</em>, veja
+abaixo:</p>
 <pre class="r"><code>#O argumento *dimnames* recebe uma list com vetores de carateres com os nomes das linhas e das colunas, nessa mesma ordem
 matrix(data = 1:12,nrow = 4,ncol = 3,dimnames = list(rownames = c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;,&quot;r4&quot;),colnames = c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;)))</code></pre>
 <pre><code>##         colnames
@@ -1178,8 +1242,9 @@ print(m)</code></pre>
 </div>
 <div id="array" class="section level1">
 <h1>Array</h1>
-<p>2022 | 01 | 12 Last compiled: 2022-03-21</p>
-<p>São elementos multidimensionais, ou seja, armazenam dados em mais de duas dimensões.</p>
+<p>2022 | 01 | 12 Last compiled: 2022-08-14</p>
+<p>São elementos multidimensionais, ou seja, armazenam dados em mais de
+duas dimensões.</p>
 <div id="criando-um-array" class="section level2">
 <h2>Criando um array</h2>
 <pre class="r"><code>a&lt;-array(data = 1:18,dim = c(3,3,2)) # c(x,y,z)
@@ -1230,7 +1295,9 @@ a[,2,]</code></pre>
 </div>
 <div id="nomeando-um-array" class="section level2">
 <h2>Nomeando um array</h2>
-<p>Com a função <em>dimnames</em>, inserimos uma <em>list</em> com três vetores de caracteres: o primeiro para as linhas, o segundo para as colunas e o terceiro para as matrizes.</p>
+<p>Com a função <em>dimnames</em>, inserimos uma <em>list</em> com três
+vetores de caracteres: o primeiro para as linhas, o segundo para as
+colunas e o terceiro para as matrizes.</p>
 <pre class="r"><code>dimnames(a)&lt;-list(c(&quot;r1&quot;,&quot;r2&quot;,&quot;r3&quot;),c(&quot;c1&quot;,&quot;c2&quot;,&quot;c3&quot;),c(&quot;array 1&quot;,&quot;array 2&quot;))
 print(a)</code></pre>
 <pre><code>## , , array 1
@@ -1250,9 +1317,12 @@ print(a)</code></pre>
 </div>
 <div id="dataframe" class="section level1">
 <h1>Dataframe</h1>
-<p>2022 | 01 | 14 Last compiled: 2022-03-21</p>
-<p>É um “tipo” de matrix - só que agora, cada vetor pode ser de um tipo, e.g. vetores numéricos, de caracteres, lógicos são permitidos em um mesmo objeto.</p>
-<p><strong>Recorde:</strong> objetos do tipo <em>matrix</em>, assim como vetores, permitem <u>apenas</u> um tipo de variável.</p>
+<p>2022 | 01 | 14 Last compiled: 2022-08-14</p>
+<p>É um “tipo” de matrix - só que agora, cada vetor pode ser de um tipo,
+e.g. vetores numéricos, de caracteres, lógicos são permitidos em um
+mesmo objeto.</p>
+<p><strong>Recorde:</strong> objetos do tipo <em>matrix</em>, assim como
+vetores, permitem <u>apenas</u> um tipo de variável.</p>
 <div id="criando-um-dataframe" class="section level2">
 <h2>Criando um dataframe</h2>
 </div>

@@ -14,7 +14,7 @@
 
 <title>Learning R: openair</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
@@ -318,7 +318,7 @@ div.tocify {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">Arthur Learns R</a>
+      <a class="navbar-brand" href="index.html">Arthur Boari</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -355,18 +355,23 @@ div.tocify {
 </div>
 
 
-<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
-<p>Pacote <em>openair</em>: Tools for the Analysis of Air Pollution Data</p>
-<p>Esse pacote é específico para análise de dados de qualidade do ar.</p>
+<p>2022 | 1 | 13 Last compiled: 2022-08-14</p>
+<p>Pacote <em>openair</em>: Tools for the Analysis of Air Pollution
+Data</p>
+<p>Esse pacote é específico para análise de dados de qualidade do
+ar.</p>
 <div id="obtendo-dados-de-qualidade-do-ar" class="section level1">
 <h1>Obtendo dados de qualidade do ar</h1>
-<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
-<p>Tutorial: <a href="https://www.instagram.com/tv/CQGx-5cHv2Y/?utm_source=ig_web_copy_link">dados de qualidade do ar de Minas Gerais - FEAM</a></p>
+<p>2022 | 1 | 13 Last compiled: 2022-08-14</p>
+<p>Tutorial: <a
+href="https://www.instagram.com/tv/CQGx-5cHv2Y/?utm_source=ig_web_copy_link">dados
+de qualidade do ar de Minas Gerais - FEAM</a></p>
 </div>
 <div id="importando-dados-de-qualidade-do-ar" class="section level1">
 <h1>Importando dados de qualidade do ar</h1>
-<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
-<p>Trabalharemos com dados de qualidade do ar para a estação Delegacia Amazonas (Belo Horizonte/MG) para o ano de 2019:</p>
+<p>2022 | 1 | 13 Last compiled: 2022-08-14</p>
+<p>Trabalharemos com dados de qualidade do ar para a estação Delegacia
+Amazonas (Belo Horizonte/MG) para o ano de 2019:</p>
 <pre><code>##               date PM10  NO2    O3  SO2 PM25    CO
 ## 1 01/01/2019 00:30   29 3.37 15.43 0.74   NA 0.934
 ## 2 01/01/2019 01:30   24 3.19 15.13 0.75   NA 0.899
@@ -382,8 +387,10 @@ div.tocify {
 ##  $ SO2 : num  0.74 0.75 0.74 0.76 0.7 1.75 3.61 6.33 6.19 5.89 ...
 ##  $ PM25: int  NA NA 14 11 9 NA NA NA NA 4 ...
 ##  $ CO  : num  0.934 0.899 0.925 0.903 0.665 0.668 0.686 0.664 0.643 0.649 ...</code></pre>
-<p>Para trabalhar com esse pacote, o nome da coluna de data-hora <u>deve</u> ser chamada <strong>date</strong>.</p>
-<p>A coluna <em>date</em> está como caractere, portanto, precisamos transformar para data-hora.</p>
+<p>Para trabalhar com esse pacote, o nome da coluna de data-hora
+<u>deve</u> ser chamada <strong>date</strong>.</p>
+<p>A coluna <em>date</em> está como caractere, portanto, precisamos
+transformar para data-hora.</p>
 <pre class="r"><code>dado$date&lt;-as.POSIXct(dado$date, format=&quot;%d/%m/%Y %H:%M&quot;)</code></pre>
 <pre><code>##                  date PM10  NO2    O3  SO2 PM25    CO
 ## 1 2019-01-01 00:30:00   29 3.37 15.43 0.74   NA 0.934
@@ -400,11 +407,13 @@ div.tocify {
 ##  $ SO2 : num  0.74 0.75 0.74 0.76 0.7 1.75 3.61 6.33 6.19 5.89 ...
 ##  $ PM25: int  NA NA 14 11 9 NA NA NA NA 4 ...
 ##  $ CO  : num  0.934 0.899 0.925 0.903 0.665 0.668 0.686 0.664 0.643 0.649 ...</code></pre>
-<p>Veja como agora a coluna <em>date</em> está escrita, o R reconhece como data-hora! Estamos prontos para trabalhar com funções do pacote.</p>
+<p>Veja como agora a coluna <em>date</em> está escrita, o R reconhece
+como data-hora! Estamos prontos para trabalhar com funções do
+pacote.</p>
 </div>
 <div id="função-summaryplot" class="section level1">
 <h1>Função <em>summaryPlot</em></h1>
-<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
+<p>2022 | 1 | 13 Last compiled: 2022-08-14</p>
 <pre class="r"><code>openair::summaryPlot(mydata = dado,
                      date.breaks = 12,
                      period = &quot;months&quot;)</code></pre>
@@ -412,13 +421,26 @@ div.tocify {
 ## &quot;POSIXct&quot;  &quot;POSIXt&quot; &quot;integer&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;numeric&quot; &quot;integer&quot; &quot;numeric&quot;</code></pre>
 <pre><code>## Detected data with Daylight Saving Time.</code></pre>
 <p><img src="openair_files/figure-html/summaryPlot-1.png" width="672" /></p>
-<p>O argumento <em>date.breaks</em> controla a divisão do eixo x, enquanto o argumento <em>period</em> define a divisão do conjunto para plotagem da análise de completude. O <em>default</em> para esse argumento é <em>years</em>, porém, como estamos trabalhando apenas com um ano de dados, escolhemos <em>months</em> - sempre no plural - para uma análise mais detalhada.</p>
-<p>O gráfico é dividido em duas colunas: a primeira, com a estatística e completude dos dados, e a segunda, com o histograma das variáveis. Casa deseje poluentes específicos, faça a indexação diretamente no argumento <em>mydata</em>.</p>
-<p>Em uma rápida análise na segunda coluna do gráfico, podemos verificar que não seguem uma distribuição normal, porém devemos sempre verificar a estatística.</p>
+<p>O argumento <em>date.breaks</em> controla a divisão do eixo x,
+enquanto o argumento <em>period</em> define a divisão do conjunto para
+plotagem da análise de completude. O <em>default</em> para esse
+argumento é <em>years</em>, porém, como estamos trabalhando apenas com
+um ano de dados, escolhemos <em>months</em> - sempre no plural - para
+uma análise mais detalhada.</p>
+<p>O gráfico é dividido em duas colunas: a primeira, com a estatística e
+completude dos dados, e a segunda, com o histograma das variáveis. Casa
+deseje poluentes específicos, faça a indexação diretamente no argumento
+<em>mydata</em>.</p>
+<p>Em uma rápida análise na segunda coluna do gráfico, podemos verificar
+que não seguem uma distribuição normal, porém devemos sempre verificar a
+estatística.</p>
 <div id="teste-de-anderson-darling" class="section level2">
 <h2>Teste de Anderson-Darling</h2>
-<p>O teste de Anderson-Darling é semelhante ao teste de Shapiro-Wilk. Ambos verificam a normalidade dos dados. Vale ressaltar que a função do Shapiro-Wild (<em>stats::shapiro.test()</em>) foi traduzida do Fortran e possui a limitação de análise de até 5000 dados.</p>
-<p>2022 | 1 | 13 Last compiled: 2022-03-21</p>
+<p>O teste de Anderson-Darling é semelhante ao teste de Shapiro-Wilk.
+Ambos verificam a normalidade dos dados. Vale ressaltar que a função do
+Shapiro-Wild (<em>stats::shapiro.test()</em>) foi traduzida do Fortran e
+possui a limitação de análise de até 5000 dados.</p>
+<p>2022 | 1 | 13 Last compiled: 2022-08-14</p>
 <pre class="r"><code>library(nortest)
 #H0 = distribuição normal: p &gt; 0.05 (Hipótese nula)
 #Ha = distribuição não normal: p &lt;= 0.05 (Hipótese alternativa)

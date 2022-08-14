@@ -330,7 +330,7 @@ Aqui não há coerção.
 
 ## Criando uma list: função *list()*
 
-```{r função list, echo=FALSE,include=TRUE}
+```{r função list, echo=FALSE,include=TRUE,eval=FALSE}
 #Sempre recorra ao help das funções para aprender a usá-las
 ?list
 ```

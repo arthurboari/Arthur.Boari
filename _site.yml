@@ -1,6 +1,6 @@
-name: "Arthur Learns R"
+name: "Arthur Boari"
 navbar:
-  title: "Arthur Learns R"
+  title: "Arthur Boari"
   left:
     - text: "Home"
       href: index.html
