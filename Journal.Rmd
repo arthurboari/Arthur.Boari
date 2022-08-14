@@ -64,7 +64,7 @@ b<-"_posts/Caminho absoluto versus caminho relativo/Caminho absoluto versus cami
 print(b)
 ```
 
-Perceba o seguinte: caso eu te entregue um script com a seguinte função:
+Perceba o seguinte: caso eu te entregue um script com a seguinte função: 
 
 ```{r importação + erro de caminho absoluto,eval=FALSE, message=TRUE, warning=TRUE, include=TRUE}
 dados<-read.csv("C:\Users\aboar\Documents\Pasta do R\portAB\_posts\Caminho absoluto versus caminho relativo\dados_tcc.csv")
