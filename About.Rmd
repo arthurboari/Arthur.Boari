@@ -1,6 +1,12 @@
 ---
 title: "About"
-output: html_document
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
 ---
 
 ```{=html}
@@ -43,3 +49,7 @@ Para mais informações, consulte os meus perfis:
 [ORCID](https://www.researchgate.net/profile/Arthur-Boari)
 
 Deseja entrar em contato via e-mail? [Clique aqui!](mailto:arthur1995boari@gmail.com)
+
+# Master degree details
+
+## Disciplinas
