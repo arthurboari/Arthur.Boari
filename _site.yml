@@ -1,9 +1,16 @@
 name: "Arthur Boari"
 navbar:
   title: "Arthur Boari"
+  type: inverse
   left:
     - text: "Home"
+      icon: fa-home
       href: index.html
-    - text: "Sobre mim"
-      href: Links.html
+    - text: "About"
+      icon: fa-user
+      href: About.html
 output_dir: "docs"
+output:
+  html_document:
+    theme: cosmo
+    highlight: textmate
