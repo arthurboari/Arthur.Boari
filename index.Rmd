@@ -2,11 +2,3 @@
 title: "Arthur Boari"
 output: html_document
 ---
-
-Olá! Seja bem-vind@ ao blog Arthur Learns R. Aqui irei documentar alguns estudos de programação em R:
-
-* Funções específicas de pacotes;
-* Dicas de programação; e
-* Tutoriais.
-
-**Sugestões?** Entre em contato através dos links disponibilizados na aba *Sobre mim*.

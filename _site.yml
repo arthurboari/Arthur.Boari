@@ -4,12 +4,6 @@ navbar:
   left:
     - text: "Home"
       href: index.html
-    - text: "Dicas"
-      href: Journal.html
-    - text: "Learning R: base"
-      href: Learn.html
-    - text: "Learning R: openair"
-      href: openair.html
     - text: "Sobre mim"
       href: Links.html
 output_dir: "docs"
