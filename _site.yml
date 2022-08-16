@@ -9,8 +9,14 @@ navbar:
     - text: "About"
       icon: fa-user
       href: About.html
+    - text: "Programming"
+      icon: fa-code
+      menu:
+        - text: "R"
+        - text: "Basic ggplot2 maps + geobr"
+          href: Home-Page.html
 output_dir: "docs"
 output:
   html_document:
-    theme: cosmo
+    theme: yeti
     highlight: textmate

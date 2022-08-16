@@ -7,7 +7,6 @@ output: html_document
 <style>
 body {
   color: darkred;
-  background-color: lightblue;
   font-family: Times;
   font-size: 20px;
   text-align: justify;
@@ -23,7 +22,7 @@ pre {
   border-color: black;
 }
 #header {
-  color: orange;
+  color: gold;
 }
 </style>
 ```
