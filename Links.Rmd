@@ -2,6 +2,25 @@
 title: "Sobre mim"
 output: html_document
 ---
+<style>
+body {
+  color: black;
+  font-family: Times;
+  font-size: 20px
+}
+pre {
+  background-color: lightgreen;
+}
+#TOC {
+  color: red;
+  font-family: Times;
+  font-size: 14px;
+  border-color: black;
+}
+#header {
+  color: orange;
+}
+</style>
 
 ![](images/Photo.jpg){width=20%}
 
