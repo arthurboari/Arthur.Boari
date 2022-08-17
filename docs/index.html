@@ -13,7 +13,7 @@
 
 <title>Arthur Boari</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.15/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/yeti.min.css" rel="stylesheet" />
@@ -143,11 +143,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -265,7 +269,7 @@ $(document).ready(function () {
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     <span class="fa fa-code"></span>
      
-    Programming
+    Codes
      
     <span class="caret"></span>
   </a>
@@ -278,7 +282,20 @@ $(document).ready(function () {
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="mailto:eng.arthurboari@gmail.com">
+    <span class="fa fa-envelope"></span>
+     
+    Contact ME!
+  </a>
+</li>
+<li>
+  <a href="https://linktr.ee/aboari">
+    <span class="fa fa-link"></span>
+     
+    Linktr.ee
+  </a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -295,9 +312,9 @@ $(document).ready(function () {
 
 <style>
 body {
-  color: orange;
+  color: darkred;
   font-family: Times;
-  font-size: 20px
+  font-size: 20px;
 }
 pre {
   background-color: lightgreen;
@@ -310,8 +327,34 @@ pre {
 }
 #header {
   color: gold;
+  align: center;
 }
 </style>
+<p><br> <br></p>
+<img src="" style="max-width: 40%;">
+<div>
+<p>
+Welcome to my GitHub/Markdown website!
+</p>
+<br>
+<p>
+These webpages reunite reliable information regarding my
+academic/professional progress. As long as the content is being
+transferred, the following content is expected to be publicly displayed:
+</p>
+<ul>
+<li>
+<a href="https://arthurboari.github.io/arthurboari/About.html">Detailed
+academic biography</a>
+</li>
+<li>
+Detailed skills
+</li>
+<li>
+Documented programming tutorials
+</li>
+</ul>
+</div>
 
 
 

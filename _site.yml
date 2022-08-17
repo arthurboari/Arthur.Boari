@@ -9,12 +9,19 @@ navbar:
     - text: "About"
       icon: fa-user
       href: About.html
-    - text: "Programming"
+    - text: "Codes"
       icon: fa-code
       menu:
         - text: "R"
         - text: "Basic ggplot2 maps + geobr"
           href: Home-Page.html
+  right:
+    - text: Contact ME!
+      icon: fa-envelope
+      href: mailto:eng.arthurboari@gmail.com
+    - text: Linktr.ee
+      icon: fa-link
+      href: https://linktr.ee/aboari
 output_dir: "docs"
 output:
   html_document:
