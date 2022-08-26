@@ -1,0 +1,305 @@
+---
+title: "Simple Maps"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+---
+
+```{=html}
+<style>
+body {
+  color: darkred;
+  font-family: Times;
+  font-size: 20px;
+  text-align: justify;
+  text-justify: inter-word;
+}
+pre {
+  background-color: lightgreen;
+}
+#TOC {
+  color: red;
+  font-family: Times;
+  font-size: 14px;
+  border-color: black;
+}
+#header {
+  color: gold;
+}
+</style>
+```
+
+```{r}
+####Instalação/Carregando pacotes e documentos####
+#install.packages("geobr")
+#install.packages("ggplot2")
+#install.packages("ggspatial")
+#install.packages("RColorBrewer")
+
+library(geobr)
+library(ggplot2)
+library(ggspatial)
+library(RColorBrewer)
+
+estacao<-read.csv2(
+  file = "Coordenadas SIRGAS 2000 Completo.csv")
+
+####O pacote 'geobr'####
+#malhas digitais do IBGE e outras plataformas (IPEA)
+
+#Verificando dados disponíveis
+?list_geobr
+#####
+disp<-list_geobr()
+#####
+#Localizando códigos:
+?lookup_muni
+#####
+lookup_muni(name_muni = "LAVRAS")
+#Os dois primeiros dígitos: código do estado
+#####
+#Obtendo Brasil
+?read_country
+#####
+Brasil<-read_country(year = 2020)
+#Usar year = 2010 pra contorno
+#ANO é 'sempre' bom informar
+#####
+
+#Obtendo estados
+?read_state
+#####
+MG<-read_state(code_state = 31)
+ES<-read_state(code_state = "ES")
+#####
+
+#Obtendo municípios
+?read_municipality
+#####
+Lavras<-read_municipality(code_muni = 3138203)
+
+lookup_muni(name_muni = "VITORIA")
+
+Vitoria<-read_municipality(code_muni = 3205309)
+
+Serra<-read_municipality(code_muni = 3205002)
+
+Cariacica<-read_municipality(code_muni = 3201308)
+
+VilaVelha<-read_municipality(code_muni = 3205200)
+
+RMV<-rbind(Vitoria,Serra,Cariacica,VilaVelha)
+#####
+
+#Obtendo região metropolitana
+?read_metro_area
+#####
+RMet<-read_metro_area()
+#####
+
+#Separando RMet por estado
+?subset
+#####
+RMetMG<-subset(RMet, RMet$code_state==31) # ou indexação
+#####
+
+####O pacote 'ggplot2'####
+#Sintaxe diferente
+#nova maneira de criar gráficos a partir dos dados
+#conceito de camadas (layers) para a sintaxe do R
+
+#Construindo o primeiro gráfico
+?ggplot
+?geom_sf
+
+#####
+ggplot(data = Brasil)+
+  geom_sf()
+#####
+
+#Alterando a cor
+ggplot(data = Brasil)+
+  geom_sf(fill="yellow")
+
+#Adicionando a sigla dos estados
+ggplot(data = Brasil)+
+  geom_sf(fill="yellow")+
+  geom_sf_text(aes(label=abbrev_state))
+
+#Alterando o nome dos eixos
+ggplot(data = Brasil)+
+  geom_sf(fill="yellow")+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")
+
+#Colorindo só MG
+Brasil2<-Brasil
+color<-rep(x="transparent",27)
+color[17]<-"yellow"
+Brasil2$color<-color
+
+ggplot(data = Brasil2)+
+  geom_sf(fill=color)+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")
+
+#Temas de gráficos
+ggplot(data = Brasil2)+
+  geom_sf(fill=color)+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")+
+  theme_bw()
+
+ggplot(data = Brasil2)+
+  geom_sf(fill=color)+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")+
+  theme_classic()
+
+ggplot(data = Brasil2)+
+  geom_sf(fill=color)+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")+
+  theme_dark()
+
+ggplot(data = Brasil2)+
+  geom_sf(fill=color)+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")+
+  theme_minimal()
+
+ggplot(data = Brasil2)+
+  geom_sf(fill=color)+
+  geom_sf_text(aes(label=abbrev_state))+
+  labs(x="",y="")+
+  theme_void()
+
+#Acrescentando novos elementos
+AreaUrbana<-read_urban_area()
+VitoriaAU<-subset(AreaUrbana,
+                  AreaUrbana$code_muni==3205309)
+
+ggplot()+
+  geom_sf(data = VitoriaAU,fill="lightblue")+
+  geom_sf(data = Vitoria,size=2,fill="transparent")+
+  geom_sf_text(data=Vitoria,aes(
+    label=Vitoria$name_muni))+
+  coord_sf(xlim=c(-40.37,-40.20),
+           ylim=c(-20.35,-20.23))+
+  theme_minimal()
+
+#Aula 2
+#Para RMV
+ggplot()+
+  geom_sf(data = AreaUrbana,fill="lightblue")+
+  geom_sf(data = RMV,fill="transparent")+
+  geom_point(data = estacao,aes(x=long,y=lat,
+                                col=Estação))+
+  geom_sf_text(data=RMV,aes(label=name_muni))+
+  coord_sf(xlim=c(-40.55,-40.15),ylim=c(-20.5,-20))+
+  theme_minimal()
+
+#Ajustando tamanho dos pontos e espessura
+  #linha das cidades
+ggplot()+
+  geom_sf(data = AreaUrbana,fill="lightblue")+
+  geom_sf(data = RMV,fill="transparent",size=1)+
+  geom_point(data = estacao,aes(x=long,y=lat,
+                                col=Estação),size=2)+
+  geom_sf_text(data=RMV,aes(label=name_muni))+
+  coord_sf(xlim=c(-40.55,-40.15),ylim=c(-20.5,-20))+
+  theme_minimal()
+  
+#Adicionando seta
+ggplot()+
+  geom_sf(data = AreaUrbana,fill="lightblue")+
+  geom_sf(data = RMV,fill="transparent",size=1)+
+  geom_point(data = estacao,aes(x=long,y=lat,
+                                col=Estação),size=2)+
+  geom_sf_text(data=RMV,aes(label=name_muni))+
+  coord_sf(xlim=c(-40.55,-40.15),ylim=c(-20.5,-20))+
+  theme_minimal()+
+  annotation_north_arrow(
+    style = north_arrow_fancy_orienteering,
+    location = "tl") #tl, br,bl
+
+#Adicionando escala
+ggplot()+
+  geom_sf(data = AreaUrbana,fill="lightblue")+
+  geom_sf(data = RMV,fill="transparent",size=1)+
+  geom_point(data = estacao,aes(x=long,y=lat,
+                                col=Estação),size=2)+
+  geom_sf_text(data=RMV,aes(label=name_muni))+
+  coord_sf(xlim=c(-40.55,-40.15),ylim=c(-20.5,-20))+
+  theme_minimal()+
+  annotation_north_arrow(
+    style = north_arrow_fancy_orienteering,
+                         location = "tr")+
+  annotation_scale(location = "br")
+
+#Últimas polidas no mapa
+
+####Pacote RColorBrewer####
+display.brewer.all()
+display.brewer.all(type = "seq")
+display.brewer.all(type = "qual")
+display.brewer.all(type = "div")
+display.brewer.all(colorblindFriendly = T)
+#####
+
+#trocando cor dos pontos
+?brewer.pal
+#####
+display.brewer.pal(9,"Paired")
+display.brewer.pal(11,"Paired")
+paleta<-brewer.pal(9,"Paired")
+paleta2<-brewer.pal(11,"Paired")
+#####
+
+ggplot()+
+  geom_sf(data = AreaUrbana,fill="lightblue",alpha=0.5,show.legend = T)+
+  geom_sf(data = RMV,fill="transparent",size=1)+
+  geom_point(data = estacao,aes(x=long,y=lat,col=Estação),size=2)+
+  scale_color_manual(values = paleta2[2:10])+
+  geom_sf_text(data=RMV,aes(label=name_muni))+
+  coord_sf(xlim=c(-40.6,-40.15),ylim=c(-20.55,-20))+
+  theme_minimal()+
+  annotation_north_arrow(
+    style = north_arrow_fancy_orienteering,
+    location = "tr")+
+  annotation_scale(location = "br")+
+  labs(x="",y="",col="")+
+  scale_fill_manual(values = c("Area Urbana"="lightblue"))+
+  guides(color=guide_legend(override.aes = list(linetype = c(0),fill="transparent")))
+  
+?ggsave
+#####
+#plot - objeto que deseja salvar
+#filename - nome do arquivo que vai aparecer no PC + extensão do arquivo
+#device - a extensão do arquivo
+#width - a largura da imagem desejada
+#height - a altura da imagem desejada
+#units - a unidade de medida dos dois argumentos anteriores
+#dpi - aqui vc controla a qualidade/resolução do plot
+#####
+ggsave(plot = graph,
+       filename = "gráfico.png",
+       device = "png",
+       height = 8.32,
+       width = 10.42,
+       units = "in",
+       dpi = 600)
+
+ggsave(plot = graph,
+       filename = "gráfico.tiff",
+       device = "tiff",
+       height = 8.32,
+       width = 10.42,
+       units = "in",
+       dpi = 600)
+```
+
