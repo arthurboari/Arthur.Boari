@@ -12,7 +12,7 @@ output:
 ```{=html}
 <style>
 body {
-  color: darkred;
+  color: black;
   font-family: Times;
   font-size: 20px;
   text-align: justify;
@@ -22,7 +22,7 @@ pre {
   background-color: lightgreen;
 }
 #TOC {
-  color: red;
+  color: darkblue;
   font-family: Times;
   font-size: 14px;
   border-color: black;
@@ -71,8 +71,9 @@ As stated before, this package is useful to download spatial data sets for the B
 
 This useful function returns the relation between the packages' function, what it returns, the years of available data and the source.
 
-```{r}
-head(list_geobr())
+```{r list_geobr}
+list_geobr <- list_geobr()
+knitr::kable(head(list_geobr))
 ```
 ## The `lookup_muni()` function
 

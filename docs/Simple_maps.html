@@ -388,7 +388,7 @@ div.tocify {
 
 <style>
 body {
-  color: darkred;
+  color: black;
   font-family: Times;
   font-size: 20px;
   text-align: justify;
@@ -398,7 +398,7 @@ pre {
   background-color: lightgreen;
 }
 #TOC {
-  color: red;
+  color: darkblue;
   font-family: Times;
   font-size: 14px;
   border-color: black;
@@ -450,28 +450,69 @@ sets for the Brazilian country.</p>
 <p>This useful function returns the relation between the packages’
 function, what it returns, the years of available data and the
 source.</p>
-<pre class="r"><code>head(list_geobr())</code></pre>
-<pre><code>##                     function           geography
-## 1             `read_country`             Country
-## 2              `read_region`              Region
-## 3               `read_state`              States
-## 4         `read_meso_region`         Meso region
-## 5        `read_micro_region`        Micro region
-## 6 `read_intermediate_region` Intermediate region
-##                                                                                                                                years
-## 1 1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970, 1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-## 2                                                                   2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-## 3 1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970, 1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-## 4                                                                   2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-## 5                                                                   2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
-## 6                                                                                                                   2017, 2019, 2020
-##   source
-## 1   IBGE
-## 2   IBGE
-## 3   IBGE
-## 4   IBGE
-## 5   IBGE
-## 6   IBGE</code></pre>
+<pre class="r"><code>list_geobr &lt;- list_geobr()
+knitr::kable(head(list_geobr))</code></pre>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="10%" />
+<col width="70%" />
+<col width="3%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">function</th>
+<th align="left">geography</th>
+<th align="left">years</th>
+<th align="left">source</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>read_country</code></td>
+<td align="left">Country</td>
+<td align="left">1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970,
+1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+2020</td>
+<td align="left">IBGE</td>
+</tr>
+<tr class="even">
+<td align="left"><code>read_region</code></td>
+<td align="left">Region</td>
+<td align="left">2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018,
+2019, 2020</td>
+<td align="left">IBGE</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>read_state</code></td>
+<td align="left">States</td>
+<td align="left">1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970,
+1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019,
+2020</td>
+<td align="left">IBGE</td>
+</tr>
+<tr class="even">
+<td align="left"><code>read_meso_region</code></td>
+<td align="left">Meso region</td>
+<td align="left">2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018,
+2019, 2020</td>
+<td align="left">IBGE</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>read_micro_region</code></td>
+<td align="left">Micro region</td>
+<td align="left">2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018,
+2019, 2020</td>
+<td align="left">IBGE</td>
+</tr>
+<tr class="even">
+<td align="left"><code>read_intermediate_region</code></td>
+<td align="left">Intermediate region</td>
+<td align="left">2017, 2019, 2020</td>
+<td align="left">IBGE</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="the-lookup_muni-function" class="section level2">
 <h2>The <code>lookup_muni()</code> function</h2>
@@ -479,7 +520,13 @@ source.</p>
 Lavras’ ID:</p>
 <pre class="r"><code>lookup_muni(name_muni = &quot;LAVRAS&quot;)</code></pre>
 <pre><code>## Using year 2010</code></pre>
-<pre><code>## Problem connecting to data server. Please try it again in a few minutes.</code></pre>
+<pre><code>## Returning results for municipality Lavras</code></pre>
+<pre><code>##      code_muni name_muni code_state   name_state abbrev_state code_micro
+## 2680   3138203    Lavras         31 Minas Gerais           MG      31057
+##      name_micro code_meso           name_meso code_immediate name_immediate
+## 2680     Lavras      3111 Campo das Vertentes         310043         Lavras
+##      code_intermediate name_intermediate
+## 2680              3108          Varginha</code></pre>
 </div>
 </div>
 <div id="downloading-the-geobr-data-sets" class="section level1">
@@ -505,7 +552,6 @@ lines…</p>
 code:</p>
 <pre class="r"><code>Brazil.states &lt;- read_state(code_state = &quot;all&quot;, year = 2020, showProgress = FALSE)</code></pre>
 <pre><code>## Using year 2020</code></pre>
-<pre><code>## Problem connecting to data server. Please try again in a few minutes.</code></pre>
 <pre class="r"><code>ggplot() + geom_sf(data = Brazil.states)</code></pre>
 <p><img src="Simple_maps_files/figure-html/estados%20brasil%202-1.png" width="672" />
 <br></p>
