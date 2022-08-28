@@ -33,7 +33,58 @@ pre {
 </style>
 ```
 
+The following content was prepared as a part of an assignment for the PEA-504 - Estágio em Docência (*"Internship in Teaching"*) course and presented to undergrad students enrolled in the GAM114 - Modelagem de Processos Ambientais (*"Environmental Process Modeling"*) course.
+
+The assignment prepared and shared below aims to introduce the *ggplot2* package to the students as a way of plotting simple maps in R. For that we use four packages, as described below:
+
+- *ggplot2*;
+- *geobr:* a package that provides spatial data sets of the Brazilian territory;
+- *ggspatial:* for plotting basic map items; and
+- *RColorBrewer:* for creating color palettes.
+
+# Loading the packages
+
+```{r loading the packages}
+library(geobr)
+library(ggplot2)
+library(ggspatial)
+library(RColorBrewer)
+```
+
+# Loading data points
+
+As we're plotting the location of air quality monitoring stations, we need to load the data that contains their coordinates. These stations are located in the Espírito Santo state capital, Vitória.
+
+```{r loading the csv}
+Stations <- read.csv2(
+  file = "Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv",
+  fileEncoding = "UTF-8")
+```
+
+You can obtain this file <a href="Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv" download>here</a>.
+
+# The *geobr* package
+
+As stated before, this package is useful to download spatial data sets for the Brazilian country.
+
+## The `list_geobr()` function
+
+This useful function returns the relation between the packages' function, what it returns, the years of available data and the source.
+
 ```{r}
+head(list_geobr())
+```
+## The `lookup_muni()` function
+
+This useful one helps us track the city's ID. Let's search for Lavras' ID:
+
+```{r lookup_muni}
+lookup_muni(name_muni = "LAVRAS")
+```
+
+This page is being built.
+
+```{r eval=FALSE, include=FALSE}
 ####Instalação/Carregando pacotes e documentos####
 #install.packages("geobr")
 #install.packages("ggplot2")

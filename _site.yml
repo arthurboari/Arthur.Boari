@@ -14,7 +14,7 @@ navbar:
       menu:
         - text: "R"
         - text: "Basic ggplot2 maps + geobr"
-          href: Home-Page.html
+          href: Simple_maps.html
   right:
     - text: Contact ME!
       icon: fa-envelope

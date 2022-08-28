@@ -11,7 +11,7 @@
 
 
 
-<title>About</title>
+<title>Simple Maps</title>
 
 <script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -381,7 +381,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">About</h1>
+<h1 class="title toc-ignore">Simple Maps</h1>
 
 </div>
 
@@ -407,70 +407,80 @@ pre {
   color: gold;
 }
 </style>
-<p><img src="images/WhatsApp%20Image%202022-03-23%20at%2008.10.40.jpeg"
-style="width:20.0%" /> <br><br></p>
-<div id="overview" class="section level1">
-<h1>Overview</h1>
-<p>Currently, <strong>Arthur Boari</strong> is developing his master’s
-research in the area of air pollution — investigating trends in time
-series of Particulate Matter and Tropospheric Ozone from capital cities
-in the southeastern region of Brazil. I am linked to the <a
-href="https://sites.google.com/ufla.br/ppgeamb/p%C3%A1gina-inicial?authuser=0">Post-graduate
-Program in Environmental Engineering</a> at the Universidade Federal de
-Lavras (UFLA), where Prof. Dr. Marcelo Vieira-Filho supervises me. He
-was the only entrant in the research line Climate Change, Energy and
-Atmospheric Pollution in the second semester of 2020.</p>
-<p>During my Undergraduate degree (2014-2020) in Environmental and
-Sanitary Engineering (UFLA) I developed several activities, to be
-discussed:</p>
+<p>The following content was prepared as a part of an assignment for the
+PEA-504 - Estágio em Docência (<em>“Internship in Teaching”</em>) course
+and presented to undergrad students enrolled in the GAM114 - Modelagem
+de Processos Ambientais (<em>“Environmental Process Modeling”</em>)
+course.</p>
+<p>The assignment prepared and shared below aims to introduce the
+<em>ggplot2</em> package to the students as a way of plotting simple
+maps in R. For that we use four packages, as described below:</p>
 <ul>
-<li><p>My Final Paper addressed the use of four evapotranspiration
-estimation methods (FAO56-Penman-Monteith, Hargreaves &amp; Samani,
-Makkink, and Thornthwaite) in the climatological water balance
-methodology (Thornthwaite &amp; Matter) for historical series of
-meteorological data from eight stations in the northeastern part of the
-state of Minas Gerais. This area is characterized by the Aw and Cwa
-(Köppen) classifications. All the work was oriented by Prof. Dr. Sílvia
-de Nazaré Monteiro Yanagi (UFLA).</p></li>
-<li><p>In 2019 I joined the <a
-href="https://sites.google.com/ufla.br/nepuai">Núcleo de Estudos em
-Poluição Urbana e Agroindustrial (NEP UAI)</a> where I had the
-opportunity to start developing projects in the area of atmospheric
-sciences, such as noise pollution and air pollution. During the three
-years I was there, I passed through several positions where I developed
-communication, people management, and project management skills. In
-March 2022 I finished my activities with them.</p></li>
-<li><p>Between 2016 and 2019 I worked in water and sewage analysis
-laboratories from treatment plants located on the UFLA campus. During
-this period I was linked to the Environmental Directorate (DMA/UFLA) as
-an experiential activity (2016), voluntary scientific initiation
-(2016-2017), and technical learning (2017-2019). Among the analyses
-performed are physical analyses (pH, conductivity, color, and
-turbidity), chemical analyses (Total Kjeldahl Nitrogen,
-Biochemical/Chemical Oxygen Demand, Manganese, Total Iron, Total
-Phosphorus, among others), and biological analyses (Total and
-Thermotolerant Coliforms). <br> <br></p></li>
+<li><em>ggplot2</em>;</li>
+<li><em>geobr:</em> a package that provides spatial data sets of the
+Brazilian territory;</li>
+<li><em>ggspatial:</em> for plotting basic map items; and</li>
+<li><em>RColorBrewer:</em> for creating color palettes.</li>
 </ul>
+<div id="loading-the-packages" class="section level1">
+<h1>Loading the packages</h1>
+<pre class="r"><code>library(geobr)</code></pre>
+<pre><code>## Loading required namespace: sf</code></pre>
+<pre class="r"><code>library(ggplot2)
+library(ggspatial)
+library(RColorBrewer)</code></pre>
 </div>
-<div id="master-degree-details" class="section level1">
-<h1>Master degree details</h1>
-<div id="curricular-components" class="section level2">
-<h2>Curricular components</h2>
-<div id="section" class="section level3">
-<h3>2022/2</h3>
+<div id="loading-data-points" class="section level1">
+<h1>Loading data points</h1>
+<p>As we’re plotting the location of air quality monitoring stations, we
+need to load the data that contains their coordinates. These stations
+are located in the Espírito Santo state capital, Vitória.</p>
+<pre class="r"><code>Stations &lt;- read.csv2(
+  file = &quot;Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv&quot;,
+  fileEncoding = &quot;UTF-8&quot;)</code></pre>
+<p>You can obtain this file
+<a href="Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv" download>here</a>.</p>
 </div>
-<div id="section-1" class="section level3">
-<h3>2022/1</h3>
+<div id="the-geobr-package" class="section level1">
+<h1>The <em>geobr</em> package</h1>
+<p>As stated before, this package is useful to download spatial data
+sets for the Brazilian country.</p>
+<div id="the-list_geobr-function" class="section level2">
+<h2>The <code>list_geobr()</code> function</h2>
+<p>This useful function returns the relation between the packages’
+function, what it returns, the years of available data and the
+source.</p>
+<pre class="r"><code>head(list_geobr())</code></pre>
+<pre><code>##                     function           geography
+## 1             `read_country`             Country
+## 2              `read_region`              Region
+## 3               `read_state`              States
+## 4         `read_meso_region`         Meso region
+## 5        `read_micro_region`        Micro region
+## 6 `read_intermediate_region` Intermediate region
+##                                                                                                                                years
+## 1 1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970, 1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+## 2                                                                   2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+## 3 1872, 1900, 1911, 1920, 1933, 1940, 1950, 1960, 1970, 1980, 1991, 2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+## 4                                                                   2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+## 5                                                                   2000, 2001, 2010, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020
+## 6                                                                                                                   2017, 2019, 2020
+##   source
+## 1   IBGE
+## 2   IBGE
+## 3   IBGE
+## 4   IBGE
+## 5   IBGE
+## 6   IBGE</code></pre>
 </div>
-<div id="section-2" class="section level3">
-<h3>2021/2</h3>
-</div>
-<div id="section-3" class="section level3">
-<h3>2021/1</h3>
-</div>
-<div id="section-4" class="section level3">
-<h3>2020/2</h3>
-</div>
+<div id="the-lookup_muni-function" class="section level2">
+<h2>The <code>lookup_muni()</code> function</h2>
+<p>This useful one helps us track the city’s ID. Let’s search for
+Lavras’ ID:</p>
+<pre class="r"><code>lookup_muni(name_muni = &quot;LAVRAS&quot;)</code></pre>
+<pre><code>## Using year 2010</code></pre>
+<pre><code>## Problem connecting to data server. Please try it again in a few minutes.</code></pre>
+<p>This page is being built.</p>
 </div>
 </div>
 
@@ -523,7 +533,7 @@ $(document).ready(function ()  {
 
     // establish options
     var options = {
-      selectors: "h1,h2,h3,h4",
+      selectors: "h1,h2",
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
