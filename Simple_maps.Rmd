@@ -82,6 +82,34 @@ This useful one helps us track the city's ID. Let's search for Lavras' ID:
 lookup_muni(name_muni = "LAVRAS")
 ```
 
+# Downloading the *geobr* data sets
+
+## Country data set
+
+Every time you download a *geobr* data set is useful to plot it to assess if it's the desired one.
+
+```{r estados brasil}
+Brazil <- read_country(year = 2020, showProgress = FALSE)
+ggplot() + geom_sf(data = Brazil)
+```
+<br>
+As we can see, the upper code returned all the 26 states and the Federal District. But sometimes all you desire is the country's contour lines...
+
+```{r contorno brasil}
+Brazil.contour <- read_country(year = 2010, showProgress = FALSE)
+ggplot() + geom_sf(data = Brazil.contour)
+```
+<br>
+... To achieve the desired result the solution is changing the *year* argument.
+
+By the way, the first result could be achieved by the following code:
+
+```{r estados brasil 2}
+Brazil.states <- read_state(code_state = "all", year = 2020, showProgress = FALSE)
+ggplot() + geom_sf(data = Brazil.states)
+```
+<br>
+
 This page is being built.
 
 ```{r eval=FALSE, include=FALSE}
