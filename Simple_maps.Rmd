@@ -33,6 +33,11 @@ pre {
 </style>
 ```
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = FALSE,cache = TRUE,comment = "")
+```
+
+
 The following content was prepared as a part of an assignment for the PEA-504 - Estágio em Docência (*"Internship in Teaching"*) course and presented to undergrad students enrolled in the GAM114 - Modelagem de Processos Ambientais (*"Environmental Process Modeling"*) course.
 
 The assignment prepared and shared below aims to introduce the *ggplot2* package to the students as a way of plotting simple maps in R. For that we use four packages, as described below:
