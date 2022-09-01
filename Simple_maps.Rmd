@@ -116,51 +116,42 @@ ggplot() + geom_sf(data = Brazil.states)
 ```
 <br>
 
+## State data set
+
+When it comes to state spatial data the go-to function is `read_state()`.
+
+```{r state}
+MG <- read_state(code_state = 31, showProgress = FALSE)
+ggplot() + geom_sf(data = MG)
+```
+<br>
+This function just obtains a subset of `read_country()`'s output. So, to obtain all the municipalities, head over to `read_municipality()` just assigning the state code as the municipality code:
+
+```{r state mg}
+MG.mun <- read_municipality(code_muni = 31, showProgress = FALSE)
+ggplot() + geom_sf(data = MG.mun)
+```
+<br>
+
+So, how can I figure out the state codes? Well, I've plotted out a map just for you!
+
+```{r state codes}
+ggplot(data = Brazil) + geom_sf() + geom_sf_text(aes(label = code_state)) + labs(x = "",y = "")
+```
+
+The above code shows how the `geom_sf_text()` plots *tags* in maps. Below you can see the possibilities in the `Brazil` *sf* object.
+
+```{r kable sf, include=FALSE}
+knitr::kable(head(Brazil))
+```
+<br>
+Note that the `geom` column stores the geometries and how they should be plotted. This column has `r class(Brazil$geom)`. You can find more information about this type of data [here](https://r-spatial.github.io/sf/articles/sf1.html).
+
+
+<br>
 This page is being built.
 
 ```{r eval=FALSE, include=FALSE}
-####Instalação/Carregando pacotes e documentos####
-#install.packages("geobr")
-#install.packages("ggplot2")
-#install.packages("ggspatial")
-#install.packages("RColorBrewer")
-
-library(geobr)
-library(ggplot2)
-library(ggspatial)
-library(RColorBrewer)
-
-estacao<-read.csv2(
-  file = "Coordenadas SIRGAS 2000 Completo.csv")
-
-####O pacote 'geobr'####
-#malhas digitais do IBGE e outras plataformas (IPEA)
-
-#Verificando dados disponíveis
-?list_geobr
-#####
-disp<-list_geobr()
-#####
-#Localizando códigos:
-?lookup_muni
-#####
-lookup_muni(name_muni = "LAVRAS")
-#Os dois primeiros dígitos: código do estado
-#####
-#Obtendo Brasil
-?read_country
-#####
-Brasil<-read_country(year = 2020)
-#Usar year = 2010 pra contorno
-#ANO é 'sempre' bom informar
-#####
-
-#Obtendo estados
-?read_state
-#####
-MG<-read_state(code_state = 31)
-ES<-read_state(code_state = "ES")
-#####
 
 #Obtendo municípios
 ?read_municipality
@@ -388,3 +379,4 @@ ggsave(plot = graph,
        dpi = 600)
 ```
 
+This code was last compiled at `r Sys.Date()`

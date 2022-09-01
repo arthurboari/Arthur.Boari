@@ -555,7 +555,110 @@ code:</p>
 <pre class="r"><code>ggplot() + geom_sf(data = Brazil.states)</code></pre>
 <p><img src="Simple_maps_files/figure-html/estados%20brasil%202-1.png" width="672" />
 <br></p>
-<p>This page is being built.</p>
+</div>
+<div id="state-data-set" class="section level2">
+<h2>State data set</h2>
+<p>When it comes to state spatial data the go-to function is
+<code>read_state()</code>.</p>
+<pre class="r"><code>MG &lt;- read_state(code_state = 31, showProgress = FALSE)</code></pre>
+<pre><code>Using year 2010</code></pre>
+<pre class="r"><code>ggplot() + geom_sf(data = MG)</code></pre>
+<p><img src="Simple_maps_files/figure-html/state-1.png" width="672" />
+<br> This function just obtains a subset of
+<code>read_country()</code>’s output. So, to obtain all the
+municipalities, head over to <code>read_municipality()</code> just
+assigning the state code as the municipality code:</p>
+<pre class="r"><code>MG.mun &lt;- read_municipality(code_muni = 31, showProgress = FALSE)</code></pre>
+<pre><code>Using year 2010</code></pre>
+<pre class="r"><code>ggplot() + geom_sf(data = MG.mun)</code></pre>
+<p><img src="Simple_maps_files/figure-html/state%20mg-1.png" width="672" />
+<br></p>
+<p>So, how can I figure out the state codes? Well, I’ve plotted out a
+map just for you!</p>
+<pre class="r"><code>ggplot(data = Brazil) + geom_sf() + geom_sf_text(aes(label = code_state)) + labs(x = &quot;&quot;,y = &quot;&quot;)</code></pre>
+<pre><code>Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
+give correct results for longitude/latitude data</code></pre>
+<p><img src="Simple_maps_files/figure-html/state%20codes-1.png" width="672" /></p>
+<p>The above code shows how the <code>geom_sf_text()</code> plots
+<em>tags</em> in maps. Below you can see the possibilities in the
+<code>Brazil</code> <em>sf</em> object.</p>
+<pre class="r"><code>knitr::kable(head(Brazil))</code></pre>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="14%" />
+<col width="12%" />
+<col width="13%" />
+<col width="13%" />
+<col width="34%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">code_state</th>
+<th align="left">abbrev_state</th>
+<th align="left">name_state</th>
+<th align="right">code_region</th>
+<th align="left">name_region</th>
+<th align="left">geom</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">11</td>
+<td align="left">RO</td>
+<td align="left">Rondônia</td>
+<td align="right">1</td>
+<td align="left">Norte</td>
+<td align="left">MULTIPOLYGON (((-65.3815 -1…</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="left">AC</td>
+<td align="left">Acre</td>
+<td align="right">1</td>
+<td align="left">Norte</td>
+<td align="left">MULTIPOLYGON (((-71.07772 -…</td>
+</tr>
+<tr class="odd">
+<td align="right">13</td>
+<td align="left">AM</td>
+<td align="left">Amazônas</td>
+<td align="right">1</td>
+<td align="left">Norte</td>
+<td align="left">MULTIPOLYGON (((-69.83766 -…</td>
+</tr>
+<tr class="even">
+<td align="right">14</td>
+<td align="left">RR</td>
+<td align="left">Roraima</td>
+<td align="right">1</td>
+<td align="left">Norte</td>
+<td align="left">MULTIPOLYGON (((-63.96008 2…</td>
+</tr>
+<tr class="odd">
+<td align="right">15</td>
+<td align="left">PA</td>
+<td align="left">Pará</td>
+<td align="right">1</td>
+<td align="left">Norte</td>
+<td align="left">MULTIPOLYGON (((-51.43248 -…</td>
+</tr>
+<tr class="even">
+<td align="right">16</td>
+<td align="left">AP</td>
+<td align="left">Amapá</td>
+<td align="right">1</td>
+<td align="left">Norte</td>
+<td align="left">MULTIPOLYGON (((-53.27918 2…</td>
+</tr>
+</tbody>
+</table>
+<p><br> Note that the <code>geom</code> column stores the geometries and
+how they should be plotted. This column has sfc_MULTIPOLYGON, sfc. You
+can find more information about this type of data <a
+href="https://r-spatial.github.io/sf/articles/sf1.html">here</a>.</p>
+<p><br> This page is being built.</p>
+<p>This code was last compiled at 2022-09-01</p>
 </div>
 </div>
 
