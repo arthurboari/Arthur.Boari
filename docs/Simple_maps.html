@@ -582,80 +582,9 @@ give correct results for longitude/latitude data</code></pre>
 <p>The above code shows how the <code>geom_sf_text()</code> plots
 <em>tags</em> in maps. Below you can see the possibilities in the
 <code>Brazil</code> <em>sf</em> object.</p>
-<pre class="r"><code>knitr::kable(head(Brazil))</code></pre>
-<table>
-<colgroup>
-<col width="12%" />
-<col width="14%" />
-<col width="12%" />
-<col width="13%" />
-<col width="13%" />
-<col width="34%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="right">code_state</th>
-<th align="left">abbrev_state</th>
-<th align="left">name_state</th>
-<th align="right">code_region</th>
-<th align="left">name_region</th>
-<th align="left">geom</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="right">11</td>
-<td align="left">RO</td>
-<td align="left">Rondônia</td>
-<td align="right">1</td>
-<td align="left">Norte</td>
-<td align="left">MULTIPOLYGON (((-65.3815 -1…</td>
-</tr>
-<tr class="even">
-<td align="right">12</td>
-<td align="left">AC</td>
-<td align="left">Acre</td>
-<td align="right">1</td>
-<td align="left">Norte</td>
-<td align="left">MULTIPOLYGON (((-71.07772 -…</td>
-</tr>
-<tr class="odd">
-<td align="right">13</td>
-<td align="left">AM</td>
-<td align="left">Amazônas</td>
-<td align="right">1</td>
-<td align="left">Norte</td>
-<td align="left">MULTIPOLYGON (((-69.83766 -…</td>
-</tr>
-<tr class="even">
-<td align="right">14</td>
-<td align="left">RR</td>
-<td align="left">Roraima</td>
-<td align="right">1</td>
-<td align="left">Norte</td>
-<td align="left">MULTIPOLYGON (((-63.96008 2…</td>
-</tr>
-<tr class="odd">
-<td align="right">15</td>
-<td align="left">PA</td>
-<td align="left">Pará</td>
-<td align="right">1</td>
-<td align="left">Norte</td>
-<td align="left">MULTIPOLYGON (((-51.43248 -…</td>
-</tr>
-<tr class="even">
-<td align="right">16</td>
-<td align="left">AP</td>
-<td align="left">Amapá</td>
-<td align="right">1</td>
-<td align="left">Norte</td>
-<td align="left">MULTIPOLYGON (((-53.27918 2…</td>
-</tr>
-</tbody>
-</table>
 <p><br> Note that the <code>geom</code> column stores the geometries and
-how they should be plotted. This column has sfc_MULTIPOLYGON, sfc. You
-can find more information about this type of data <a
+how they should be plotted. This column has sfc_MULTIPOLYGON, sfc class.
+You can find more information about this type of data <a
 href="https://r-spatial.github.io/sf/articles/sf1.html">here</a>.</p>
 <p><br> This page is being built.</p>
 <p>This code was last compiled at 2022-09-01</p>

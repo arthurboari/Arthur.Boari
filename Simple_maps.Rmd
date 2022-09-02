@@ -145,7 +145,7 @@ The above code shows how the `geom_sf_text()` plots *tags* in maps. Below you ca
 knitr::kable(head(Brazil))
 ```
 <br>
-Note that the `geom` column stores the geometries and how they should be plotted. This column has `r class(Brazil$geom)`. You can find more information about this type of data [here](https://r-spatial.github.io/sf/articles/sf1.html).
+Note that the `geom` column stores the geometries and how they should be plotted. This column has `r class(Brazil$geom)` class. You can find more information about this type of data [here](https://r-spatial.github.io/sf/articles/sf1.html).
 
 
 <br>
