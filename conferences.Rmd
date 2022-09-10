@@ -1,0 +1,46 @@
+---
+title: "Arthur Boari"
+output:
+  html_document:
+    toc: true
+    toc_depth: 2
+    toc_float:
+      collapsed: true
+      smooth_scroll: true
+---
+<style>
+body {
+  color: black;
+  font-family: Times;
+  font-size: 20px;
+}
+pre {
+  background-color: lightgreen;
+}
+#TOC {
+  color: darkblue;
+  font-family: Times;
+  font-size: 14px;
+  border-color: black;
+}
+#header {
+  color: gold;
+  align: center;
+}
+</style>
+
+<br>
+<br>
+
+# National Conferences
+
+## 19º Congresso Nacional de Meio Ambiente de Poços de Caldas
+
+Conference dates: 2022/09/20-22
+Place: Poços de Caldas, Minas Gerais, Brazil
+
+Full paper: pending
+References: [available]()
+
+# Local Conferences
+

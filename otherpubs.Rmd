@@ -1,0 +1,27 @@
+---
+title: "Arthur Boari"
+output: html_document
+---
+<style>
+body {
+  color: black;
+  font-family: Times;
+  font-size: 20px;
+}
+pre {
+  background-color: lightgreen;
+}
+#TOC {
+  color: darkblue;
+  font-family: Times;
+  font-size: 14px;
+  border-color: black;
+}
+#header {
+  color: gold;
+  align: center;
+}
+</style>
+
+<br>
+<br>
