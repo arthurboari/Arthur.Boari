@@ -40,7 +40,7 @@ Conference dates: 2022/09/20-22
 Place: Poços de Caldas, Minas Gerais, Brazil
 
 Full paper: pending
-References: [available]()
+References: [available](https://arthurboari.github.io/arthurboari/cnmaref.html)
 
 # Local Conferences
 
