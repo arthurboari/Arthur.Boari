@@ -2,11 +2,14 @@
 title: "19º Congresso Nacional de Meio Ambiente de Poços de Caldas - References"
 output: html_document
 ---
+```{=html}
 <style>
 body {
   color: black;
   font-family: Times;
   font-size: 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 pre {
   background-color: lightgreen;
@@ -19,9 +22,9 @@ pre {
 }
 #header {
   color: gold;
-  align: center;
 }
 </style>
+```
 
 <br>
 <br>
