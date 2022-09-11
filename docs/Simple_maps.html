@@ -536,8 +536,8 @@ knitr::kable(head(list_geobr))</code></pre>
 </div>
 <div id="the-lookup_muni-function" class="section level2">
 <h2>The <code>lookup_muni()</code> function</h2>
-<p>This useful one helps us track the city’s ID. Let’s search for
-Lavras’ ID:</p>
+<p>This useful one helps us track the city’s ID
+(<code>code_muni</code>). Let’s search for Lavras’ ID:</p>
 <pre class="r"><code>lookup_muni(name_muni = &quot;LAVRAS&quot;)</code></pre>
 <pre><code>Using year 2010</code></pre>
 <pre><code>Returning results for municipality Lavras</code></pre>
@@ -606,9 +606,90 @@ give correct results for longitude/latitude data</code></pre>
 how they should be plotted. This column has sfc_MULTIPOLYGON, sfc class.
 You can find more information about this type of data <a
 href="https://r-spatial.github.io/sf/articles/sf1.html">here</a>.</p>
-<p><br> This page is being built.</p>
-<p>This code was last compiled at 2022-09-11</p>
 </div>
+</div>
+<div id="maping-the-air-quality-stations-location"
+class="section level1">
+<h1>Maping the air quality stations location</h1>
+<p>These stations are located in four cities: Vitória, cariacica, Vila
+Velha and Serra. We need to download them and add them in one object, as
+done below:</p>
+<pre class="r"><code>Vitoria &lt;- read_municipality(code_muni = 3205309,showProgress = FALSE)
+Serra &lt;- read_municipality(code_muni = 3205002,showProgress = FALSE)
+Cariacica &lt;- read_municipality(code_muni = 3201308,showProgress = FALSE)
+VilaVelha &lt;- read_municipality(code_muni = 3205200,showProgress = FALSE)
+RMV &lt;- rbind(Vitoria,Serra,Cariacica,VilaVelha)</code></pre>
+<p>The <code>code_muni</code> value was obtained through the
+<code>lookup_muni</code> function. Please refer back to <a
+href="https://arthurboari.github.io/arthurboari/Simple_maps.html#The_lookup_muni()_function">this
+page</a> if you want to understand how to do so.</p>
+<p>Let’s view our <code>RMV</code> object content:</p>
+<pre class="r"><code>knitr::kable(RMV)</code></pre>
+<table>
+<colgroup>
+<col width="3%" />
+<col width="12%" />
+<col width="13%" />
+<col width="13%" />
+<col width="16%" />
+<col width="39%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">code_muni</th>
+<th align="left">name_muni</th>
+<th align="left">code_state</th>
+<th align="left">abbrev_state</th>
+<th align="left">geom</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">78</td>
+<td align="right">3205309</td>
+<td align="left">Vitória</td>
+<td align="left">32</td>
+<td align="left">ES</td>
+<td align="left">MULTIPOLYGON (((-28.84323 -…</td>
+</tr>
+<tr class="even">
+<td align="left">70</td>
+<td align="right">3205002</td>
+<td align="left">Serra</td>
+<td align="left">32</td>
+<td align="left">ES</td>
+<td align="left">MULTIPOLYGON (((-40.19019 -…</td>
+</tr>
+<tr class="odd">
+<td align="left">17</td>
+<td align="right">3201308</td>
+<td align="left">Cariacica</td>
+<td align="left">32</td>
+<td align="left">ES</td>
+<td align="left">MULTIPOLYGON (((-40.35609 -…</td>
+</tr>
+<tr class="even">
+<td align="left">77</td>
+<td align="right">3205200</td>
+<td align="left">Vila Velha</td>
+<td align="left">32</td>
+<td align="left">ES</td>
+<td align="left">MULTIPOLYGON (((-40.26912 -…</td>
+</tr>
+</tbody>
+</table>
+<pre class="r"><code>ggplot() + geom_sf(data = RMV)</code></pre>
+<p><img src="Simple_maps_files/figure-html/RMV%20kable-1.png" width="672" /></p>
+<p>It seems we encountered an error with out plot, <em>but</em> we did
+not. What happens is that Vitória contains islands attached to its
+territory. If we want to plot only the continental portion, we can
+restrain the x-axis width.</p>
+<pre class="r"><code>ggplot() + geom_sf(data = RMV) + coord_sf(xlim=c(-40.61,-40.18))</code></pre>
+<p><img src="Simple_maps_files/figure-html/RMV%20restrained-1.png" width="672" /></p>
+<p>Now that our base plot is built, we can add the stations and make the
+plot more personalized. <br> This page is being built.</p>
+<p>This code was last compiled at 2022-09-11 18:53:40</p>
 </div>
 
 

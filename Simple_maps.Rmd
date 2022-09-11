@@ -82,7 +82,7 @@ knitr::kable(head(list_geobr))
 ```
 ## The `lookup_muni()` function
 
-This useful one helps us track the city's ID. Let's search for Lavras' ID:
+This useful one helps us track the city's ID (`code_muni`). Let's search for Lavras' ID:
 
 ```{r lookup_muni}
 lookup_muni(name_muni = "LAVRAS")
@@ -147,7 +147,33 @@ knitr::kable(head(Brazil))
 <br>
 Note that the `geom` column stores the geometries and how they should be plotted. This column has `r class(Brazil$geom)` class. You can find more information about this type of data [here](https://r-spatial.github.io/sf/articles/sf1.html).
 
+# Maping the air quality stations location
 
+These stations are located in four cities: Vitória, cariacica, Vila Velha and Serra. We need to download them and add them in one object, as done below:
+
+```{r RMV, message=FALSE}
+Vitoria <- read_municipality(code_muni = 3205309,showProgress = FALSE)
+Serra <- read_municipality(code_muni = 3205002,showProgress = FALSE)
+Cariacica <- read_municipality(code_muni = 3201308,showProgress = FALSE)
+VilaVelha <- read_municipality(code_muni = 3205200,showProgress = FALSE)
+RMV <- rbind(Vitoria,Serra,Cariacica,VilaVelha)
+```
+The `code_muni` value was obtained through the `lookup_muni` function. Please refer back to [this page](https://arthurboari.github.io/arthurboari/Simple_maps.html#The_lookup_muni()_function) if you want to understand how to do so.
+
+Let's view our `RMV` object content:
+
+```{r RMV kable}
+knitr::kable(RMV)
+ggplot() + geom_sf(data = RMV)
+```
+
+It seems we encountered an error with out plot, *but* we did not. What happens is that Vitória contains islands attached to its territory. If we want to plot only the continental portion, we can restrain the x-axis width.
+
+```{r RMV restrained}
+ggplot() + geom_sf(data = RMV) + coord_sf(xlim=c(-40.61,-40.18))
+```
+
+Now that our base plot is built, we can add the stations and make the plot more personalized.
 <br>
 This page is being built.
 
@@ -379,4 +405,4 @@ ggsave(plot = graph,
        dpi = 600)
 ```
 
-This code was last compiled at `r Sys.Date()`
+This code was last compiled at `r Sys.time()`
