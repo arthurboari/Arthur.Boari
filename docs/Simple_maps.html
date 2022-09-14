@@ -33,8 +33,6 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-9.12.0/textmate.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
 <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 
@@ -47,18 +45,110 @@
   ul.task-list{list-style: none;}
     </style>
 
-<style type="text/css">code{white-space: pre;}</style>
-<script type="text/javascript">
-if (window.hljs) {
-  hljs.configure({languages: []});
-  hljs.initHighlightingOnLoad();
-  if (document.readyState && document.readyState === "complete") {
-    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+
+
+<style type="text/css">
+  code {
+    white-space: pre;
   }
+  .sourceCode {
+    overflow: visible;
+  }
+</style>
+<style type="text/css" data-origin="pandoc">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
 }
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    var j = 0;
+    while (j < rules.length) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
 </script>
-
-
 
 
 
@@ -418,13 +508,13 @@ pre {
   background-color: lightgreen;
 }
 #TOC {
-  color: darkblue;
+  color: #A8CF45;
   font-family: Times;
   font-size: 14px;
   border-color: black;
 }
 #header {
-  color: gold;
+  color: #00943E;
 }
 </style>
 <p>The following content was prepared as a part of an assignment for the
@@ -444,20 +534,20 @@ Brazilian territory;</li>
 </ul>
 <div id="loading-the-packages" class="section level1">
 <h1>Loading the packages</h1>
-<pre class="r"><code>library(geobr)</code></pre>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(geobr)</span></code></pre></div>
 <pre><code>Loading required namespace: sf</code></pre>
-<pre class="r"><code>library(ggplot2)
-library(ggspatial)
-library(RColorBrewer)</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggspatial)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(RColorBrewer)</span></code></pre></div>
 </div>
 <div id="loading-data-points" class="section level1">
 <h1>Loading data points</h1>
 <p>As we’re plotting the location of air quality monitoring stations, we
 need to load the data that contains their coordinates. These stations
 are located in the Espírito Santo state capital, Vitória.</p>
-<pre class="r"><code>Stations &lt;- read.csv2(
-  file = &quot;Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv&quot;,
-  fileEncoding = &quot;UTF-8&quot;)</code></pre>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Stations <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">file =</span> <span class="st">&quot;Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv&quot;</span>,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">fileEncoding =</span> <span class="st">&quot;UTF-8&quot;</span>)</span></code></pre></div>
 <p>You can obtain this file
 <a href="Arquivos/Maps/Coordenadas SIRGAS 2000 Completo.csv" download>here</a>.</p>
 </div>
@@ -470,8 +560,8 @@ sets for the Brazilian country.</p>
 <p>This useful function returns the relation between the packages’
 function, what it returns, the years of available data and the
 source.</p>
-<pre class="r"><code>list_geobr &lt;- list_geobr()
-knitr::kable(head(list_geobr))</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>list_geobr <span class="ot">&lt;-</span> <span class="fu">list_geobr</span>()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">head</span>(list_geobr))</span></code></pre></div>
 <table>
 <colgroup>
 <col width="14%" />
@@ -538,7 +628,7 @@ knitr::kable(head(list_geobr))</code></pre>
 <h2>The <code>lookup_muni()</code> function</h2>
 <p>This useful one helps us track the city’s ID
 (<code>code_muni</code>). Let’s search for Lavras’ ID:</p>
-<pre class="r"><code>lookup_muni(name_muni = &quot;LAVRAS&quot;)</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lookup_muni</span>(<span class="at">name_muni =</span> <span class="st">&quot;LAVRAS&quot;</span>)</span></code></pre></div>
 <pre><code>Using year 2010</code></pre>
 <pre><code>Returning results for municipality Lavras</code></pre>
 <pre><code>     code_muni name_muni code_state   name_state abbrev_state code_micro
@@ -555,24 +645,24 @@ knitr::kable(head(list_geobr))</code></pre>
 <h2>Country data set</h2>
 <p>Every time you download a <em>geobr</em> data set is useful to plot
 it to assess if it’s the desired one.</p>
-<pre class="r"><code>Brazil &lt;- read_country(year = 2020, showProgress = FALSE)</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>Brazil <span class="ot">&lt;-</span> <span class="fu">read_country</span>(<span class="at">year =</span> <span class="dv">2020</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>Using year 2020</code></pre>
-<pre class="r"><code>ggplot() + geom_sf(data = Brazil)</code></pre>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> Brazil)</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/estados%20brasil-1.png" width="672" />
 <br> As we can see, the upper code returned all the 26 states and the
 Federal District. But sometimes all you desire is the country’s contour
 lines…</p>
-<pre class="r"><code>Brazil.contour &lt;- read_country(year = 2010, showProgress = FALSE)</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Brazil.contour <span class="ot">&lt;-</span> <span class="fu">read_country</span>(<span class="at">year =</span> <span class="dv">2010</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>Using year 2010</code></pre>
-<pre class="r"><code>ggplot() + geom_sf(data = Brazil.contour)</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> Brazil.contour)</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/contorno%20brasil-1.png" width="672" />
 <br> … To achieve the desired result the solution is changing the
 <em>year</em> argument.</p>
 <p>By the way, the first result could be achieved by the following
 code:</p>
-<pre class="r"><code>Brazil.states &lt;- read_state(code_state = &quot;all&quot;, year = 2020, showProgress = FALSE)</code></pre>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>Brazil.states <span class="ot">&lt;-</span> <span class="fu">read_state</span>(<span class="at">code_state =</span> <span class="st">&quot;all&quot;</span>, <span class="at">year =</span> <span class="dv">2020</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>Using year 2020</code></pre>
-<pre class="r"><code>ggplot() + geom_sf(data = Brazil.states)</code></pre>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> Brazil.states)</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/estados%20brasil%202-1.png" width="672" />
 <br></p>
 </div>
@@ -580,22 +670,22 @@ code:</p>
 <h2>State data set</h2>
 <p>When it comes to state spatial data the go-to function is
 <code>read_state()</code>.</p>
-<pre class="r"><code>MG &lt;- read_state(code_state = 31, showProgress = FALSE)</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>MG <span class="ot">&lt;-</span> <span class="fu">read_state</span>(<span class="at">code_state =</span> <span class="dv">31</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>Using year 2010</code></pre>
-<pre class="r"><code>ggplot() + geom_sf(data = MG)</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> MG)</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/state-1.png" width="672" />
 <br> This function just obtains a subset of
 <code>read_country()</code>’s output. So, to obtain all the
 municipalities, head over to <code>read_municipality()</code> just
 assigning the state code as the municipality code:</p>
-<pre class="r"><code>MG.mun &lt;- read_municipality(code_muni = 31, showProgress = FALSE)</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>MG.mun <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="dv">31</span>, <span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>Using year 2010</code></pre>
-<pre class="r"><code>ggplot() + geom_sf(data = MG.mun)</code></pre>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> MG.mun)</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/state%20mg-1.png" width="672" />
 <br></p>
 <p>So, how can I figure out the state codes? Well, I’ve plotted out a
 map just for you!</p>
-<pre class="r"><code>ggplot(data = Brazil) + geom_sf() + geom_sf_text(aes(label = code_state)) + labs(x = &quot;&quot;,y = &quot;&quot;)</code></pre>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> Brazil) <span class="sc">+</span> <span class="fu">geom_sf</span>() <span class="sc">+</span> <span class="fu">geom_sf_text</span>(<span class="fu">aes</span>(<span class="at">label =</span> code_state)) <span class="sc">+</span> <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">&quot;&quot;</span>,<span class="at">y =</span> <span class="st">&quot;&quot;</span>)</span></code></pre></div>
 <pre><code>Warning in st_point_on_surface.sfc(sf::st_zm(x)): st_point_on_surface may not
 give correct results for longitude/latitude data</code></pre>
 <p><img src="Simple_maps_files/figure-html/state%20codes-1.png" width="672" /></p>
@@ -614,17 +704,17 @@ class="section level1">
 <p>These stations are located in four cities: Vitória, cariacica, Vila
 Velha and Serra. We need to download them and add them in one object, as
 done below:</p>
-<pre class="r"><code>Vitoria &lt;- read_municipality(code_muni = 3205309,showProgress = FALSE)
-Serra &lt;- read_municipality(code_muni = 3205002,showProgress = FALSE)
-Cariacica &lt;- read_municipality(code_muni = 3201308,showProgress = FALSE)
-VilaVelha &lt;- read_municipality(code_muni = 3205200,showProgress = FALSE)
-RMV &lt;- rbind(Vitoria,Serra,Cariacica,VilaVelha)</code></pre>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>Vitoria <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="dv">3205309</span>,<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>Serra <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="dv">3205002</span>,<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>Cariacica <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="dv">3201308</span>,<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>VilaVelha <span class="ot">&lt;-</span> <span class="fu">read_municipality</span>(<span class="at">code_muni =</span> <span class="dv">3205200</span>,<span class="at">showProgress =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>RMV <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Vitoria,Serra,Cariacica,VilaVelha)</span></code></pre></div>
 <p>The <code>code_muni</code> value was obtained through the
 <code>lookup_muni</code> function. Please refer back to <a
 href="https://arthurboari.github.io/arthurboari/Simple_maps.html#The_lookup_muni()_function">this
 page</a> if you want to understand how to do so.</p>
 <p>Let’s view our <code>RMV</code> object content:</p>
-<pre class="r"><code>knitr::kable(RMV)</code></pre>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(RMV)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="3%" />
@@ -679,17 +769,17 @@ page</a> if you want to understand how to do so.</p>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>ggplot() + geom_sf(data = RMV)</code></pre>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> RMV)</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/RMV%20kable-1.png" width="672" /></p>
 <p>It seems we encountered an error with out plot, <em>but</em> we did
 not. What happens is that Vitória contains islands attached to its
 territory. If we want to plot only the continental portion, we can
 restrain the x-axis width.</p>
-<pre class="r"><code>ggplot() + geom_sf(data = RMV) + coord_sf(xlim=c(-40.61,-40.18))</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>() <span class="sc">+</span> <span class="fu">geom_sf</span>(<span class="at">data =</span> RMV) <span class="sc">+</span> <span class="fu">coord_sf</span>(<span class="at">xlim=</span><span class="fu">c</span>(<span class="sc">-</span><span class="fl">40.61</span>,<span class="sc">-</span><span class="fl">40.18</span>))</span></code></pre></div>
 <p><img src="Simple_maps_files/figure-html/RMV%20restrained-1.png" width="672" /></p>
 <p>Now that our base plot is built, we can add the stations and make the
 plot more personalized. <br> This page is being built.</p>
-<p>This code was last compiled at 2022-09-11 18:53:40</p>
+<p>This code was last compiled at 2022-09-13 19:50:34</p>
 </div>
 
 

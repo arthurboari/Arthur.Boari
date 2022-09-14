@@ -15,13 +15,13 @@ pre {
   background-color: lightgreen;
 }
 #TOC {
-  color: darkblue;
+  color: #A8CF45;
   font-family: Times;
   font-size: 14px;
   border-color: black;
 }
 #header {
-  color: gold;
+  color: #00943E;
 }
 </style>
 ```
