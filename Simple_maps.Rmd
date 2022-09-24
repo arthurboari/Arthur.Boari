@@ -406,3 +406,5 @@ ggsave(plot = graph,
 ```
 
 This code was last compiled at `r Sys.time()`
+
+&copy; 2022 Arthur Boari. All rights reserved.

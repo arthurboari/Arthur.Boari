@@ -25,3 +25,5 @@ pre {
 
 <br>
 <br>
+
+&copy; 2022 Arthur Boari. All rights reserved.

@@ -87,3 +87,5 @@ Acesso em: 01 mar. 2022
 * WICKHAM, H. et al. **dplyr**: A Grammar of Data Manipulation. [S.l.], 2021. R package version 1.0.7. Disponível em: [link](https://CRAN.R-project.org/package=dplyr).
 
 * YU, Pei et al. Loss of life expectancy from PM2.5 in Brazil: a national study from 2010 to 2018. **Environment International**, [S.L.], v. 166, n. 107350, p. 1-9, ago. 2022. Elsevier BV. [DOI](http://dx.doi.org/10.1016/j.envint.2022.107350).
+
+&copy; 2022 Arthur Boari. All rights reserved.
