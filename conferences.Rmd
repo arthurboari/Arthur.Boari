@@ -38,13 +38,13 @@ pre {
 
 Conference dates: 2022/09/20-22
 
-Place: Poços de Caldas, Minas Gerais, Brazil
+Place: Poços de Caldas, Minas Gerais, Brazil.
 
 Full paper: <a href="Arquivos/Publicacoes/Resumo identificado final.pdf" >submitted version</a>.
 
 Poster: <a href="Arquivos/Publicacoes/Banner.pptx (1).pdf" >pdf file</a>. 
 
-References: [available](https://arthurboari.github.io/arthurboari/cnmaref.html)
+References: [available here](https://arthurboari.github.io/arthurboari/cnmaref.html).
 
 Website: [link](http://www.meioambientepocos.com.br/index.html) as accessed in 2022/09/19.
 
