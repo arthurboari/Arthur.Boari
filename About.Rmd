@@ -32,8 +32,9 @@ pre {
 }
 </style>
 ```
-![](images/WhatsApp Image 2022-03-23 at 08.10.40.jpeg){width="20%"}
+![](images/Untitled design (2).png){heigth="15%"}
 <br><br>
+
 
 # Overview
 
@@ -64,3 +65,5 @@ During his Undergraduate degree (2014-2020) in Environmental and Sanitary Engine
 ### 2021/1
 
 ### 2020/2
+
+&copy; 2022 Arthur Boari. All rights reserved.
