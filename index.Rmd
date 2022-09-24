@@ -26,14 +26,18 @@ pre {
 <br>
 <br>
 
-<img src="" style="max-width: 40%;">
-<div>
-  <p>Welcome to my GitHub/Markdown website!</p>
-  <br>
-  <p>These webpages reunite reliable information regarding my academic/professional progress. As long as the content is being transferred, the following content is expected to be publicly displayed:</p>
-  <ul>
-  <li>[Detailed academic biography](https://arthurboari.github.io/arthurboari/About.html)</li>
-  <li>Detailed skills</li>
-  <li>Documented programming tutorials</li>
-</ul>
+<div class="row">
+  <div class="col-md-8" markdown="1">
+  Welcome to my GitHub/Markdown website!
+
+These webpages reunite reliable information regarding my academic/professional progress. As long as the content is being transferred, the following content is expected to be publicly displayed:
+
+* [Detailed academic biography](https://arthurboari.github.io/arthurboari/About.html)
+* Detailed skills
+* Documented programming tutorials
+  </div>
+  <div class="col-md-4" markdown="1">
+  <img height="300px" class="center-block" src="images/Imagem do WhatsApp de 2022-09-21 à(s) 08.19.46.jpg">
+  </div>
+</div>
 </div>
