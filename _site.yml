@@ -15,6 +15,8 @@ navbar:
         - text: "R"
         - text: "Basic ggplot2 maps + geobr"
           href: Simple_maps.html
+        - text: "RColorBrewer palletes"
+          href: "RColorBrewerpalletes.html"
     - text: "Publications"
       icon: fa-file
       menu:
