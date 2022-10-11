@@ -40,7 +40,9 @@ Conference dates: 2022/09/20-22
 
 Place: Poços de Caldas, Minas Gerais, Brazil.
 
-Full paper: <a href="Arquivos/Publicacoes/Resumo identificado final.pdf" >submitted version</a>.
+Full paper: <a href="Arquivos/Publicacoes/Resumo identificado final.pdf" >submitted version</a> or <a href="http://www.meioambientepocos.com.br/ANAIS2022/76%20-%20244016_crescimento-da-concentrao-de-materiais-particulados-e-oznio-em-capitais-brasileiras.pdf" >conference proceedings</a>.
+
+Conference Proceedings: <a href="http://www.meioambientepocos.com.br/anais2022.html" >link here</a>.
 
 Poster: <a href="Arquivos/Publicacoes/Banner.pptx (1).pdf" >pdf file</a>. 
 
