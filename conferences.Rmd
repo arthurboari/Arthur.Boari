@@ -58,13 +58,13 @@ Conference dates: 2022/11/03-04
 
 Place: Universidade Federal de Lavras (Lavras, Minas Gerais, Brazil).
 
-Full paper: <a href="Arquivos/Publicacoes/xxxi cpg/CPG2022_paper_138.pdf" >submitted version.
+Full paper: <a href="Arquivos/Publicacoes/xxxi cpg/CPG2022_paper_138.pdf" >submitted version</a>.
 
 Presentation: <a href="Arquivos/Publicacoes/xxxi cpg/Slides CPG 2022.pdf" >pdf file</a>. 
 
 References: [available here](https://arthurboari.github.io/arthurboari/xxxicpg.html).
 
-Website: [link]() as accessed in 2022/10/29.
+Website: [link](https://congressos.ufla.br/xxxicppg) as accessed in 2022/10/29.
 
 
 &copy; 2022 Arthur Boari. All rights reserved.
