@@ -52,6 +52,19 @@ Website: [link](http://www.meioambientepocos.com.br/index.html) as accessed in 2
 
 # Local Conferences
 
+## XXXI Congresso da Pós-Graduação
+
+Conference dates: 2022/11/03-04
+
+Place: Universidade Federal de Lavras (Lavras, Minas Gerais, Brazil).
+
+Full paper: <a href="Arquivos/Publicacoes/" >submitted version.
+
+Presentation: <a href="Arquivos/Publicacoes/xxxi cpg/Slides CPG 2022.pdf" >pdf file</a>. 
+
+References: [available here](https://arthurboari.github.io/arthurboari/xxxicpg.html).
+
+Website: [link]() as accessed in 2022/10/29.
 
 
 &copy; 2022 Arthur Boari. All rights reserved.
