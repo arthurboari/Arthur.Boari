@@ -52,7 +52,7 @@ pre {
 
 * SEINFELD, J. H.; PANDIS, S. N. **Atmospheric chemistry and physics**: from air pollution to climate change. 2. ed. Hoboken, N.J: John Wiley & Sons, 2006. 1203 p. ISBN 978-0471720188.
 
-SEN, P. K. Estimates of the Regression Coefficient Based on Kendall's Tau. **Journal of the American Statistical Association**, v. 63, n. 324, p. 1379, dec 1968. ISSN 01621459. Disponível em: ⟨https://www.pacificclimate.org/∼wernera/zyp/Sen%201968%20JASA.pdf⟩. Acesso em: 28 fev. 2022.
+* SEN, P. K. Estimates of the Regression Coefficient Based on Kendall's Tau. **Journal of the American Statistical Association**, v. 63, n. 324, p. 1379, dec 1968. ISSN 01621459. Disponível em: ⟨https://www.pacificclimate.org/∼wernera/zyp/Sen%201968%20JASA.pdf⟩. Acesso em: 28 fev. 2022.
 
 * WORLD HEALTH ORGANIZATION (WHO). **WHO global air quality guidelines**: particulate matter (PM2.5 andPM10), ozone, nitrogen dioxide, sulfur dioxide and carbon monoxide. Geneva, Switzerland: World Health Organization, 2021. xxi, 273 p.
 
