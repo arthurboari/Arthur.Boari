@@ -40,13 +40,7 @@ pre {
 
 * BRASIL. Ministério do Meio Ambiente. Conselho Nacional do Meio Ambiente (CONAMA). Resolução nº 491, de 19 de novembro de 2018. dispõe sobre padrões de qualidade do ar. **Diário Oficial [da] República Federativa do Brasil — 1**, Brasília, DF, 2018. ISSN 1677-7042. Disponível em: ⟨https://www.in.gov.br/materia/-/asset\ publisher/Kujrw0TZC2Mb/content/id/51058895⟩. Acesso em: 02 mar. 2022.
 
-* ESPÍRITO SANTO. Secretaria de Meio Ambiente e Recursos Hídricos. Instituto Estadual de Meio Ambiente e Recursos Hídricos (IEMA). **Relatório da Qualidade do Ar na Grande Vitória: 2020**. Cariacica, 2021. Disponível em: ⟨https://iema.es.gov.br/Media/iema/CQAI/Relatorios\ anuais/IEMA\CQAI\ Relat\%C3\%B3rio\ Anual\ da\ Qualidade\ do\ Ar\ 2020.pdf⟩. Acesso em: 01 mar. 2022.
-
 * LENZI, E.; FAVERO, L. O. B. **Introdução à Química da Atmosfera**: Ciência, vida e sobrevivência. 2. ed. Barueri, SP: Grupo Editorial Nacional (GEN), 2019. ISBN 9788521634843. Disponível em: ⟨https://www.grupogen.com.br/exatas/quimica/introducao-a-quimica-da-atmosfera-ciencia-vida-e-sobrevivencia⟩. Acesso em: 17 fev. 2022.
-
-* MINAS GERAIS. Secretaria de Estado de Meio Ambiente e Desenvolvimento Sustentável. Fundação Estadual do Meio Ambiente (FEAM). **Informações Complementares das Estações**. 2020. Disponível em: ⟨http://www.feam.br/images/stories/2020/QUALIDADE\ DO\ AR/Tabela\ Informa\%C3\%A7\%C3\%B5es\ Complementares\ das\ Esta\%C3\%A7\%C3\%B5es.xlsx⟩. Acesso em: 01 mar. 2022.
-
-* RIO DE JANEIRO (Estado). Secretaria de Estado do Ambiente e Sustentabilidade. Instituto Estadual do Ambiente (INEA). **Relatório da Qualidade do Ar do estado do Rio de Janeiro**: Ano base 2018. Rio de Janeiro, 2020. Disponível em: ⟨http://www.inea.rj.gov.br/wp-content/uploads/2020/11/relatorio-qualidade-ar-2018.pdf⟩. Acesso em: 01 mar. 2022.
 
 * SAO PAULO (Estado). Secretaria de Infraestrutura e Meio Ambiente. Companhia Ambiental do Estado de São Paulo (CETESB). **Qualidade do ar no estado de São Paulo 2020**. São Paulo, 2021. 10 p. Disponível em: ⟨https://cetesb.sp.gov.br/ar/wp-content/uploads/sites/28/2021/05/Apendice-2-Qualidade-do-Ar-2020.pdf⟩. Acesso em: 01 mar. 2022.
 
