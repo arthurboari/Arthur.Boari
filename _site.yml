@@ -32,7 +32,7 @@ navbar:
       href: mailto:eng.arthurboari@gmail.com
     - text: Linktr.ee
       icon: fa-link
-      href: https://linktr.ee/aboari
+      href: https://linktr.ee/arthurboari
 output_dir: "docs"
 output:
   html_document:
