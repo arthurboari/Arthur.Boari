@@ -48,7 +48,7 @@ taylor.view <-
 About
 ==================
 
-Column {data-width=350}
+Column {data-width=400}
 -----------------------------------------------------------------------
 
 ### About the author {data-height=25}
