@@ -17,7 +17,8 @@ navbar:
           href: Simple_maps.html
         - text: "RColorBrewer palletes"
           href: "RColorBrewerpalletes.html"
-        - text: "Taylor Swift Spotify Data: a dashboard analysis"
+        - text: "Dashboards"
+        - text: "Taylor Swift Spotify Data"
           href: "TSdashboard.html"
     - text: "Publications"
       icon: fa-file
