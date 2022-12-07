@@ -103,7 +103,7 @@ reactable::reactable(data = taylor.view,searchable = TRUE,
                      liveness = colDef(name = "Liveness"),
                      valence = colDef(name = "Valence"),
                      tempo = colDef(name = "Tempo")
-                     ),highlight = TRUE, paginationType = "jump",bordered = TRUE,defaultColDef = colDef(align = "center",vAlign = "center")) %>% add_title("Table: Taylor Swift's Spotify Data: standard edition", align = "center", font_color = "blue")
+                     ),highlight = TRUE, showPagination = FALSE,defaultPageSize = 144,bordered = TRUE,defaultColDef = colDef(align = "center",vAlign = "center")) %>% add_title("Table: Taylor Swift's Spotify Data: standard edition", align = "center", font_color = "blue")
 ```
 
 
