@@ -14,10 +14,12 @@ library(viridis)
 #library(shiny)
 #library(plotly)
 library(ggiraph)
+library(reactable)
+library(reactablefmtr)
 ```
 
 ```{r data and codes}
-taylor.filtered <- read.csv(file = "Arquivos/dashboard/Taylor Swift Spotify Data filtered only Standard.csv",header = TRUE,sep = ",",dec = ".",fileEncoding = "UTF-8")
+taylor.filtered <- read.csv(file = "Taylor Swift Spotify Data filtered only Standard.csv",header = TRUE,sep = ",",dec = ".",fileEncoding = "UTF-8")
 taylor.filtered$album_name <- factor(x = taylor.filtered$album_name,levels = c("Taylor Swift",'Fearless','Speak Now','Red','1989','reputation','Lover','folklore','evermore','Midnights'),ordered = TRUE)
 taylor.filtered$track_number <- factor(x = taylor.filtered$track_number,levels = c("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"),ordered = TRUE)
 
@@ -48,7 +50,7 @@ taylor.view <-
 About
 ==================
 
-Column {data-width=400}
+Column {data-width=350}
 -----------------------------------------------------------------------
 
 ### About the author {data-height=25}
@@ -63,14 +65,16 @@ This dashboard is a result of an assignment performed for PEX820 - Data Manipula
 
 The data present in this dashboard comes from Spotify's API [@Spotify4dev] and was read into the R environment through the `spotifyr` [@spotifyr] package and manipulated using the `tidyverse` [@tidyverse] package. The Table presented on the next page showcases the data used from now on. We considered only the standard original recordings of all albums, although further analysis with the different editions and re-recordings are considered.
 
-Other used packages: `flexdashboard` [@flexdashboard], `viridis` [@viridis] and `ggiraph` [@ggiraph].
+Other used packages: `flexdashboard` [@flexdashboard], `viridis` [@viridis], `ggiraph` [@ggiraph], `reactable` [@reactable], and `reactablefmtr` [@reactablefmtr].
+
+You are able to download the datasets in [Base](https://www.kaggle.com/datasets/arthurboari/taylor-swift-spotify-data) form, as extract from the Spotify API, or in the [Final](https://www.kaggle.com/datasets/arthurboari/taylor-swift-albums-data-standard-edition-only) form used in this dashboard.
 
 Refer to the "References" page to view all sources of information and download the base and final dataset of this analysis.
 
 Column {data-width=600}
 ----------------------------------------------------------------------- 
 ```{r picture, echo = F, fig.cap = "[Taylor Swift Album Cover Coasters](https://www.urbanartisangeneva.com/product/taylor-swift-album-coasters/537?cfa=gpl). First row: Midnights (2022), evermore (2020) and folklore (2020). Second row: Lover (2019), reputation (2017), 1989 (2014) and Red (2012 with 2021 re-record cover). Third row: Speak Now (2010), Fearless (2008 with 2021 re-record cover) and Taylor Swift (2006).", out.width = '80%',out.height='80%',fig.pos='bottom'}
-knitr::include_graphics("Arquivos/dashboard/Sem título.jpg")
+knitr::include_graphics("Sem titulo.jpg")
 ```
 
 Dataset
@@ -79,7 +83,27 @@ Dataset
 
 
 ```{r}
-knitr::kable(x = taylor.view,row.names = FALSE,col.names = c('Artist','Release date','Year','Album','Track nº','Track name','Duration (min)','Key','Danceability','Energy','Loudness','Speechiness','Acousticness','Instrumentalness','Liveness','Valence','Tempo'),caption = "Table: Taylor Swift's Spotify Data: standard edition",digits = 2)
+#knitr::kable(x = taylor.view,row.names = FALSE,col.names = c('Artist','Release date','Year','Album','Track nº','Track name','Duration (min)','Key','Danceability','Energy','Loudness','Speechiness','Acousticness','Instrumentalness','Liveness','Valence','Tempo'),caption = "Table: Taylor Swift's Spotify Data: standard edition",digits = 2)
+reactable::reactable(data = taylor.view,searchable = TRUE,
+                     columns = list(
+                       artist_name = colDef(name = "Artist"),
+                       album_release_date = colDef(name = "Release date"),
+                       album_release_year = colDef(name = "Year",minWidth = 50),
+                       album_name = colDef(name = "Album"),
+                       track_number = colDef(name = "Track n",minWidth = 80),
+                       track_name = colDef(name = "Track name"),
+                       duration_min = colDef(name = "Duration (min)",minWidth = 120),
+                     key_mode = colDef(name = "Key"),
+                     danceability = colDef(name = "Danceability",minWidth = 110),
+                     energy = colDef(name = "Energy"),
+                     loudness = colDef(name = "Loudness"),
+                     speechiness = colDef(name = "Speechiness"),
+                     acousticness = colDef(name = 'Acousticness',minWidth = 110),
+                     instrumentalness = colDef(name = "Instrumentalness",minWidth = 140),
+                     liveness = colDef(name = "Liveness"),
+                     valence = colDef(name = "Valence"),
+                     tempo = colDef(name = "Tempo")
+                     ),highlight = TRUE, paginationType = "jump",bordered = TRUE,defaultColDef = colDef(align = "center",vAlign = "center")) %>% add_title("Table: Taylor Swift's Spotify Data: standard edition", align = "center", font_color = "blue")
 ```
 
 
@@ -710,13 +734,6 @@ girafe(ggobj = gg_point_tsmid,width_svg = 6,height_svg = 2.3)
 
 References
 ==================
-
-### Download the Datasets {data-height=150}
-
-[Base](https://www.kaggle.com/datasets/arthurboari/taylor-swift-spotify-data)
-
-[Final](https://www.kaggle.com/datasets/arthurboari/taylor-swift-albums-data-standard-edition-only) (the one use and printed in this dashboard)
-
 
 ### Author's Top 5 favorite tracks of each album {data-height=350}
 
