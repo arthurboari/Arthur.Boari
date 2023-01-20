@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  18 JAN 2023 21:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.12) (preloaded format=pdflatex 2023.1.14)  19 JAN 2023 10:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -306,6 +306,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [1{C:/Users/aboar/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}
 
 ]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 73.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 73.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 73.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -319,19 +326,22 @@ Package rerunfilecheck Info: File `"Carta IME".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9683 strings out of 476406
- 159872 string characters out of 2789567
+ 9703 strings out of 476406
+ 160081 string characters out of 2789567
  1862787 words of memory out of 3000000
- 29935 multiletter control sequences out of 15000+600000
- 514033 words of font info for 35 fonts, out of 8000000 for 9000
+ 29947 multiletter control sequences out of 15000+600000
+ 517235 words of font info for 44 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
  72i,11n,77p,1721b,450s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecti
-1200.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecrm1200.pk>
-Output written on "Carta IME.pdf" (2 pages, 47703 bytes).
+ <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+0800.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecti1200.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecrm1200.pk><C:/Users/aboar/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/aboar/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on "Carta IME.pdf" (2 pages, 66339 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
+ 158 PDF objects out of 1000 (max. 8388607)
  3 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
