@@ -1,18 +1,13 @@
 ---
-title: "Who is the author?"
+title: "About me"
 output:
-  html_document:
-    toc: true
-    toc_depth: 4
-    toc_float:
-      collapsed: true
-      smooth_scroll: true
+  html_document
 ---
 
 ```{=html}
 <style>
 body {
-  color: black;
+  color: lightyellow;
   font-family: Times;
   font-size: 20px;
   text-align: justify;
@@ -52,18 +47,3 @@ pre {
 <br>
 <br>
 
-# Master degree details
-
-## Curricular components
-
-### 2022/2
-
-### 2022/1
-
-### 2021/2
-
-### 2021/1
-
-### 2020/2
-
-&copy; 2022 Arthur Boari. All rights reserved.
