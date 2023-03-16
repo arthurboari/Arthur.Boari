@@ -5,7 +5,7 @@ navbar:
   left:
     - text: "Arthur Boari"
       icon: fa-user
-      href: About.html
+      href: index.html
     - text: "Codes"
       icon: fa-code
       menu:
