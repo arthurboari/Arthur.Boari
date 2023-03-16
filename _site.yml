@@ -1,12 +1,9 @@
 name: "Arthur Boari"
 navbar:
-  title: "Arthur Boari"
+  title: ""
   type: default
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
-    - text: "About me"
+    - text: "Arthur Boari"
       icon: fa-user
       href: About.html
     - text: "Codes"
