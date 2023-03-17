@@ -1,12 +1,12 @@
-name: "Arthur Boari"
+name: "Arthur Boari Home"
 navbar:
-  title: ""
+  title: "Arthur Boari"
   type: default
   left:
     - text: "Arthur Boari"
       icon: fa-user
       href: index.html
-    - text: "Codes"
+    - text: "Códigos"
       icon: fa-code
       menu:
         - text: "R"
@@ -16,10 +16,10 @@ navbar:
         - text: "Taylor Swift Spotify Data"
           href: "TSdashboard.html"
   right:
-    - text: Contact ME!
+    - text: "Entre em Contato"
       icon: fa-envelope
       href: mailto:eng.arthurboari@gmail.com
-    - text: Linktr.ee
+    - text: "Links"
       icon: fa-link
       href: https://linktr.ee/aboari
 output_dir: "docs"
