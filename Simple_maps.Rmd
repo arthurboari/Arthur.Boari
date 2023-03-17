@@ -1,5 +1,5 @@
 ---
-title: "Simple Maps"
+title: "Mapas com *geobr* e *ggplot2*"
 output:
   html_document:
     toc: true
@@ -11,8 +11,12 @@ output:
 
 ```{=html}
 <style>
+  .title {
+    visibility: visible;
+    position: relative;
+}
 body {
-  color: black;
+  color: lightyellow;
   font-family: Times;
   font-size: 20px;
   text-align: justify;
