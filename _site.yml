@@ -3,9 +3,6 @@ navbar:
   title: "Arthur Boari"
   type: default
   left:
-    - text: "Arthur Boari"
-      icon: fa-user
-      href: index.html
     - text: "Códigos"
       icon: fa-code
       menu:

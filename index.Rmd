@@ -1,11 +1,15 @@
 ---
-title: "Sobre"
+title: "Sobre | Arthur Boari"
 output:
   html_document
 ---
 
 ```{=html}
 <style>
+  .title {
+    visibility: hidden;
+    position: relative;
+}
 body {
   color: lightyellow;
   font-family: Times;
@@ -27,9 +31,9 @@ pre {
 }
 </style>
 ```
-![](images/Untitled design (2).png){heigth="2.5%"}
-<br><br>
-
+```{r fig.align='center',echo=FALSE,out.width='60%',fig.cap='Arquivo pessoal'}
+knitr::include_graphics(path = "images/Untitled design (2).png")
+```
 
 # Overview
 
