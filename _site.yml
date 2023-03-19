@@ -13,6 +13,13 @@ navbar:
         - text: "Taylor Swift Spotify Data"
           href: "TSdashboard.html"
   right:
+    - text: "Idioma"
+      icon: fa-language
+      menu:
+        - text: "EN-US"
+          href: https://arthurboari.github.io/portfolio_en/
+        - text: "PT-BR"
+          href: https://arthurboari.github.io/portfolio_pt/  
     - text: "Entre em Contato"
       icon: fa-envelope
       href: mailto:eng.arthurboari@gmail.com
