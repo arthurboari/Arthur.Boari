@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.18)  18 MAR 2023 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 23.1) (preloaded format=pdflatex 2023.3.21)  10 APR 2023 11:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **"./Carta IME.tex"
 (Carta IME.tex
 LaTeX2e <2022-11-01> patch level 1
-L3 programming layer <2023-02-07>
+L3 programming layer <2023-02-22>
 (C:\Users\aboar\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
 Document Class: article 2022/07/02 v1.4n Standard LaTeX document class
 (C:\Users\aboar\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
@@ -63,7 +63,7 @@ Package babel Info: Importing font and identification data for brazilian
 (C:\Users\aboar\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/l3keys2e\l3k
 eys2e.sty
 (C:\Users\aboar\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
-Package: expl3 2023-02-07 L3 programming layer (loader) 
+Package: expl3 2023-02-22 L3 programming layer (loader) 
 
 (C:\Users\aboar\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
 tex.def
@@ -320,11 +320,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [2]
-Overfull \hbox (225.94527pt too wide) in paragraph at lines 83--84
-[]\T1/cmr/m/n/12 Outra apli-ca-ção im-por-tante da es-ta-tís-tica na mi-nha áre
-a é a $[]$.
- []
-
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -338,23 +333,22 @@ Package rerunfilecheck Info: File `"Carta IME".out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 9710 strings out of 476339
- 160197 string characters out of 5788119
- 1863340 words of memory out of 5000000
- 30016 multiletter control sequences out of 15000+600000
- 518011 words of font info for 45 fonts, out of 8000000 for 9000
+ 9708 strings out of 476334
+ 160175 string characters out of 5787971
+ 1863382 words of memory out of 5000000
+ 30020 multiletter control sequences out of 15000+600000
+ 517235 words of font info for 44 fonts, out of 8000000 for 9000
  1150 hyphenation exceptions out of 8191
- 75i,11n,77p,1838b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecbx
-1200.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
-0\ecrm0800.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
-/dpi600\ecti1200.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknap
-pen/ec/dpi600\ecrm1200.pk><C:/Users/aboar/AppData/Local/Programs/MiKTeX/fonts/t
-ype1/public/amsfonts/cm/cmmi8.pfb><C:/Users/aboar/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr8.pfb>
-Output written on "Carta IME.pdf" (3 pages, 84184 bytes).
+ 75i,11n,77p,1935b,450s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\ecrm
+0800.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi60
+0\ecti1200.pk> <C:\Users\aboar\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec
+/dpi600\ecrm1200.pk><C:/Users/aboar/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb><C:/Users/aboar/AppData/Local/Programs/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmr8.pfb>
+Output written on "Carta IME.pdf" (3 pages, 73738 bytes).
 PDF statistics:
- 208 PDF objects out of 1000 (max. 8388607)
+ 175 PDF objects out of 1000 (max. 8388607)
  4 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
