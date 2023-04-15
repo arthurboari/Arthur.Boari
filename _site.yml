@@ -3,29 +3,26 @@ navbar:
   title: "Arthur Boari"
   type: default
   left:
-    - text: "Códigos"
-      icon: fa-code
-      menu:
-        - text: "R"
-        - text: "Basic ggplot2 maps + geobr"
-          href: Simple_maps.html
-        - text: "Dashboards"
-        - text: "Taylor Swift Spotify Data"
-          href: "TSdashboard.html"
+    - text: "CV Lattes"
+      icon: fa-link
+      href: http://lattes.cnpq.br/7113151378838886
+    - text: "ResearchGate"
+      icon: fa-link
+      href: https://www.researchgate.net/profile/Arthur-Boari
+    - text: "Outros Links"
+      icon: fa-link
+      href: https://linktr.ee/aboari
   right:
-    - text: "Idioma"
+    - text: "Língua"
       icon: fa-language
       menu:
         - text: "EN-US"
           href: https://arthurboari.github.io/portfolio_en/
         - text: "PT-BR"
-          href: https://arthurboari.github.io/portfolio_pt/  
-    - text: "Entre em Contato"
+          href: https://arthurboari.github.io/portfolio_pt/
+    - text: "Entre em contato"
       icon: fa-envelope
       href: mailto:eng.arthurboari@gmail.com
-    - text: "Links"
-      icon: fa-link
-      href: https://linktr.ee/aboari
 output_dir: "docs"
 output:
   html_document:
