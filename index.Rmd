@@ -31,23 +31,20 @@ pre {
 }
 </style>
 ```
-```{r fig.align='center',echo=FALSE,out.width='60%',fig.cap='Arquivo pessoal'}
+```{r fig.align='center',echo=FALSE,out.width='60%'}
 knitr::include_graphics(path = "images/Untitled design (2).png")
 ```
 
-# Visão geral
+Arthur Boari nasceu em Lavras, Minas Gerais, em 1995. Sua língua nativa é o português do Brasil, mas ele também fala, escreve e lê em inglês. Desde criança, Arthur se preocupa com o meio ambiente, o que o levou a estudar engenharia ambiental anos depois. Neste texto, pretendemos traçar um panorama de sua trajetória até aqui.
 
-|       O autor nasceu na cidade de Lavras, Minas Gerais, Brasil, em 1995. A sua língua materna é o português brasileiro, mas fala, escreve, e lê também em inglês. Arthur preocupou-se com o ambiente quando criança - um tema que estudaria anos mais tarde para se tornar um engenheiro ambiental. O texto seguinte visa dar ao leitor uma visão geral da sua carreira até agora.
 
-|       Atualmente, **Arthur Boari** está desenvolvendo sua pesquisa de mestrado na área de poluição do ar --- investigando tendências em séries temporais de material particulado e ozônio troposférico das capitais da região sudeste do Brasil. Ele está vinculado ao [Programa de Pós-graduação em Engenharia Ambiental](https://sites.google.com/ufla.br/ppgeamb/p%C3%A1gina-inicial?authuser=0) na Universidade Federal de Lavras (UFLA), onde [Prof. Dr. Marcelo Vieira-Filho](http://lattes.cnpq.br/5059318976988668) o supervisiona. Ele foi o único ingressante na linha de pesquisa Mudança Climática, Energia e Poluição Atmosférica no segundo semestre de 2020.
+Recentemente, Arthur encerrou seu mestrado em Engenharia Ambiental. Em termos de pesquisa, investigou tendências em séries temporais de material particulado e ozônio troposférico nas capitais da região sudeste do Brasil. A pesquisa resultou na submissão de um artigo ao periódico Environmental Monitoring and Assessment, e é esperada a finalização de um segundo artigo. Arthur era vinculado a linha de pesquisa Mudanças Climáticas, Energia e Poluição Atmosférica do [Programa de Pós-Graduação em Engenharia Ambiental](https://sites.google.com/ufla.br/ppgeamb/p%C3%A1gina-inicial?authuser=0) da Universidade Federal de Lavras (UFLA), onde era orientado pelo [Prof. Dr. Marcelo Vieira-Filho](http://lattes.cnpq.br/5059318976988668).
 
-|       Durante sua graduação (2014-2020) em Engenharia Ambiental e Sanitária (UFLA) ele desenvolveu várias atividades, a serem discutidas:
 
-|       Seu trabalho final abordou o uso de quatro métodos de estimativa de evapotranspiração (FAO56-Penman-Monteith, Hargreaves & Samani, Makkink, e Thornthwaite) na metodologia do balanço climatológico da água (Thornthwaite & Matter) para séries históricas de dados meteorológicos de oito estações no nordeste do estado de Minas Gerais. Esta área é caracterizada pelas classificações de Aw e Cwa (Köppen). Todo o trabalho foi orientado pela [Prof. Dra. Sílvia de Nazaré Monteiro Yanagi (UFLA)](http://lattes.cnpq.br/3943657653311716).
+Durante sua graduação em Engenharia Ambiental e Sanitária na UFLA, Arthur desenvolveu pesquisa laboratorial em amostras de água e esgoto provenientes de estações de tratamento localizadas no campus sede da UFLA. Nesse período, foi filiado à Diretoria de Meio Ambiente (DMA/UFLA) como atividade vivencial (2016), iniciação científica voluntária (2016-2017) e aprendizado técnico (2017-2019). As análises realizadas incluíram análises físicas (pH, condutividade, cor e turbidez), químicas (Nitrogênio Kjeldahl Total, Demanda Bioquímica/Química de Oxigênio, Manganês, Ferro Total, Fósforo Total, entre outras) e biológicas (Coliformes Totais e Termotolerantes), e foram base para várias publicações em congressos locais, regionais e a nível nacional.
 
-* Em 2019 ele ingressou no [Núcleo de Estudos em Poluição Urbana e Agroindustrial (NEP UAI)](https://sites.google.com/ufla.br/nepuai) onde teve a oportunidade de começar a desenvolver projetos na área de ciências atmosféricas, tais como poluição sonora e poluição do ar. Durante os três anos que lá esteve, ele passou por várias posições onde desenvolveu habilidades de comunicação, gestão de pessoas e gestão de projetos. Em março de 2022, ele terminou suas atividades com eles.
 
-* Entre 2016 e 2019 trabalhou em laboratórios de análise de água e esgoto de estações de tratamento localizadas no campus da UFLA. Durante este período ele esteve ligado à Diretoria de Meio Ambiente (DMA/UFLA) como uma atividade experimental (2016), iniciação científica voluntária (2016-2017) e aprendizado técnico (2017-2019). Entre as análises realizadas estão análises físicas (pH, condutividade, cor e turbidez), análises químicas (Nitrogênio Kjeldahl Total, Demanda Bioquímica/Química de Oxigênio, Manganês, Ferro Total, Fósforo Total, entre outras), e análises biológicas (Coliformes Total e Termotolerantes).
-<br>
-<br>
+Arthur ingressou no [Núcleo de Estudos de Poluição Urbana e Agroindustrial - NEP UAI](https://sites.google.com/ufla.br/nepuai), onde teve a oportunidade de começar a desenvolver projetos na área de ciências atmosféricas, como poluição atmosférica e sonora. Durante os três anos em que esteve lá, passou por diversos cargos onde desenvolveu habilidades de comunicação, gestão de pessoas e gestão de projetos. Foram geradas publicações em congressos locais e regionais, bem como a publicação de um artigo internacional que investigou a resposta de medidas de lockdown na poluição do ar em estações da cidade de São Paulo.
 
+
+No seu trabalho de conclusão de curso, Arthur utilizou quatro métodos para estimar a evapotranspiração (FAO56-Penman-Monteith, Hargreaves & Samani, Makkink e Thornthwaite) na metodologia de balanço hídrico climatológico (Thornthwaite & Mather) para séries históricas de dados meteorológicos de oito estações da região nordeste de Minas Gerais. A [Profa. Dra. Sílvia de Nazaré Monteiro Yanagi](http://lattes.cnpq.br/3943657653311716) supervisionou todo o projeto.
